@@ -12,3 +12,5 @@ Ygor Farias de Melo
 Francisco de Assis Soares da Silva
 <br>
 Márcia Cristina de Sousa
+<br>
+Karine Araujo dos Santos
