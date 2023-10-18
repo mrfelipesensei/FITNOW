@@ -1,0 +1,54 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.main_header{
+    width: 100%;
+    background-color: #000000;
+}
+
+#fit_logo{
+    width: 300px;
+}
+
+.main_header .main_header_content{
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.main_header_content_menu{
+    flex-basis: calc(100% - 330px);
+    font-display: flex;
+    justify-content: flex-end;
+}
+
+.main_header_content_menu ul{
+    display: flex;
+    align-items: stretch;
+}
+
+.main_header_content_menu ul li{
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.main_header_content_menu ul li a{
+    padding: 0 27px;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    height: 100%;
+    color: white;
+    border: 2px solid white;
+}
+
+.main_header_content_menu ul li a:hover{
+    color: white;
+    background-color: rgb(199, 34, 34);
+}
