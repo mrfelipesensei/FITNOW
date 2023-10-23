@@ -4,7 +4,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 80px;
+    padding: 40px;
     border-radius: 15px;
     color: white;
     text-align: center;
@@ -33,6 +33,23 @@
     opacity: 0.8;
 }
 .button:hover{
+    background-color: black;
+    color: white;
+    opacity: 1;
+    cursor: pointer;
+}
+
+#lilbtn{
+    background-color: white;
+    border: none;
+    padding: 3px;
+    width: 50%;
+    border-radius: 10px;
+    color: black;
+    font-size: 15px;
+    opacity: 0.8;
+}
+#lilbtn:hover{
     background-color: black;
     color: white;
     opacity: 1;
