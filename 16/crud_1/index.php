@@ -13,7 +13,7 @@
     </header>
     <nav>
         <a href="home.html">Home</a>
-        <a href="#">Perfil</a>
+        <a href="perfis/index.php">Perfil</a>
         <a href="#">Usuários</a>
     </nav>
 </body>
