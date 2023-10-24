@@ -1,5 +1,5 @@
 <?php
-    require_once '../src/conexao.php';
+    require_once '../src/databases/conexao.php';
 
     # solicita a conexão com o banco de dados e guarda na váriavel dbh.
     $dbh = Conexao::getConexao();

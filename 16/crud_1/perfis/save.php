@@ -1,7 +1,7 @@
 <?php
     header('Content-Type: text/html; charset=utf-8;');
     
-    require_once '../src/conexao.php';
+    require_once '../src/databases/conexao.php';
 
     # recebe os valores enviados do formulário via método post.
     $nome = strtoupper(filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS));
