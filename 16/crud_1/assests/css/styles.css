@@ -1,0 +1,57 @@
+/*Topo*/
+.main_header {
+    width: 100%;
+    background-color: black;
+
+}
+
+.main_header .main_header_content {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main_header .main_header_content .logo {
+    flex-basis: 330px;
+    padding: 20px;
+    width: 290px;
+}
+
+#logofit{
+    width: 200px;
+}
+
+.main_header .main_header_content .main_header_content_menu {
+    flex-basis: calc(100% - 330px);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main_header_content_menu ul {
+    display: flex;
+    align-items: stretch;
+}
+
+.main_header_content_menu ul li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+}
+
+.main_header_content_menu ul li a{
+    padding: 0 26px;
+    display: flex;
+    font-size: 1.3rem;
+    align-items: center;
+    height: 100%;
+    color:white;
+}
+
+.main_header_content_menu ul li a:hover{
+    color:black;
+    background-color: rgb(158, 20, 20);
+}
+
+/*FIM - TOPO*/
