@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="../assests/css/modal.css"> <!--modal.css-->
     <link rel="stylesheet" href="../assests/css/login.css"> <!--login.css-->
     <link rel="stylesheet" href="../assests/css/styles.css">
+    <link rel="stylesheet" href="../assests/css/index_perfil.css">
     <title>Perfil</title>
 </head>
 <body>
@@ -49,10 +50,12 @@
     <main>
         <h1>Perfil</h1>
         <section class="section__btn">
-            <a class="btn" href="create.php">Novo</a>
+            <a class="btn" href="create.php">Novo Perfil</a>
         </section>
+        <br><br><br>
         <hr>
-        <section>
+        <div class="outcontainer" >
+            <section class="container">
             <table>
                 <thead>
                     <tr>
@@ -72,15 +75,16 @@
                             <td><?php echo $perfil['idPerfil'];?></td>
                             <td><?= $perfil['nome'];?></td>
                             <td class="td__operacao">
-                                <a class="btnalterar" href="edit.php?id=<?=$perfil['idPerfil'];?>">Alterar</a>
-                                <a class="btnexcluir" href="delete.php?id=<?=$perfil['idPerfil'];?>" onclick="return confirm('Deseja confirmar a operação?');">Excluir</a>
+                                <a class="btns" href="edit.php?id=<?=$perfil['idPerfil'];?>">Alterar</a>
+                                <a class="btns" href="delete.php?id=<?=$perfil['idPerfil'];?>" onclick="return confirm('Deseja confirmar a operação?');">Excluir</a>
                             </td>
                         </tr>
                         <?php endforeach; ?>
                     <?php endif; $dbh = null; ?>
                 </tbody>
             </table>
-        </section>
+            </section>
+        </div>
     </main>
 </body>
 </html>

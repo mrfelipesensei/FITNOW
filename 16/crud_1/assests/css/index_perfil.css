@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+    font-size: 25px;
+    margin-top: 5px;
+}
+
+.btn {
+    background-color: grey;
+    color: black;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 20px;
+    position: absolute;
+    right: 45%;
+}
+
+.btn:hover{
+    background-color: green;
+    color: white;
+    transition: 1s;
+}
+
+.outcontainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    background-color: #fff;
+}
+
+
+.container{
+    color: #000;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    width: 50%; 
+    background-color: rgb(245,242,242);
+    padding: 2px 0;
+    border-radius: 5px;
+    -webkit-box-shadow: 3px 3px 3px 3px rgba(50, 50, 50, 0.77);
+    -moz-box-shadow: 3px 3px 3px 3px rgba(50, 50, 50, 0.77);
+    box-shadow: 3px 3px 3px 3px rgba(50, 50, 50, 0.77);
+}
+
+.container table{
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+}
+
+.container table tr th{
+    height: 56px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: .25px;
+    text-align: center;
+    padding: 0 5px;
+}
+
+.container table tr td {
+    vertical-align: middle;
+    width: 20%;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+}
+
+.container table tr td .btns{
+    font-size: 20px;
+}
+
+/*
+.container table tr td .btns{
+    font-size: 14px;
+    margin-left: auto;
+    cursor: pointer;
+    color: #0019ff;
+    border: 2px solid #0019ff;
+    border-radius: 5px;
+    background-color: transparent;
+    margin: 50%;
+    padding: 8px 10px;
+    min-height: 20px;
+}
+
+.container table tr td .btns:hover{
+    background-color: #dbdef6;
+}
