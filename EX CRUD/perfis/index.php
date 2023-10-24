@@ -3,6 +3,8 @@ require_once __DIR__ . "/../layouts/header.php";
 require_once __DIR__ . "/../layouts/nav.php";
 
 require_once __DIR__ . '/../src/dao/perfildao.php';
+require_once __DIR__ . "/../auth/restrito.php";
+
 
 # cria um objeto da classe PerfilDAO e chama método para realizar ação.
 $dao = new PerfilDAO();

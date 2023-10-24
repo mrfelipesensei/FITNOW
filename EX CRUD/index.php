@@ -17,6 +17,10 @@
         <a href="#">Home</a>
         <a href="usuarios/index.php">Usuários</a>
         <a href="perfis/index.php">Perfil</a>
+        <?php session_start();
+        if (isset($_SESSION['usuario'])) : ?>
+            <a href="auth/logout.php">Log out</a>
+        <?php endif; ?>
     </nav>
 
 

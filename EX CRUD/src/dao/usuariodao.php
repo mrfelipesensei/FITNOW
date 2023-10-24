@@ -89,4 +89,22 @@ class UsuarioDAO
 
         return $result;
     }
+
+    public function login($email, $password)
+    {
+        $query = "SELECT id, nome, email, perfil_id 
+            FROM escolabd.usuarios 
+            WHERE email = :email
+            AND password = :password;";
+
+        $stmt = $this->dbh->prepare($query);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':password', $password);
+        $stmt->execute();
+
+        $row = $stmt->fetch(PDO::FETCH_BOTH);
+        $this->dbh = null;
+
+        return $row;
+    }
 }
