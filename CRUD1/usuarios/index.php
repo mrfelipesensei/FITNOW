@@ -1,6 +1,7 @@
 <?php
     require_once '../src/databases/conexao.php';
-
+    require_once '../src/dao/usuariodao.php';
+    /*
     # solicita a conexão com o banco de dados e guarda na váriavel dbh.
     $dbh = Conexao::getConexao();
 
@@ -13,7 +14,11 @@
     # devolve a quantidade de linhas retornada pela consulta a tabela.
     $quantidadeRegistros = $stmt->rowCount();
     $perfis = $stmt->fetchAll();
-    $dbh = null;
+    $dbh = null;*/
+
+    $dao = new UsuarioDAO();
+    $usuarios = $dao->getAll();
+    $quantidadeRegistros = count($usuarios);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -82,7 +87,7 @@
                     <?php else: ?>
                         <?php foreach ($usuarios as $usuario) : ?>
                         <tr>
-                            <td><?php echo $usuario['idUsuario'];?></td>
+                            <td><?php echo $usuario['idUsuarios'];?></td>
                             <td><?= $usuario['nome'];?></td>
                             <td><?= $usuario['cpf'];?></td>
                             <td><?= $usuario['email'];?></td>

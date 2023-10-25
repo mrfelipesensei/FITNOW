@@ -42,7 +42,7 @@
                 <ul>
                     <li><a href="">Home</a></li>
                     <li><a href="../perfis/index.php">Perfil</a></li>
-                    <li><a href="#">Usuários</a></li>
+                    <li><a href="../usuarios/index.php">Usuários</a></li>
                 </ul>
             </nav>
         </div>
