@@ -89,30 +89,30 @@ $perfis = $perfilDAO->getAll();
 <body>
     <h1>Novo Usuário</h1>
     <br>
-    <form action="save.php" method="post">
+    <form action="update.php" method="post">
         <div class="form_center">
             <label for="nome">Nome:</label><br>
-            <input type="text" name="nome" placeholder="Informe seu nome." size="80" required><br>
+            <input type="text" name="nome" placeholder="Informe seu nome." size="80" required autofocus value="<?= htmlspecialchars($usuario['nome']) ?>"><br>
         </div>
         <br>
         <div class="form_center">
             <label for="cpf">CPF:</label><br>
-            <input type="text" name="cpf" id="" placeholder="Informe seu CPF." maxlength="15" required><br>
+            <input type="text" name="cpf" id="" placeholder="Informe seu CPF." maxlength="15" required value="<?= htmlspecialchars($usuario['cpf']) ?>"><br>
         </div>
         <br>
         <div class="form_center">
             <label for="email">E-mail:</label><br>
-            <input type="email" name="email" placeholder="Informe seu e-mail." size="80" required autofocus><br>
+            <input type="email" name="email" placeholder="Informe seu e-mail." size="80" required autofocus value="<?= htmlspecialchars($usuario['email']) ?>"><br>
         </div>
         <br>
         <div class="form_center">
             <label for="senha">Senha:</label><br>
-            <input type="password" name="senha" id="" placeholder="Informe sua senha." required><br>
+            <input type="password" name="senha" id="" placeholder="Informe sua senha." required value="<?= htmlspecialchars($usuario['senha']) ?>"><br>
         </div>
         <br>
         <div class="form_center">
             <label for="telefone">Telefone:</label><br>
-            <input type="number" name="telefone" id="" placeholder="Informe seu telefone." maxlength="11" required><br>
+            <input type="number" name="telefone" id="" placeholder="Informe seu telefone." maxlength="11" required value="<?= htmlspecialchars($usuario['telefone']) ?>"><br>
         </div>
         <br>
         <div class="form_center">
