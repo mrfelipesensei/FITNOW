@@ -11,6 +11,9 @@ if (!$usuario) {
     exit;
 }
 
+$perfilDAO = new PerfilDAO();
+$perfis = $perfilDAO->getAll();
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
