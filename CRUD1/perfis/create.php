@@ -70,7 +70,7 @@
         <h1>Novo Perfil</h1>
         <form action="save.php" method="post">
         <div class="form_center" >
-        <label>Nome</label><br>
+            <label>Nome</label><br>
             <input type="text" name="nome" placeholder="Informe seu nome." size="80" required autofocus><br>
         </div>    
             <br>
