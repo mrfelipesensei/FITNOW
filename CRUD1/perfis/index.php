@@ -43,6 +43,7 @@
                     <li><a href="">Home</a></li>
                     <li><a href="../perfis/index.php">Perfil</a></li>
                     <li><a href="../usuarios/index.php">Usuários</a></li>
+                    <li><a href="../auth/index.php">Login</a></li>
                 </ul>
             </nav>
         </div>
