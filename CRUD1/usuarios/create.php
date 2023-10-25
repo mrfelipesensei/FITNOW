@@ -110,3 +110,6 @@ $perfis = $perfilDAO->getAll();
 </body>
 
 </html>
+
+
+<!--FALTA COLOCAR OS CAMPOS SEGUNDO O BANCO DE DADOS: nome, cpf, ..., perfil -->
