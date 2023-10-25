@@ -95,8 +95,8 @@
                             <td><?= $usuario['telefone'];?></td>
                             <td><?= $usuario['perfil_id'];?></td>
                             <td class="td__operacao">
-                                <a class="btns" href="edit.php?id=<?=$perfil['idPerfil'];?>">Alterar</a>
-                                <a class="btns" href="delete.php?id=<?=$perfil['idPerfil'];?>" onclick="return confirm('Deseja confirmar a operação?');">Excluir</a>
+                                <a class="btns" href="edit.php?id=<?=$usuario['idUsuarios'];?>">Alterar</a>
+                                <a class="btns" href="delete.php?id=<?=$usuario['idUsuarios'];?>" onclick="return confirm('Deseja confirmar a operação?');">Excluir</a>
                             </td>
                         </tr>
                         <?php endforeach; ?>
