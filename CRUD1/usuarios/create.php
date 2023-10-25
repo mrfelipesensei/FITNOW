@@ -63,7 +63,8 @@ $perfis = $perfilDAO->getAll();
 <header class="main_header">
     <div class="main_header_content">
         <a href="home.html" class="logo">
-            <img id="logofit" src="../img/logofit.png" alt="FITNOW - A qualquer hora e qualquer lugar" title="FITNOW - A qualquer hora e qualquer lugar"></a>
+            <img id="logofit" src="../img/logofit.png" alt="FITNOW - A qualquer hora e qualquer lugar"
+                title="FITNOW - A qualquer hora e qualquer lugar"></a>
 
         <nav class="main_header_content_menu">
             <ul>
@@ -75,18 +76,24 @@ $perfis = $perfilDAO->getAll();
     </div>
 </header>
 <br>
+
 <body>
     <h1>Novo Usuário</h1>
     <br>
     <form action="save.php" method="post">
         <div class="form_center">
-            <label for="email">E-mail:</label><br>
-            <input type="email" name="email" placeholder="Informe seu e-mail." size="80" required autofocus><br>
+            <label for="nome">Nome:</label><br>
+            <input type="text" name="nome" placeholder="Informe seu nome." size="80" required><br>
         </div>
         <br>
         <div class="form_center">
-            <label for="nome">Nome:</label><br>
-            <input type="text" name="nome" placeholder="Informe seu nome." size="80" required><br>
+            <label for="cpf">CPF:</label><br>
+            <input type="text" name="cpf" id="" placeholder="Informe seu CPF." maxlength="15" required><br>
+        </div>
+        <br>
+        <div class="form_center">
+            <label for="email">E-mail:</label><br>
+            <input type="email" name="email" placeholder="Informe seu e-mail." size="80" required autofocus><br>
         </div>
         <br>
         <div class="form_center">
@@ -95,10 +102,17 @@ $perfis = $perfilDAO->getAll();
         </div>
         <br>
         <div class="form_center">
+            <label for="telefone">Telefone:</label><br>
+            <input type="number" name="telefone" id="" placeholder="Informe seu telefone." maxlength="11" required><br>
+        </div>
+        <br>
+        <div class="form_center">
             <label for="perfil">Perfil:</label><br>
             <select name="perfil" id="">
-                <?php foreach ($perfis as $perfil) : ?>
-                    <option value="<?= $perfil['idPerfil'] ?>"><?= $perfil['nome'] ?></option>
+                <?php foreach ($perfis as $perfil): ?>
+                    <option value="<?= $perfil['idPerfil'] ?>">
+                        <?= $perfil['nome'] ?>
+                    </option>
                 <?php endforeach ?>
             </select><br>
         </div>
