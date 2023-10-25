@@ -1,3 +1,11 @@
+<?php
+require_once __DIR__ ."/../src/dao/perfildao.php";
+
+$perfilDAO = new PerfilDAO();
+$perfis = $perfilDAO->getAll();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -41,10 +49,9 @@
         <input type="password" name="senha" id="" placeholder="Informe sua senha." required><br>
         <label for="perfil">Perfil</label><br>
         <select name="perfil" id="">
-            <option value="1">Administrador</option>
-            <option value="2">Cliente Comum</option>
-            <option value="3">Cliente Plus</option>
-            <option value="4">Parceiro</option>
+            <?php foreach($perfis as $perfil): ?>
+                <option value="<?= $perfil['idPerfil']?>"><?= $perfil['nome']?></option>
+            <?php endforeach?>
         </select><br>
         <button class="btn" type="submit">Salvar</button>
     </form>
