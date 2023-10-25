@@ -73,7 +73,7 @@ class UsuarioDAO
         WHERE idUsuarios = :id;';
 
         $stmt = $this->dbh->prepare($query);
-        $stmt->bindParam(':idUsuarios',$id);
+        $stmt->bindParam(':id',$id);
         $stmt->bindParam(':nome',$nome);
         $stmt->bindParam(':cpf',$cpf);
         $stmt->bindParam(':email',$email);

@@ -23,5 +23,6 @@ if ($result) {
     header('location: index.php?error=Não foi possível atualizar o usuário!');
 }
 
+#NÃO ESTÁ ATUALIZANDO!
 
 ?>
