@@ -1,10 +1,26 @@
 <?php
 require_once __DIR__ . "/../src/dao/usuariodao.php";
 require_once __DIR__ ."/../src/dao/perfildao.php";
+include_once '../src/databases/conexao.php';
 
+/*
 $id = filter_input(INPUT_GET,"id", FILTER_VALIDATE_INT) ?? 0;
 $dao = new UsuarioDAO();
 $usuario = $dao->getById($id);
+*/
+
+$dbh = Conexao::getConexao();
+
+$id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
+
+$query = "SELECT * FROM fitnowbd.usuarios WHERE idUsuarios = :id;";
+
+$stmt = $dbh->prepare($query);
+$stmt->bindParam(':id', $id);
+$stmt->execute();
+
+$usuario = $stmt->fetch(PDO::FETCH_BOTH);
+$dbh = null;
 
 if (!$usuario) {
     header('location: index.php?error=Usuário não encontrado!');

@@ -1,4 +1,5 @@
 <?php
+/*
 header("Content-Type: text/html; charset=utf-8;");
 
 require_once __DIR__ . '/../src/dao/usuariodao.php';
@@ -16,14 +17,15 @@ $perfilId = filter_input(INPUT_POST,'perfil_id', FILTER_SANITIZE_SPECIAL_CHARS);
 
 $dao = new UsuarioDAO();
 $result = $dao->update($id, $nome, $cpf, $email, $senha, $telefone, $perfilId);
+*/
 
+require_once '../src/databases/conexao.php';
 
-/*
 $dbh = Conexao::getConexao();
 
 $query = "UPDATE fitnowbd.usuarios SET 
     nome =:nome
-    WHERE idUsuarios =:id;";
+    WHERE idUsuarios = :id;";
 
 $stmt = $dbh->prepare($query);
 
@@ -32,7 +34,7 @@ $stmt->bindParam(':id',$id);
 
 $result = $stmt->execute();
 $dbh = null;
-*/
+
 
 if ($result) {
     header('location: index.php?msg=Usuário atualizado com sucesso!');
