@@ -1,5 +1,6 @@
 <h1>Novo Usuário</h1>
 <form action="?page=salvar" method="POST">
+    <input type="hidden" name="acao" value="cadastrar">
     <div>
         <label for="nome">Nome:</label>
         <input type="text" name="nome" id="" placeholder="Informe seu nome" autofocus>

@@ -26,6 +26,9 @@ include("config.php");
             case "listar":
                 include("listar_user.php");
                 break;
+            case "salvar":
+                include("salvar_user.php");
+                break;
             default:
                 print '<h1>Bem vindos!</h1>';
                 break;
