@@ -8,7 +8,7 @@
             $telefone = $_POST["telefone"];
 
             $sql = "INSERT INTO usuarios(nome, cpf, email, senha, telefone) VALUES
-            ('{$nome},{$cpf},{$email},{$senha},{$telefone}')";
+            ('{$nome}','{$cpf}','{$email}','{$senha}','{$telefone}')";
 
             $res = $conexao->query($sql);
 
