@@ -56,7 +56,8 @@ class PerfilDAO{
     }
 
     public function update($id, $nome){
-        $query = "UPDATE fitnowbd.perfis SET nome = :nome WHERE idPerfil = :id;";
+        $query = "UPDATE fitnowbd.perfis SET 
+        nome = :nome WHERE idPerfil = :id;";
 
         $stmt = $this->dbh->prepare($query);
         $stmt->bindParam(":nome", $nome);

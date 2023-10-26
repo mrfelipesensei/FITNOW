@@ -61,7 +61,7 @@ class UsuarioDAO
         return $result;
     }
 
-    public function update($id, $nome, $cpf, $email, $senha, $telefone, $perfilId){
+    public function update($idUsuarios, $nome, $cpf, $email, $senha, $telefone, $perfilId){
        
         $query = 'UPDATE fitnowbd.usuarios SET
         nome = :nome,
@@ -73,7 +73,7 @@ class UsuarioDAO
         WHERE idUsuarios = :id;';
 
         $stmt = $this->dbh->prepare($query);
-        $stmt->bindParam(':id',$id);
+        $stmt->bindParam(':id',$idUsuarios);
         $stmt->bindParam(':nome',$nome);
         $stmt->bindParam(':cpf',$cpf);
         $stmt->bindParam(':email',$email);
