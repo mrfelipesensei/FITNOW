@@ -37,7 +37,7 @@ section.carrossel1 img{
 div.container1{
     display: flex;
     transform: translateX(0);
-    transition: .4s ease-in-out;
+    transition: .1s ease-in-out;
 }
 </style>
 
