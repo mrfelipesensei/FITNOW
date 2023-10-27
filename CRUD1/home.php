@@ -18,27 +18,27 @@
     <title>FITNOW</title>
 </head>
 <style>
-    section.carrossel1{
-    overflow: hidden;
-    width: 800px;
-    height: 400px;
-    margin: 3em auto;
-    text-align: center;
-    border: 10px outset red;
-    border-radius: 25px;
-}
+    section.carrossel1 {
+        overflow: hidden;
+        width: 850px;
+        height: 400px;
+        margin: 3em auto;
+        text-align: center;
+        border: 10px outset red;
+        border-radius: 25px;
+    }
 
-section.carrossel1 img{
-    object-fit: cover;
-    width: 800px;
-    height: 400px;
-}
+    section.carrossel1 img {
+        object-fit: cover;
+        width: 850px;
+        height: 400px;
+    }
 
-div.container1{
-    display: flex;
-    transform: translateX(0);
-    transition: .1s ease-in-out;
-}
+    div.container1 {
+        display: flex;
+        transform: translateX(0);
+        transition: .1s ease-in-out;
+    }
 </style>
 
 <body>
@@ -103,6 +103,43 @@ div.container1{
             </article>
         </div>
         <!--FIM 1ª DOBRA-->
+
+        <div class="main_blog">
+        <header class="main_blog_header">
+                <h1 class="icon-blog">Várias Modalidades</h1>
+                <p>Treinos dinâmicos para todos os perfis</p>
+        </header>
+        </div>
+        <section class="carrossel1">
+            <a href="pedidos.html">
+                <div class="container1" id="img">
+                    <div>
+                        <img src="img/musculacao.jpeg" alt="">
+                    </div>
+                    <div>
+                        <img src="img/boxing.jpg" alt="">
+                    </div>
+                    <div>
+                        <img src="img/yoga.jpg" alt="">
+                    </div>
+                    <div>
+                        <img src="img/natacao.webp" alt="">
+                    </div>
+                    <div>
+                        <img src="img/crossfit.webp" alt="">
+                    </div>
+                    <div>
+                        <img src="img/pilates.jpg" alt="">
+                    </div>
+                    <div>
+                        <img src="img/funcional.jpg" alt="">
+                    </div>
+                    <div>
+                        <img src="img/Jiu-Jitsu.png" alt="">
+                    </div>
+                </div>
+            </a>
+        </section>
 
         <!--INICIO SESSÃO SESSÃO DE ARTIGOS-->
         <section class="main_blog">
@@ -261,24 +298,7 @@ div.container1{
             </div>
             <!-- FIM SESSÃO DOBRA  CURSOS-->
 
-            <section class="carrossel1">
-                <a href="pedidos.html">
-                    <div class="container1" id="img">
-                        <div>
-                            <h1>ITEM1</h1>
-                            <img src="imgs/carrosel1.jpg" alt="">
-                        </div>
-                        <div>
-                            <h1>ITEM2</h1>
-                            <img src="imgs/carrosel2.png" alt="">
-                        </div>
-                        <div>
-                            <h1>ITEM3</h1>
-                            <img src="imgs/carrosel3.png" alt="">
-                        </div>
-                    </div>
-                </a>
-            </section>
+
             <!--INICIO DOBRA REVIEWS-->
             <div class="main_course_fullwidth">
                 <div class="main_course_ratting_content">
@@ -333,7 +353,7 @@ div.container1{
                                 <img src="img/star.png" alt="Imagem" title="Imagem">
                                 <img src="img/star.png" alt="Imagem" title="Imagem">
                             </header>
-                            <p>Incrível como a plataforma é capaz de abrir 
+                            <p>Incrível como a plataforma é capaz de abrir
                                 nossas portas para todos os públicos.</p>
                         </article>
 
@@ -347,7 +367,7 @@ div.container1{
                                 <img src="img/star.png" alt="Imagem" title="Imagem">
                                 <img src="img/star.png" alt="Imagem" title="Imagem">
                             </header>
-                            <p>Posso viajar sem me preocupar com meus treinos, 
+                            <p>Posso viajar sem me preocupar com meus treinos,
                                 onde vou tenho o FITNOW.</p>
                         </article>
 
@@ -361,7 +381,7 @@ div.container1{
                                 <img src="img/star.png" alt="Imagem" title="Imagem">
                                 <img src="img/star.png" alt="Imagem" title="Imagem">
                             </header>
-                            <p>Posso dizer que sem o FITNOW teríamos falido, 
+                            <p>Posso dizer que sem o FITNOW teríamos falido,
                                 agora temos alunos novos a cada dia.</p>
                         </article>
 
@@ -375,7 +395,7 @@ div.container1{
                                 <img src="img/star.png" alt="Imagem" title="Imagem">
                                 <img src="img/star.png" alt="Imagem" title="Imagem">
                             </header>
-                            <p>Para alguem como eu que trabalha viajando, 
+                            <p>Para alguem como eu que trabalha viajando,
                                 sem dúvida me ajuda diariamente manter a disciplina.</p>
                         </article>
                     </section>
@@ -402,9 +422,11 @@ div.container1{
                             <h2>Tudo o que você precisa para treinar com praticidade em um só lugar</h2>
                         </header>
                         <p>Desde 2023 o FITNOW - vem aproximando as melhores academias do mercado, entregamos ao cliente
-                            opções múltiplas e de qualidade. Você tem acesso a academias, centros de treinamentos com os melhores equipamentos que
+                            opções múltiplas e de qualidade. Você tem acesso a academias, centros de treinamentos com os
+                            melhores equipamentos que
                             impulsionam seus excercícios e sua saúde.</p>
-                        <p>Que tal treinar com ajuda da plataforma com o certificado da aplicação eleita a melhor do Brasil com reconhecimento
+                        <p>Que tal treinar com ajuda da plataforma com o certificado da aplicação eleita a melhor do
+                            Brasil com reconhecimento
                             em mais de 17 países pela Latin American Quality Institute?</p>
                     </article>
 
@@ -569,7 +591,7 @@ div.container1{
                 <h2>Sobre o Projeto</h2>
             </header>
             <p>Através da nossa plataforma o cliente pode ter acesso as mais variadas academias parceiras
-                mais próximas em sua região, de modo que poderá treinar conforme sua disposição, para ter acesso 
+                mais próximas em sua região, de modo que poderá treinar conforme sua disposição, para ter acesso
                 à conteúdos e serviços exclusivos é necessário assinar o Plus
             </p>
         </article>
@@ -599,4 +621,5 @@ div.container1{
         modal.style.display = 'none'; // oculta a janela modal
     });
 </script>
+
 </html>
