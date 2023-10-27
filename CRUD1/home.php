@@ -105,10 +105,10 @@
         <!--FIM 1ª DOBRA-->
 
         <div class="main_blog">
-        <header class="main_blog_header">
+            <header class="main_blog_header">
                 <h1 class="icon-blog">Várias Modalidades</h1>
                 <p>Treinos dinâmicos para todos os perfis</p>
-        </header>
+            </header>
         </div>
         <section class="carrossel1">
             <a href="pedidos.html">
@@ -313,6 +313,40 @@
                         <img src="img/star.png" alt="Estrela" title="Estrela">
                     </article>
 
+                    <section>
+                        <section class="carrossel1">
+                            <a href="pedidos.html">
+                                <div class="container1" id="img">
+                                    <div>
+                                        <img src="img/musculacao.jpeg" alt="">
+                                    </div>
+                                    <div>
+                                        <img src="img/boxing.jpg" alt="">
+                                    </div>
+                                    <div>
+                                        <img src="img/yoga.jpg" alt="">
+                                    </div>
+                                    <div>
+                                        <img src="img/natacao.webp" alt="">
+                                    </div>
+                                    <div>
+                                        <img src="img/crossfit.webp" alt="">
+                                    </div>
+                                    <div>
+                                        <img src="img/pilates.jpg" alt="">
+                                    </div>
+                                    <div>
+                                        <img src="img/funcional.jpg" alt="">
+                                    </div>
+                                    <div>
+                                        <img src="img/Jiu-Jitsu.png" alt="">
+                                    </div>
+                                </div>
+                            </a>
+                        </section>
+
+                    </section>
+
                     <section class="main_course_ratting_content_comment">
                         <header>
                             <h2>Veja o que estão falando sobre o FITNOW</h2>
@@ -504,12 +538,10 @@
                 </div>
                 <article class="main_tutor_content_history">
                     <header>
-                        <h2>Formado em Ciências da Computação e apaixonado pela Web</h2>
+                        <h2>Rodrigo Góes <br> Nutricionista, braziliense, 36 anos</h2>
                     </header>
-                    <p>Como muitos, comecei na programação por conta dos jogos! Com o tempo, o amor pela programação foi
-                        crescendo a ponto de tomar como profissão e me especializar na área. Hoje, com a bagagem que
-                        tenho,
-                        compartilho meu conhecimento com todos os alunos da UpInside Treinamentos
+                    <p>Esbanja humor, carisma e conhecimento ao falar de nutrição nas redes sociais, 
+                        com seus já conhecidos bordões em inglês
                     </p>
                 </article>
 
