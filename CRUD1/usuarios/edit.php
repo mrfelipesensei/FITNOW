@@ -106,6 +106,7 @@ $perfis = $perfilDAO->getAll();
     <h1>Novo Usuário</h1>
     <br>
     <form action="update.php" method="post">
+        <input type="hidden" name="id" value="<?= $id ?>">
         <div class="form_center">
             <label for="nome">Nome:</label><br>
             <input type="text" name="nome" placeholder="Informe seu nome." size="80" required autofocus value="<?= htmlspecialchars($usuario['nome']) ?>"><br>

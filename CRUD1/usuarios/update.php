@@ -1,5 +1,5 @@
 <?php
-/*
+
 header("Content-Type: text/html; charset=utf-8;");
 
 require_once __DIR__ . '/../src/dao/usuariodao.php';
@@ -12,28 +12,29 @@ $cpf = filter_input(INPUT_POST,'cpf', FILTER_SANITIZE_SPECIAL_CHARS);
 $email = filter_input(INPUT_POST,'email', FILTER_SANITIZE_EMAIL);
 $senha = md5(filter_input(INPUT_POST,'senha', FILTER_SANITIZE_SPECIAL_CHARS));
 $telefone = filter_input(INPUT_POST,'telefone', FILTER_SANITIZE_SPECIAL_CHARS);
-$perfilId = filter_input(INPUT_POST,'perfil_id', FILTER_SANITIZE_SPECIAL_CHARS);
+$perfilId = filter_input(INPUT_POST,'perfil', FILTER_SANITIZE_SPECIAL_CHARS);
 
-
+// var_dump($id, $nome, $cpf, $email, $senha, $telefone, $perfilId);exit;
 $dao = new UsuarioDAO();
 $result = $dao->update($id, $nome, $cpf, $email, $senha, $telefone, $perfilId);
-*/
 
-require_once '../src/databases/conexao.php';
+//require_once '../src/databases/conexao.php';
+// var_dump($id,$nome);exit;
 
-$dbh = Conexao::getConexao();
+// $dbh = Conexao::getConexao();
 
-$query = "UPDATE fitnowbd.usuarios SET 
-    nome =:nome
-    WHERE idUsuarios = :id;";
+// $query = "UPDATE fitnowbd.usuarios SET 
+//     nome =:nome
+//     WHERE idUsuarios = :id;";
 
-$stmt = $dbh->prepare($query);
+// $stmt = $dbh->prepare($query);
 
-$stmt->bindParam(':nome',$nome);
-$stmt->bindParam(':id',$id);
+// $stmt->bindParam(':nome',$nome);
+// $stmt->bindParam(':id',$id);
 
-$result = $stmt->execute();
-$dbh = null;
+// $result = $stmt->execute();
+// $dbh = null;
+
 
 
 if ($result) {
