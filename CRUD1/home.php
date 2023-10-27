@@ -89,7 +89,7 @@
 
             <article>
                 <a href="#">
-                    <img src="img/post.jpg" width="200" alt="Imagem post" title="Imagem Post">
+                    <img src="img/musculacao.jpeg" width="200" alt="Imagem post" title="Imagem Post">
                 </a>
                 <p><a href="" class="category">Categoria</a></p>
                 <h2><a href="" class="title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam magnam
@@ -101,7 +101,7 @@
 
             <article>
                 <a href="#">
-                    <img src="img/post.jpg" width="200" alt="Imagem post" title="Imagem Post">
+                    <img src="img/boxing.jpg" width="200" alt="Imagem post" title="Imagem Post">
                 </a>
                 <p><a href="" class="category">Categoria</a></p>
                 <h2><a href="" class="title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam magnam
@@ -113,7 +113,7 @@
 
             <article>
                 <a href="#">
-                    <img src="img/post.jpg" width="200" alt="Imagem post" title="Imagem Post">
+                    <img src="img/yoga.jpg" width="200" alt="Imagem post" title="Imagem Post">
                 </a>
                 <p><a href="" class="category">Categoria</a></p>
                 <h2><a href="" class="title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam magnam
@@ -206,7 +206,6 @@
         <!-- INICIO SESSÃO DOBRA  CURSOS-->
         <section class="main_course">
             <header class="main_course_header">
-                <img src="img/logo.png" alt="img" title="img">
                 <h1 class="icon-books">FITNOW</h1>
                 <p>Você tem liberdade para escolher o local mais prático para seu treino de qualidade</p>
             </header>
