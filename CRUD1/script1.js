@@ -12,4 +12,4 @@ function carrosselAutomatico(){
     imgs.style.transform = `translateX(${-imagemAtual * imgs.offsetWidth}px)`
 }
 
-setInterval(carrosselAutomatico, 2000);
+setInterval(carrosselAutomatico, 5000);
