@@ -91,7 +91,7 @@
                 <a href="#">
                     <img src="img/musculacao.jpeg" width="200" alt="Imagem post" title="Imagem Post">
                 </a>
-                <p><a href="" class="category">Categoria</a></p>
+                <p><a href="" class="category">Musculação</a></p>
                 <h2><a href="" class="title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam magnam
                         error dolorem. Recusandae,
                         quo ex laborum voluptate pariatur praesentium error doloremque cumque, mollitia laboriosam vel
@@ -103,7 +103,7 @@
                 <a href="#">
                     <img src="img/boxing.jpg" width="200" alt="Imagem post" title="Imagem Post">
                 </a>
-                <p><a href="" class="category">Categoria</a></p>
+                <p><a href="" class="category">Boxing</a></p>
                 <h2><a href="" class="title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam magnam
                         error dolorem. Recusandae,
                         quo ex laborum voluptate pariatur praesentium error doloremque cumque, mollitia laboriosam vel
@@ -115,7 +115,7 @@
                 <a href="#">
                     <img src="img/yoga.jpg" width="200" alt="Imagem post" title="Imagem Post">
                 </a>
-                <p><a href="" class="category">Categoria</a></p>
+                <p><a href="" class="category">Yoga</a></p>
                 <h2><a href="" class="title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam magnam
                         error dolorem. Recusandae,
                         quo ex laborum voluptate pariatur praesentium error doloremque cumque, mollitia laboriosam vel
@@ -125,9 +125,9 @@
 
             <article>
                 <a href="#">
-                    <img src="img/post.jpg" width="" alt="Imagem post" title="Imagem Post">
+                    <img src="img/natacao.webp" width="" alt="Imagem post" title="Imagem Post">
                 </a>
-                <p><a href="" class="category">Categoria</a></p>
+                <p><a href="" class="category">Natação</a></p>
                 <h2><a href="" class="title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam magnam
                         error dolorem. Recusandae,
                         quo ex laborum voluptate pariatur praesentium error doloremque cumque, mollitia laboriosam vel
@@ -137,9 +137,9 @@
 
             <article>
                 <a href="#">
-                    <img src="img/post.jpg" width="" alt="Imagem post" title="Imagem Post">
+                    <img src="img/crossfit.webp" width="" alt="Imagem post" title="Imagem Post">
                 </a>
-                <p><a href="" class="category">Categoria</a></p>
+                <p><a href="" class="category">Crossfit</a></p>
                 <h2><a href="" class="title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam magnam
                         error dolorem. Recusandae,
                         quo ex laborum voluptate pariatur praesentium error doloremque cumque, mollitia laboriosam vel
@@ -149,9 +149,9 @@
 
             <article>
                 <a href="#">
-                    <img src="img/post.jpg" width="" alt="Imagem post" title="Imagem Post">
+                    <img src="img/pilates.jpg" width="" alt="Imagem post" title="Imagem Post">
                 </a>
-                <p><a href="" class="category">Categoria</a></p>
+                <p><a href="" class="category">Pilates</a></p>
                 <h2><a href="" class="title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam magnam
                         error dolorem. Recusandae,
                         quo ex laborum voluptate pariatur praesentium error doloremque cumque, mollitia laboriosam vel
@@ -161,9 +161,9 @@
 
             <article>
                 <a href="#">
-                    <img src="img/post.jpg" width="" alt="Imagem post" title="Imagem Post">
+                    <img src="img/funcional.jpg" width="" alt="Imagem post" title="Imagem Post">
                 </a>
-                <p><a href="" class="category">Categoria</a></p>
+                <p><a href="" class="category">Funcional</a></p>
                 <h2><a href="" class="title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam magnam
                         error dolorem. Recusandae,
                         quo ex laborum voluptate pariatur praesentium error doloremque cumque, mollitia laboriosam vel
@@ -173,9 +173,9 @@
 
             <article>
                 <a href="#">
-                    <img src="img/post.jpg" width="" alt="Imagem post" title="Imagem Post">
+                    <img src="img/Jiu-Jitsu.png" width="" alt="Imagem post" title="Imagem Post">
                 </a>
-                <p><a href="" class="category">Categoria</a></p>
+                <p><a href="" class="category">Jiu Jitsu</a></p>
                 <h2><a href="" class="title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam magnam
                         error dolorem. Recusandae,
                         quo ex laborum voluptate pariatur praesentium error doloremque cumque, mollitia laboriosam vel
@@ -432,11 +432,11 @@
         <section class="main_tutor">
             <div class="main_tutor_content">
                 <header>
-                    <h1>Conheça seu Instrutor WEB, seu tutor nesse curso</h1>
-                    <p>EU vou te ajudar a criar sua webpage em Html5 e Css3</p>
+                    <h1>Venha ser AESTHETIC!</h1>
+                    <p>Nosso embaixador garante: "É a plataforma única para você treinar melhor e sempre!"</p>
                 </header>
                 <div class="main_tutor_content_img">
-                    <img src="img/instrutor.png" width="200" title="Instrutor" alt="Instrutor">
+                    <img src="img/rodrigo.jpg" width="200" title="Instrutor" alt="Instrutor">
                 </div>
                 <article class="main_tutor_content_history">
                     <header>
