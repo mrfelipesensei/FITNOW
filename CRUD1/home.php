@@ -14,8 +14,32 @@
     <link href="assests/css/fonticon.css" rel="stylesheet"> <!--fonticon.css-->
     <link rel="stylesheet" href="assests/css/modal.css"> <!--modal.css-->
     <link rel="stylesheet" href="assests/css/login.css"> <!--login.css-->
+    <script src="script1.js" defer></script>
     <title>FITNOW</title>
 </head>
+<style>
+    section.carrossel1{
+    overflow: hidden;
+    width: 800px;
+    height: 400px;
+    margin: 3em auto;
+    text-align: center;
+    border: 10px outset red;
+    border-radius: 25px;
+}
+
+section.carrossel1 img{
+    object-fit: cover;
+    width: 800px;
+    height: 400px;
+}
+
+div.container1{
+    display: flex;
+    transform: translateX(0);
+    transition: .4s ease-in-out;
+}
+</style>
 
 <body>
     <!--DOBRA CABEÇALHO-->
@@ -237,6 +261,24 @@
             </div>
             <!-- FIM SESSÃO DOBRA  CURSOS-->
 
+            <section class="carrossel1">
+                <a href="pedidos.html">
+                    <div class="container1" id="img">
+                        <div>
+                            <h1>ITEM1</h1>
+                            <img src="imgs/carrosel1.jpg" alt="">
+                        </div>
+                        <div>
+                            <h1>ITEM2</h1>
+                            <img src="imgs/carrosel2.png" alt="">
+                        </div>
+                        <div>
+                            <h1>ITEM3</h1>
+                            <img src="imgs/carrosel3.png" alt="">
+                        </div>
+                    </div>
+                </a>
+            </section>
             <!--INICIO DOBRA REVIEWS-->
             <div class="main_course_fullwidth">
                 <div class="main_course_ratting_content">
