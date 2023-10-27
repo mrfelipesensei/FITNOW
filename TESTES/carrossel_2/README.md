@@ -1,5 +1,4 @@
-# Without JavaScript Carousel
+# Bootstrap carousel with thumbnails slider
 
-A Pen created on CodePen.io. Original URL: [https://codepen.io/koheishingai/pen/eYdKPP](https://codepen.io/koheishingai/pen/eYdKPP).
+A Pen created on CodePen.io. Original URL: [https://codepen.io/pankajthakur/pen/qmpKaw](https://codepen.io/pankajthakur/pen/qmpKaw).
 
-Without JavaScript, Only CSS.
