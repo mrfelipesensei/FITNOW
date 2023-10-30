@@ -162,5 +162,3 @@ where Academia.parceiro_id = Usuarios.idUsuarios and idUsuarios = 7;
 
 
 
-
-
