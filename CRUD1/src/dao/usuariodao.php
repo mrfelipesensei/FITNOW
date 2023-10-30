@@ -99,6 +99,8 @@ class UsuarioDAO
 
         $row = $stmt->fetch(PDO::FETCH_BOTH);
         $this->dbh = null;
+
+        return $row;
     }
 
 

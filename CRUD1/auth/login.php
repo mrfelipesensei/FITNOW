@@ -8,18 +8,19 @@ $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
 $senhaCrypto = md5($senha);
 
 $dao = new UsuarioDAO();
-$usuario = $dao->login($email,$senhaCrypto);
+$usuarios = $dao->login($email,$senhaCrypto);
 
-if (!$usuario) {
+if (!$usuarios) {
     header("location: index.php?error=Login ou senha inválidos!");
     exit;
 }
 $_SESSION['usuarios'] = array(
-    'id' => $usuario['idUsuarios'],
-    'nome' => $usuario['nome'],
-    'email' => $usuario['email'],
-    'perfil' => $usuario['perfil_id'],
+    'id' => $usuarios['idUsuarios'],
+    'nome' => $usuarios['nome'],
+    'email' => $usuarios['email'],
+    'perfil' => $usuarios['perfil_id'],
 );
 
+var_dump($usuarios);
 
 ?>
