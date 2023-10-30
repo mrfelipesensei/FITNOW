@@ -101,7 +101,28 @@ INSERT INTO `fitnowbd`.`Endereco` (`idEndereco`,`logradouro`,`bairro`,`cidade`,`
 ('4','Conjunto SHA Conjunto 1','Arniqueiras','Brasília','DF','Chácara','56B','4'),
 ('5','Quadra EQNP 8/12 Bloco F','Ceilândia Sul','Brasília','DF','Loja','13','5'),
 ('6','Quadra SQS 113 Bloco H','Asa Norte','Brasília','DF','Loja','55','6'),
-('7','Quadra QNP 24 Conjunto G','Ceilândia Sul','Brasília','DF','Lote','24','7');
+('7','Quadra QNP 24 Conjunto G','Ceilândia Sul','Brasília','DF','Lote','24','7'),
+('8','Quadra QNM 6','Ceilândia Norte','Brasília','DF','Lote','13','8'),
+('9','Quadra QS 306 Conjunto 6','Samambaia Sul','Brasília','DF','Loja','13','9'),
+('10','Rua 6 Chácara 239','Vicente Pires','Brasília','DF','Loja','25','10');
+
+/* Retorna a quantidade de registros de uma tabela */
+SELECT COUNT(idAcademia)  'Quantidade de Registros é: 'FROM academia;
+
+
+/*Palavras que contém 'Samambaia':*/
+SELECT bairro
+FROM Endereco
+WHERE bairro LIKE '%Samambaia%'
+ORDER BY idEndereco;
+
+
+
+
+
+
+
+
 
 
 
