@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ ."/../databases/conexao.php";
+require_once __DIR__ . '/../databases/conexao.php';
 
 class AcademiaDAO{
     private $dbh;
@@ -11,7 +11,7 @@ class AcademiaDAO{
     public function getAll(){
         $query = "SELECT * FROM fitnowbd.academia;";
 
-        $stmt = $this->dbh->prepare($query);
+        $stmt = $this->dbh->query($query);
         $rows = $stmt->fetchAll();
         $this->dbh = null;
         return $rows;

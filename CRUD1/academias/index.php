@@ -5,6 +5,7 @@
     $dao = new AcademiaDAO();
     $academias = $dao->getAll();
     $quantidadeRegistros = count($academias);
+    var_dump($quantidadeRegistros);
 
 ?>
 <!DOCTYPE html>
