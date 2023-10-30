@@ -1,3 +1,12 @@
+<?php
+    require_once '../src/databases/conexao.php';
+    require_once '../src/dao/academiadao.php';
+
+    $dao = new AcademiaDAO();
+    $academias = $dao->getAll();
+    $quantidadeRegistros = count($academias);
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -60,10 +69,17 @@
                 </tr>
             </thead>
             <tbody>
-                
+            <?php if ($quantidadeRegistros == "0"): ?>
+                    <tr>
+                        <td colspan="6">Não existem usuários cadastrados.</td>
+                    </tr>
+            <?php else: ?>
+                <?php foreach($academias as $academia) : ?>
                 <tr>
-                    
+                    <td><?php echo $academia['idAcademia'];?></td>
                 </tr>
+                <?php endforeach; ?>
+            <?php endif; $dbh = null; ?>
             </tbody>
         </table>
     </div>
