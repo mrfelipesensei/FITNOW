@@ -109,6 +109,8 @@ INSERT INTO `fitnowbd`.`Endereco` (`idEndereco`,`logradouro`,`bairro`,`cidade`,`
 /* Retorna a quantidade de registros de uma tabela */
 SELECT COUNT(idAcademia)  'Quantidade de Registros é: 'FROM academia;
 
+select * from academia;
+
 
 /*Palavras que contém 'Samambaia':*/
 SELECT bairro
@@ -117,8 +119,43 @@ WHERE bairro LIKE '%Samambaia%'
 ORDER BY idEndereco;
 
 
+/*INNER JOIN TABELAS Academia e Endereco*/
 
+select * from Academia, Endereco
+where Academia.idAcademia = Endereco.endereco_id
+order by nome;
 
+-- Mostre as academias e seus endereço do bairro Samambaia
+select * from Academia, Endereco
+where Academia.idAcademia = Endereco.endereco_id and bairro LIKE '%Samambaia%'
+order by nome;
+
+-- Mostre as academias em que o dono é Bruce Wayne
+select * from Academia, Usuarios
+where Academia.parceiro_id = Usuarios.idUsuarios and idUsuarios = 9;
+
+-- Mostre as academias, pelo nome, horários em que o dono é Steve Jobs
+select Academia.nome, Academia.horarios from Academia,Usuarios
+where Academia.parceiro_id = Usuarios.idUsuarios and idUsuarios = 6;
+
+-- Mostre as academias de Ceilândia e suas modalidades com nome e bairro
+select modalidades,nome,bairro from Academia, Endereco
+where Academia.idAcademia = Endereco.endereco_id and bairro LIKE '%Ceilândia%'
+order by nome;
+
+-- Mostre os horários das academias de Samambaia
+select horarios, nome, bairro from Academia, Endereco
+where Academia.idAcademia = Endereco.endereco_id and bairro LIKE '%Samambaia%'
+order by nome;
+
+-- Mostre os valores das academias de Ceilândia
+select valores, nome, bairro from Academia, Endereco
+where Academia.idAcademia = Endereco.endereco_id and bairro LIKE '%Samambaia%'
+order by nome;
+
+-- Mostre os nomes das academias em que o dono é Bill Gates
+select Academia.nome, Usuarios.nome from Academia, Usuarios
+where Academia.parceiro_id = Usuarios.idUsuarios and idUsuarios = 7;
 
 
 
