@@ -5,7 +5,6 @@
     $dao = new AcademiaDAO();
     $academias = $dao->getAll();
     $quantidadeRegistros = count($academias);
-    var_dump($quantidadeRegistros);
 
 ?>
 <!DOCTYPE html>
@@ -78,6 +77,15 @@
                 <?php foreach($academias as $academia) : ?>
                 <tr>
                     <td><?php echo $academia['idAcademia'];?></td>
+                    <td><?= $academia['nome'];?></td>
+                    <td><?= $academia['cnpj'];?></td>
+                    <td><?= $academia['horarios'];?></td>
+                    <td><?= $academia['modalidades']; ?></td>
+                    <td><?= $academia['valores'];?></td>
+                    <td class="td__operacao" >
+                        <a class="btns" href="edit.php?id=<?=$academia['idAcademia'];?>">Alterar</a>
+                        <a class="btns" href="delete.php?<?=$academia['idAcademia'];?>" onclick="return confirm('Deseja confirmar a operação?');">Excluir</a>
+                    </td>
                 </tr>
                 <?php endforeach; ?>
             <?php endif; $dbh = null; ?>
