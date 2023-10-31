@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="../assests/css/login.css"> <!--login.css-->
     <link rel="stylesheet" href="../assests/css/styles.css">
     <link rel="stylesheet" href="../assests/css/index_perfil.css">
+    <link rel="stylesheet" href="../assests/css/tabela.css">
     <title>Academias</title>
 </head>
 <header class="main_header">
