@@ -4,7 +4,7 @@ header("Content-Type: text/html; charset=utf-8;");
 require_once __DIR__ ."/../src/dao/academiadao.php";
 
 
-$nome = filter_input(INPUT_POST,'nome', FILTER_SANITIZE_SPECIAL_CHARS);
+$nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
 $cnpj = filter_input(INPUT_POST,'cnpj', FILTER_SANITIZE_SPECIAL_CHARS);
 $horarios = filter_input(INPUT_POST,'horarios', FILTER_SANITIZE_SPECIAL_CHARS);
 $modalidades = filter_input(INPUT_POST,'modalidades', FILTER_SANITIZE_SPECIAL_CHARS);
