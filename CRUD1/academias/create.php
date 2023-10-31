@@ -42,12 +42,12 @@ $academias = $academiaDAO->getAll();
     <form action="save.php" method="post">
         <div class="form_center">
             <label for="nome">Nome:</label>
-            <input type="text" nome="nome" placeholder="Informe o nome da academia" size="40" required><br>
+            <input type="text" name="nome" placeholder="Informe o nome da academia" size="40" required><br>
         </div>
         <br>
         <div>
             <label for="cnpj">CNPJ:</label>
-            <input type="text" name="cpf" placeholder="00.000.000/0001-00" maxlength="18" required><br>
+            <input type="text" name="cnpj" placeholder="00.000.000/0001-00" maxlength="18" required><br>
         </div>
         <br>
         <div>
