@@ -33,7 +33,8 @@
     <link rel="stylesheet" href="../assests/css/modal.css"> <!--modal.css-->
     <link rel="stylesheet" href="../assests/css/login.css"> <!--login.css-->
     <link rel="stylesheet" href="../assests/css/styles.css">
-    <link rel="stylesheet" href="../assests/css/index_perfil.css">
+    <!-- <link rel="stylesheet" href="../assests/css/index_perfil.css"> -->
+    <link rel="stylesheet" href="../assests/css/index_usuario.css">
     <title>Perfil</title>
 </head>
 <body>
@@ -67,7 +68,7 @@
         <hr>
         <div class="outcontainer" >
             <section class="container">
-            <table>
+            <table class="center-table" >
                 <thead>
                     <tr>
                         <th>#</th>

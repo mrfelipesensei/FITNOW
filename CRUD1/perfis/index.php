@@ -57,7 +57,7 @@
         <hr>
         <div class="outcontainer" >
             <section class="container">
-            <table>
+            <table class="center-table" >
                 <thead>
                     <tr>
                         <th>#</th>

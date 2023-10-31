@@ -26,17 +26,10 @@ h1{
     transition: 1s;
 }
 
-.center-table {
-    width: 50%; /* Adjust the width as needed */
-    margin: 0 auto; /* This will center the table horizontally */
-    position: absolute;
-    top: 62%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* This will center the table vertically */
-}
+
 
 table{
-    width: 50%;
+    width: 100%;
     border-collapse: collapse;
     text-align: center;
 }
@@ -55,3 +48,4 @@ tr:nth-child(even){
 td{
     padding: 10px;
 }
+
