@@ -64,8 +64,7 @@
                 <p><?= $_GET['msg'] ?? $_GET['error'] ?></p>
             </div>
         <?php endif; ?>
-        <br><br><br>
-        <hr>
+        <br>
         <div class="outcontainer" >
             <section class="container">
             <table class="center-table" >

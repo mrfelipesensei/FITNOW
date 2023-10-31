@@ -54,7 +54,6 @@
             <a class="btn" href="create.php">Novo Perfil</a>
         </section>
         <br><br><br>
-        <hr>
         <div class="outcontainer" >
             <section class="container">
             <table class="center-table" >

@@ -54,8 +54,7 @@
             </p>
         </div>
     <?php endif; ?>
-    <br><br><br>
-    <hr>
+    <br>
     <div class="outcontainer">
         <table>
             <thead>
