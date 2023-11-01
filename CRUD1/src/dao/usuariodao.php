@@ -20,7 +20,7 @@ class UsuarioDAO
 
     public function getById($id){
 
-        $query = "SELECT * FROM fitnowbd.usuarios WHERE idUsuarios = :id;";
+        $query = "SELECT * FROM fitnowbd.usuarios WHERE idUsuario = :id;";
 
         $stmt = $this->dbh->prepare($query);
         $stmt->bindParam(':id',$id);
@@ -32,7 +32,7 @@ class UsuarioDAO
     }
 
     public function delete($id){
-        $query = 'DELETE FROM fitnowbd.usuarios WHERE idUsuarios = :id;';
+        $query = 'DELETE FROM fitnowbd.usuarios WHERE idUsuario = :id;';
 
         $stmt = $this->dbh->prepare($query);
         $stmt->bindParam(':id',$id);
@@ -70,7 +70,7 @@ class UsuarioDAO
         senha = :senha,
         telefone = :telefone,
         perfil_id = :perfil_id
-        WHERE idUsuarios = :id;';
+        WHERE idUsuario = :id;';
 
         $stmt = $this->dbh->prepare($query);
         $stmt->bindParam(':id',$id);

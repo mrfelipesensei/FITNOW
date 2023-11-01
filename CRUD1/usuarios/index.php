@@ -88,7 +88,7 @@
                     <?php else: ?>
                         <?php foreach ($usuarios as $usuario) : ?>
                         <tr>
-                            <td><?php echo $usuario['idUsuarios'];?></td>
+                            <td><?php echo $usuario['idUsuario'];?></td>
                             <td><?= $usuario['nome'];?></td>
                             <td><?= $usuario['cpf'];?></td>
                             <td><?= $usuario['email'];?></td>
@@ -96,8 +96,8 @@
                             <td><?= $usuario['telefone'];?></td>
                             <td><?= $usuario['perfil_id'];?></td>
                             <td class="td__operacao">
-                                <a class="btns" href="edit.php?id=<?=$usuario['idUsuarios'];?>">Alterar</a>
-                                <a class="btns" href="delete.php?id=<?=$usuario['idUsuarios'];?>" onclick="return confirm('Deseja confirmar a operação?');">Excluir</a>
+                                <a class="btns" href="edit.php?id=<?=$usuario['idUsuario'];?>">Alterar</a>
+                                <a class="btns" href="delete.php?id=<?=$usuario['idUsuario'];?>" onclick="return confirm('Deseja confirmar a operação?');">Excluir</a>
                             </td>
                         </tr>
                         <?php endforeach; ?>

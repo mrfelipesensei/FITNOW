@@ -13,7 +13,7 @@ $dbh = Conexao::getConexao();
 
 $id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
 
-$query = "SELECT * FROM fitnowbd.usuarios WHERE idUsuarios = :id;";
+$query = "SELECT * FROM fitnowbd.usuarios WHERE idUsuario = :id;";
 
 $stmt = $dbh->prepare($query);
 $stmt->bindParam(':id', $id);
