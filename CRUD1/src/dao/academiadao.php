@@ -30,9 +30,9 @@ class AcademiaDAO{
 
     }
 
-    public function new($nome,$cnpj,$horarios,$modalidades,$valores,$fotos){
-        $query = 'INSERT INTO fitnowbd.academia (nome, cnpj, horarios, modalidades, valores, fotos)
-        VALUES (:nome, :cnpj, :horarios, :modalidades, :valores, :fotos);';
+    public function new($nome,$cnpj,$horarios,$modalidades,$valores){
+        $query = 'INSERT INTO fitnowbd.academia (nome, cnpj, horarios, modalidades, valores)
+        VALUES (:nome, :cnpj, :horarios, :modalidades, :valores);';
 
         $stmt = $this->dbh->prepare($query);
         $stmt->bindParam(':nome',$nome);
@@ -40,7 +40,7 @@ class AcademiaDAO{
         $stmt->bindParam(':horarios',$horarios);
         $stmt->bindParam(':modalidades',$modalidades);
         $stmt->bindParam(':valores',$valores);
-        $stmt->bindParam(':fotos',$fotos);
+        // $stmt->bindParam(':fotos',$fotos);
 
         $result = $stmt->execute();
         $this->dbh = null;

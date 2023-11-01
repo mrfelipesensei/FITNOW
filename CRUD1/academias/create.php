@@ -65,11 +65,11 @@ $academias = $academiaDAO->getAll();
             <input type="text" name="valores" id="" placeholder="Valor Diária Ex: $25" maxlength="6" required><br>
         </div>
         <br>
-        <div>
+        <!-- <div>
             <label for="fotos">Fotos:</label>
             <input type="file" name="" id=""><br>
         </div>
-        <br><br>
+        <br><br> -->
         <button class="btn" type="submit">Salvar</button>
     </form>
     <br>
