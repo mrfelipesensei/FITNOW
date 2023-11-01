@@ -40,6 +40,7 @@ class AcademiaDAO{
         $stmt->bindParam(':horarios',$horarios);
         $stmt->bindParam(':modalidades',$modalidades);
         $stmt->bindParam(':valores',$valores);
+        // $stmt->bindParam(':academia_id',$academiaId);
         // $stmt->bindParam(':fotos',$fotos);
 
         $result = $stmt->execute();
