@@ -20,7 +20,7 @@ INSERT INTO `fitnowbd`.`Perfis` (`idPerfil`,`nome`) VALUES
 
 
 CREATE TABLE `fitnowbd`.`Usuarios` (
-	`idUsuarios` int not null primary key auto_increment,
+	`idUsuario` int not null primary key auto_increment,
     `nome` varchar(45) not null,
     `cpf` varchar(15) not null,
     `email` varchar(60) not null,
@@ -33,7 +33,7 @@ CREATE TABLE `fitnowbd`.`Usuarios` (
 
 -- Inserindo valores na tabela `Usuarios`
 
-INSERT INTO `fitnowbd`.`Usuarios`(`idUsuarios`,`nome`,`cpf`,`email`,`senha`,`telefone`,`perfil_id`) VALUES
+INSERT INTO `fitnowbd`.`Usuarios`(`idUsuario`,`nome`,`cpf`,`email`,`senha`,`telefone`,`perfil_id`) VALUES
 ('1','John Lennon','755.082.370-70','lennon_peace@gmail.com','56daf002d328229cf4ef837e0b0ecbde','6931717357','2'),
 ('2','Paul McCartney','618.441.960-97','dead.paul@gmail.com','95dag002d325229cf4ef837e0b0ecbde','6191717385','3'),
 ('3','Ringo Starr','556.222.670-72','starr123@gmail.com','45daf002d325g29cf4ef837e1b0ecbde','6291717358','3'),
@@ -52,23 +52,23 @@ CREATE TABLE `fitnowbd`.`Academia` (
     `cnpj` varchar(18) not null,
     `horarios` varchar(45) not null,
     `modalidades` varchar(45) not null,
-    `valores` varchar(45) not null
+    `valores` float not null
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `fitnowbd`. `Academia` (`idAcademia`,`nome`,`cnpj`,`horarios`,`modalidades`,`valores`) VALUES
-(1,'ARENA FIT','49.448.260/0001-13','8h às 21h','Musculação/Box','$20'),
-(2,'ARENA FIT','76.662.330/0001-04','8h às 19h','Musculação/Yoga','$25'),
-(3,'CORPO SAÚDE','12.555.646/0001-14','6h às 22h','Musculação/Yoga/Natação','$30'),
-(4,'EVOLUTION','04.257.711/0001-05','7h às 23h','Musculação/Pilates/Funcional','$30'),
-(5,'HARD GYM','46.351.806/0001-25','7h às 23h','Musculação','$20'),
-(6,'EVOLUTION','90.724.589/0001-63','8h às 21h','Musculação/Box','$25'),
-(7,'CORPO SAÚDE','28.770.387/0001-84','6h às 22h','Musculação/Yoga','$35'),
-(8,'NITRO BODY','77.896.062/0001-58','8h às 19h','Musculação/Natação','$30'),
-(9,'OLIMPO','01.674.532/0001-77','6h às 23h','Musculação/Pilates/Funcional','$30'),
-(10,'BAT CAVE','43.007.230/0001-95','7h às 21h','Musculação/Funcional','$40');
+(1,'ARENA FIT','49.448.260/0001-13','8h às 21h','Musculação/Box',20),
+(2,'ARENA FIT','76.662.330/0001-04','8h às 19h','Musculação/Yoga',25),
+(3,'CORPO SAÚDE','12.555.646/0001-14','6h às 22h','Musculação/Yoga/Natação',30),
+(4,'EVOLUTION','04.257.711/0001-05','7h às 23h','Musculação/Pilates/Funcional',30),
+(5,'HARD GYM','46.351.806/0001-25','7h às 23h','Musculação', 20),
+(6,'EVOLUTION','90.724.589/0001-63','8h às 21h','Musculação/Box', 25),
+(7,'CORPO SAÚDE','28.770.387/0001-84','6h às 22h','Musculação/Yoga', 35),
+(8,'NITRO BODY','77.896.062/0001-58','8h às 19h','Musculação/Natação', 30),
+(9,'OLIMPO','01.674.532/0001-77','6h às 23h','Musculação/Pilates/Funcional', 30),
+(10,'BAT CAVE','43.007.230/0001-95','7h às 21h','Musculação/Funcional', 40);
 
 INSERT INTO `fitnowbd`. `Academia` (`idAcademia`,`nome`,`cnpj`,`horarios`,`modalidades`,`valores`) VALUE
-(11,'HARD GYM','11.633.940/0001-34','7h às 21h','Musculação/Box','$30');
+(11,'HARD GYM','11.633.940/0001-34','7h às 21h','Musculação/Box', 30);
 
 
 CREATE TABLE `fitnowbd`.`Academia_Usuario` (
@@ -76,7 +76,7 @@ CREATE TABLE `fitnowbd`.`Academia_Usuario` (
     `idAcademia` int not null,
     `idUsuario` int not null,
     foreign key (idAcademia) references Academia(idAcademia),
-    foreign key (idUsuario) references Usuarios(idUsuarios)
+    foreign key (idUsuario) references Usuarios(idUsuario)
 );
 
 -- Criando tabela Endereco

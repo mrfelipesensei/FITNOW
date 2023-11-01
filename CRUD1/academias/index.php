@@ -85,6 +85,7 @@
                     <td class="td__operacao" >
                         <a class="btns" href="edit.php?id=<?=$academia['idAcademia'];?>">Alterar</a>
                         <a class="btns" href="delete.php?<?=$academia['idAcademia'];?>" onclick="return confirm('Deseja confirmar a operação?');">Excluir</a>
+                        <a class="btns" href="matricula.php?id=<?=$academia['idAcademia'];?>">Matricular</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>
