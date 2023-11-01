@@ -14,12 +14,17 @@
                     move_uploaded_file($arquivo['tmp_name'],'uploads/'.$arquivo['name']);
                 }
             }
-        
-
         ?>
         <form action="" method="post" enctype="multipart/form-data">
             <input type="file" name="file">
             <input type="submit" name="acao" value="Enviar" >
         </form>
+        <?php
+        if (!empty($_FILES['file'])) {
+            $foto = $arquivo['name'];
+        }
+        
+        ?>
+        <img src="uploads/<?=$foto?>" alt="">   
     </body>
 </html>
