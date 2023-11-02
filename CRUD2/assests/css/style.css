@@ -54,4 +54,51 @@
     width: 60%;
 }
 /*Fim Cabeçalho*/
+/*1ª Dobra */
+.main_cta{
+    width:100%;
+    background-image: url(../../img/worldmap.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.main_cta .main_cta_content{
+    max-width: 1300px;
+    margin:0 auto;
+}
+.main_cta .main_cta_content h1{
+    font-size: 3em;
+    color:#fff;
+    font-weight: 700;
+    text-align: center;
+}
 
+.main_cta .main_cta_content p{
+    font-size: 1.875em;
+    color: #fff;
+    font-weight: 400;
+    text-align: center;
+    margin: 20px 0;
+}
+.main_cta .main_cta_content .btn{
+    background-color: rgb(158, 20, 20);
+    color:#fff;
+    font-size: 0.8em;
+    padding: 10px 40px;
+    border-radius: 5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+}
+.main_cta .main_cta_content .btn:hover{
+    background-color: #fff;
+    color:rgb(158, 20, 20);
+    font-size: 0.9em;
+    transition: 1s;
+}
+
+
+.main_cta .main_cta_content .main_cta_content_spacer{
+    margin:0 auto;
+    max-width: 1300px;
+    padding: 170px 40px;
+}
