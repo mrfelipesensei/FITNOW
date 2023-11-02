@@ -1,9 +1,7 @@
-/*Topo*/
+/*Cabeçalho*/
 .main_header {
     width: 100%;
     background-color: black;
-
-
 }
 
 .main_header .main_header_content {
@@ -34,7 +32,6 @@
     list-style: none;
     display: flex;
     align-items: center;
-
 }
 
 .main_header_content_menu ul li a{
@@ -50,5 +47,11 @@
     color:black;
     background-color: rgb(158, 20, 20);
 }
-/*FIM - TOPO*/
+
+#fitlogo_header{
+    border: 2px solid transparent;
+    margin-bottom: -15px;
+    width: 60%;
+}
+/*Fim Cabeçalho*/
 
