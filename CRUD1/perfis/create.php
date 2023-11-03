@@ -1,3 +1,12 @@
+<?php
+require __DIR__ . "/../app/login.php";
+use App\Session\Login;
+
+//Obriga o usuário a estar logado
+Login::requireLogin();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 

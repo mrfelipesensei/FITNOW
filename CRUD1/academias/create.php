@@ -3,6 +3,12 @@ require_once __DIR__ ."/../src/dao/academiadao.php";
 
 $academiaDAO = new AcademiaDAO();
 $academias = $academiaDAO->getAll();
+
+require __DIR__ . "/../app/login.php";
+use App\Session\Login;
+
+//Obriga o usuário a estar logado
+Login::requireLogin();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
