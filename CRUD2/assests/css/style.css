@@ -267,3 +267,45 @@
     transition: 1s;
 }
 /*Fim 3º Dobra*/
+/*Opniões*/
+
+.main_course_ratting_content_comment{
+    display: flex;
+    background-color: black;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.main_course_ratting_content_comment>header{
+    flex-basis: 100%;
+    color:#fff;
+    text-align: center;
+    margin-top:20px;
+    font-size: 1.8em;
+    margin-bottom:20px;
+}
+
+.main_course_ratting_content_comment > article{
+    flex-basis:45%;
+    border: 2px solid black;
+    margin: 20px 15px;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 20px;
+    color: black;
+}
+
+.main_course_ratting_content_comment > article h3{
+    font-size: 1.2em;
+    margin-bottom: 4px;
+}
+
+.main_course_ratting_content_comment > article img{
+    width: 20px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+#egg img:hover{
+    cursor: pointer;
+}
