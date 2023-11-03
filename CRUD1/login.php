@@ -3,6 +3,15 @@ require_once __DIR__ ."/app/login.php";
 use \App\Session\Login;
 
 Login::requireLogout();
+
+#validação do POST
+if (isset($_POST["acao"])) {
+    echo "<pre>";
+    print_r($_POST);
+    echo "<pre>";
+    exit;
+}
+require_once __DIR__ ."usuarios/cre";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
