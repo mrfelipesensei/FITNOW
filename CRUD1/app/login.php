@@ -10,7 +10,7 @@ class Login{
     #Método que obriga o usuário a estar logado para acessar
     public static function requireLogin(){
         if (!self::isLogged()) {
-            header('location: login.php');
+            header('location: ../login.php');
             exit;
         }
     }
@@ -22,6 +22,5 @@ class Login{
             exit;
         }
     }
-
 
 }
