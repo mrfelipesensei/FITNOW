@@ -181,6 +181,7 @@
 }
 
 #btn2:hover{
+    cursor: pointer;
     background-color: black;
     color: white;
     font-size: 30px;
@@ -209,6 +210,7 @@
 
 .db3_box img{
     display: block;
+    width: 65px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 5px;
@@ -238,3 +240,30 @@
     font-size: larger;
     transition: 1s;
 }
+
+#pbtn2{
+    font-size: 1.875em;
+    color: #fff;
+    font-weight: 400;
+    text-align: center;
+    margin: 20px 0;
+}
+
+#btn3{
+    color:white;
+    font-size: 25px;
+    margin-bottom: 25px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(158, 20, 20);
+}
+
+#btn3:hover{
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    font-size: 30px;
+    transition: 1s;
+}
+/*Fim 3º Dobra*/
