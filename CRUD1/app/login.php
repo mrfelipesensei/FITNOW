@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Session;
 class Login{
 
     #Método responsável por verificar se o usuário está logado

@@ -4,6 +4,11 @@ require_once __DIR__ . "/../src/dao/perfildao.php";
 $perfilDAO = new PerfilDAO();
 $perfis = $perfilDAO->getAll();
 
+use App\Session\Login;
+
+//Obriga o usuário a estar logado
+Login::requireLogin();
+
 ?>
 
 <!DOCTYPE html>
