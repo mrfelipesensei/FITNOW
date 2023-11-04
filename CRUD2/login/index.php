@@ -25,8 +25,12 @@ if (isset($_POST["email"]) || isset($_POST["senha"])) {
 
                 $_SESSION["idUsuario"] = $usuario["idUsuario"];
                 $_SESSION["nome"] = $usuario["nome"];
+                $_SESSION["perfil"] = $usuario["perfil"];
 
-                header("Location: painel.php");   
+                if ($usuario["perfil"] == "Admin") {
+                    echo "TESTE";
+                }
+                // header("Location: painel.php");
             }
         }else{
             if (!isset($_SESSION)) {

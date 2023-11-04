@@ -1,5 +1,6 @@
 <?php
 include("protect.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,5 +16,11 @@ include("protect.php");
     <p>
         <a href="logout.php">Sair</a>
     </p>
+    <?php
+    if ($_SESSION["perfil"]=='Admin') {
+        echo 'TESTE';
+    }
+
+    ?>
 </body>
 </html>
