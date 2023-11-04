@@ -106,14 +106,14 @@
 /*2ª Dobra*/
 .db2 h1{
     margin-top: 15px;
-    font-size: 35px;
+    font-size: 45px;
     text-align: center;
 }
 
 .db2 p{
     margin-top: 5px;
     text-align: center;
-    font-size: 20px;
+    font-size: 25px;
 }
 /*1º Carrossel*/
 .slideshow-container {
@@ -364,7 +364,10 @@
     font-size: 20px;
     margin-bottom: 5px;
 }
-#db4icon{
+#db4icon1{
+    width: 120px;
+}
+#db4icon2{
     width: 100px;
 }
 #db4p2{
