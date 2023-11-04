@@ -309,3 +309,33 @@
 #egg img:hover{
     cursor: pointer;
 }
+/*Parceiros*/
+.parceiros{
+    text-align: center;
+}
+.parceiros h2{
+    margin-top: 25px;
+    font-size: 55px;
+    margin-bottom: 25px;
+}
+.parceiros img{
+    border-radius: 25px;
+}
+#ancora3{
+    margin-top: 10px;
+    color:white;
+    font-size: 25px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(158, 20, 20);
+}
+
+#ancora3:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    transition: 1s;
+}
+/*Fim Parceiros*/
