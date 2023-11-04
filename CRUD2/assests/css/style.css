@@ -321,7 +321,7 @@
 .parceiros img{
     border-radius: 25px;
 }
-#ancora3{
+#parceirobtn{
     margin-top: 10px;
     color:white;
     font-size: 25px;
@@ -331,7 +331,7 @@
     background-color: rgb(158, 20, 20);
 }
 
-#ancora3:hover{
+#parceirobtn:hover{
     cursor: pointer;
     background-color: rgb(80, 217, 30);
     color: black;
@@ -393,3 +393,9 @@
     transition: 1s;
 }
 /*Fim 4ª Dobra*/
+/*Rodapé*/
+footer{
+    margin-top: 25px;
+    background-color: rgb(149, 141, 141);
+    border-top: 5px dashed black;
+}
