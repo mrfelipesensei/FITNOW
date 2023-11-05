@@ -1,6 +1,10 @@
 <?php
     require_once '../src/databases/conexao.php';
-    // require_once '../src/dao/usuariodao.php';
+    require_once '../src/dao/usuariodao.php';
+
+    $dao = new UsuarioDAO();
+    $usuarios = $dao->getAll();
+    $quantidadeRegistros = count($usuarios);
 
 ?>
 
