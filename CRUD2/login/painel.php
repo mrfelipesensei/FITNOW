@@ -2,7 +2,7 @@
 include("protect.php");
 
 $userId = $_SESSION['idUsuario'];
-var_dump($userId);
+// var_dump($userId);
 
 ?>
 <!DOCTYPE html>

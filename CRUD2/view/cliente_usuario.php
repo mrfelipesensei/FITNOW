@@ -3,7 +3,7 @@ include("../login/protect.php");
 
 
 $userId = $_SESSION['idUsuario'];
-var_dump($userId);
+// var_dump($userId);
 
 require_once __DIR__ ."/../src/dao/usuariodao.php";
 include_once __DIR__ ."/../src/databases/conexao.php";
@@ -11,7 +11,7 @@ include_once __DIR__ ."/../src/databases/conexao.php";
 $dbh = Conexao::getConexao();
 $query = "SELECT * FROM fitnow.usuarios WHERE idUsuario = $userId;";
 
-var_dump($query);
+// var_dump($query);
 
 $stmt = $dbh->prepare($query);
 $stmt->execute();
@@ -45,7 +45,7 @@ $dbh = null;
 
         <nav class="main_header_content_menu">
             <ul>
-                <li><a href="index.php">Voltar</a></li>
+                <li><a href="../login/painel.php">Voltar</a></li>
             </ul>
         </nav>
     </div>
