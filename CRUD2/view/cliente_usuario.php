@@ -1,6 +1,8 @@
 <?php
 include("../login/protect.php");
 
+$userPerfil = $_SESSION['perfil'];
+// var_dump($userPerfil);
 
 $userId = $_SESSION['idUsuario'];
 // var_dump($userId);
@@ -56,6 +58,7 @@ $dbh = null;
     <br>
     <form action="update.php" method="post">
         <input type="hidden" name="id" value="<?= $id ?>">
+        <input type="hidden" name="id" value="<?= $perfil ?>">
         <div>
             <label for="nome">Nome:</label>
             <input type="text" name="nome" id="" value="<?= htmlspecialchars($usuario['nome']) ?>"><br>
