@@ -20,9 +20,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
     <link href="../assests/css/boot.css" rel="stylesheet"> <!--boot.css-->
     <link href="../assests/css/style.css" rel="stylesheet"> <!--style.css-->
+    <link rel="stylesheet" href="../assests/css/table.css"> <!--estilo tabela-->
     <link rel="stylesheet" href="assests/css/index_style.css">
     <link rel="shortcut icon" href="../img/icons8-marcador-50.png">
-    <script src="index.js" defer></script>
     <title>FITNOW</title>
 </head>
 <!--Cabeçalho-->
@@ -57,6 +57,7 @@
     <br>
     <div>
         <section>
+            <table>
             <thead>
                 <tr>
                     <th>#</th>
@@ -90,6 +91,8 @@
                         <?php endforeach; ?>
                     <?php endif; $dbh = null; ?>
             </tbody>
+            </table>
+            
         </section>
     </div>
 </body>
