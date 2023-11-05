@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05/11/2023 às 19:19
+-- Tempo de geração: 05/11/2023 às 20:27
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -34,16 +34,16 @@ CREATE TABLE `academias` (
   `horarios` varchar(10) NOT NULL,
   `bairro` varchar(50) NOT NULL,
   `modalidades` varchar(60) NOT NULL,
-  `valores` float NOT NULL,
-  `idUsuario` int(11) NOT NULL
+  `valores` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `academias`
 --
 
-INSERT INTO `academias` (`idAcademia`, `nome`, `cnpj`, `horarios`, `bairro`, `modalidades`, `valores`, `idUsuario`) VALUES
-(1, 'ARENA FIT', '49.448.260/0001-13', '8h às 21h', 'Ceilândia Sul', 'Musculação/Box', 20, 6);
+INSERT INTO `academias` (`idAcademia`, `nome`, `cnpj`, `horarios`, `bairro`, `modalidades`, `valores`) VALUES
+(1, 'BATCAVE', '55724924000122', '6h as 22h', 'Metropolis', 'Musculação/Luta', 666),
+(2, 'ARENA FIT', '20612181000114', '7h às 22h', 'Metropolis', 'Yoga/Funcional', 57);
 
 -- --------------------------------------------------------
 
@@ -78,9 +78,7 @@ INSERT INTO `usuarios` (`idUsuario`, `nome`, `cpf`, `email`, `senha`, `perfil`) 
 -- Índices de tabela `academias`
 --
 ALTER TABLE `academias`
-  ADD PRIMARY KEY (`idAcademia`),
-  ADD UNIQUE KEY `cnpj` (`cnpj`),
-  ADD KEY `idUsuario` (`idUsuario`);
+  ADD PRIMARY KEY (`idAcademia`);
 
 --
 -- Índices de tabela `usuarios`
@@ -98,23 +96,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `academias`
 --
 ALTER TABLE `academias`
-  MODIFY `idAcademia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idAcademia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- Restrições para tabelas despejadas
---
-
---
--- Restrições para tabelas `academias`
---
-ALTER TABLE `academias`
-  ADD CONSTRAINT `academias_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuarios` (`idUsuario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

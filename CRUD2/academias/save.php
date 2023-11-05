@@ -16,3 +16,8 @@ $dao = new AcademiaDAO();
 $result = $dao->new($nome, $cnpj, $horarios, $bairro, $modalidades, $valores);
 
 
+if ($result) {
+    header('location: index.php?msg=Usuário adicionado com sucesso!');
+} else {
+    header('location: index.php?error=Não foi possível adicionar o usuário!');
+}
