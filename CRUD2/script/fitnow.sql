@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05/11/2023 às 20:27
+-- Tempo de geração: 05/11/2023 às 23:07
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -42,8 +42,9 @@ CREATE TABLE `academias` (
 --
 
 INSERT INTO `academias` (`idAcademia`, `nome`, `cnpj`, `horarios`, `bairro`, `modalidades`, `valores`) VALUES
-(1, 'BATCAVE', '55724924000122', '6h as 22h', 'Metropolis', 'Musculação/Luta', 666),
-(2, 'ARENA FIT', '20612181000114', '7h às 22h', 'Metropolis', 'Yoga/Funcional', 57);
+(1, 'BATCAVE', '55724924000122', '6h as 22h', 'Gotham City', 'Musculação/Luta', 666),
+(2, 'ARENA FIT', '20612181000114', '7h às 22h', 'Metropolis', 'Yoga/Funcional', 57),
+(3, 'INFERNO GYM', '66666666666666', '6h às 18h', 'Ceilândia Norte', 'Boxing/Luta', 99);
 
 -- --------------------------------------------------------
 
@@ -66,7 +67,7 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`idUsuario`, `nome`, `cpf`, `email`, `senha`, `perfil`) VALUES
 (1, 'FELIPE', 64746900000, 'mrfelipesensei@gmail.com', '123456', 'Admin'),
-(2, 'Tininha', 123457000, 'tina@tina.com', '456', 'Cliente'),
+(2, 'TininhaA', 123457000, 'tina@tina.com', '654', 'Cliente'),
 (3, 'Batman', 202.821, 'bruce@gmail.com', '666', 'Cliente+'),
 (6, 'Steve Jobs', 51598300000, 'mac_daddy@gmail.com', '321', 'Parceiro');
 
@@ -96,7 +97,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `academias`
 --
 ALTER TABLE `academias`
-  MODIFY `idAcademia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idAcademia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
