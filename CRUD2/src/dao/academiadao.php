@@ -34,6 +34,30 @@ class AcademiaDAO{
         $this->dbh = null;
         return $result;
     }
+
+    public function getById($id){
+        $query = 'SELECT * FROM fitnow.academias WHERE idAcademia = :id;';
+
+        $stmt = $this->dbh->prepare($query);
+        $stmt->bindParam(':id',$id);
+        $stmt->execute();
+
+        $row = $stmt->fetch(PDO::FETCH_BOTH);
+        $this->dbh = null;
+        return $row;
+    }
+
+    public function delete($id){
+        $query = 'DELETE FROM fitnow.academias WHERE idAcademia = :id;';
+
+        $stmt = $this->dbh->prepare($query);
+        $stmt->bindParam(':id',$id);
+        $stmt->execute();
+
+        $result = $stmt->rowCount();
+        $this->dbh = null;
+        return $result;
+    }
 }
 
 
