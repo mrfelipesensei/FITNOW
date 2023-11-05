@@ -1,3 +1,27 @@
+<?php
+require_once __DIR__ . "/../src/dao/academiadao.php";
+include_once __DIR__ . "/../src/databases/conexao.php";
+
+
+$dbh = Conexao::getConexao();
+
+$id = isset($_GET["id"]) ? (int) $_GET["id"] : 0;
+
+$query = "SELECT * FROM fitnow.academias WHERE idAcademia = :id;";
+
+$stmt = $dbh->prepare($query);
+$stmt->bindParam(':id', $id);
+$stmt->execute();
+
+$academia = $stmt->fetch(PDO::FETCH_BOTH);
+$dbh = null;
+
+if (!$academia) {
+    header('location: index.php?error=Academia não encontrado!');
+    exit;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +36,7 @@
     <link rel="stylesheet" href="../assests/css/table.css"> <!--estilo tabela-->
     <link rel="stylesheet" href="assests/css/index_style.css">
     <link rel="shortcut icon" href="../img/icons8-marcador-50.png">
-    <title>Criar Academia</title>
+    <title>Alterar Usuário</title>
 </head>
 <!--Cabeçalho-->
 <header class="main_header">
@@ -29,38 +53,40 @@
     </div>
 </header>
 <!--Fim Cabeçalho-->
+
 <body>
-    <h1>Nova Academia</h1>
+    <h1>Alterar Academia</h1>
     <br>
-    <form action="save.php" method="post">
+    <form action="update.php" method="post">
+        <input type="hidden" name="id" value="<?= $id ?>">
         <div>
             <label for="nome">Nome:</label>
-            <input type="text" name="nome" placeholder="Nome da Academia" maxlength="40" required><br>
+            <input type="text" name="nome" id="" value="<?= htmlspecialchars($academia['nome']) ?>"><br>
         </div>
         <br>
         <div>
             <label for="cnpj">CNPJ:</label>
-            <input type="text" name="cnpj" id="" placeholder="52147189000143" maxlength="14" required><br>
+            <input type="text" name="cnpj" id="" maxlength="15" value="<?= htmlspecialchars($academia['cnpj']) ?>"><br>
         </div>
         <br>
         <div>
             <label for="horarios">Horários:</label>
-            <input type="text" name="horarios" id="" placeholder="7h às 20h" maxlength="20" required><br>
+            <input type="text" name="horarios" id="" value="<?= htmlspecialchars($academia['horarios']) ?>"><br>
         </div>
         <br>
         <div>
-            <label for="bairro">Bairro</label>
-            <input type="text" name="bairro" id="" placeholder="Cidade Tal" maxlength="40" required><br>
+            <label for="bairro">Bairro:</label>
+            <input type="text" name="bairro" id="" value="<?= htmlspecialchars($academia['bairro']) ?>"><br>
         </div>
         <br>
         <div>
             <label for="modalidades">Modalidades:</label>
-            <input type="text" name="modalidades" id="" placeholder="Musculação/Box" maxlength="80" required><br>
+            <input type="text" name="modalidades" id="" value="<?= htmlspecialchars($academia['modalidades']) ?>">
         </div>
         <br>
         <div>
             <label for="valores">Valores:</label>
-            <input type="number" name="valores" id="" placeholder="35" maxlength="6" required><br>
+            <input type="text" name="valores" id="" value="<?= htmlspecialchars($academia['valores']) ?>">
         </div>
         <br><br>
         <p>
