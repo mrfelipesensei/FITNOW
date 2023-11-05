@@ -1,5 +1,5 @@
 <?php
-    // require_once '../src/databases/conexao.php';
+    require_once '../src/databases/conexao.php';
     // require_once '../src/dao/usuariodao.php';
 
 ?>
