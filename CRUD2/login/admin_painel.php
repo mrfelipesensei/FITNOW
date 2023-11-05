@@ -13,7 +13,7 @@ include("protect.php");
 <body>
     Bem vindo ao Painel, <?php echo $_SESSION["nome"]; ?>.
     <p>
-        <a href="#">Pesquisar/Alterar Usuários</a>
+        <a href="../usuarios/index.php">Pesquisar/Alterar Usuários</a>
     </p>
     <p>
         <a href="#">Pesquisar/Alterar Academias</a>
