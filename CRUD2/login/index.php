@@ -28,9 +28,9 @@ if (isset($_POST["email"]) || isset($_POST["senha"])) {
                 $_SESSION["perfil"] = $usuario["perfil"];
 
                 if ($usuario["perfil"] == "Admin") {
-                    echo "TESTE";
+                    header("Location: admin_painel.php");
                 }elseif ($usuario["perfil"] == "Cliente") {
-                    echo "DEUS É PAI";
+                    header("Location: painel.php");
                 }
                 // header("Location: painel.php");
             }
