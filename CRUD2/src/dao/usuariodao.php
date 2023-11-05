@@ -57,4 +57,26 @@ class UsuarioDAO{
         $this->dbh = null;
         return $result;
     }
+
+    public function update($id, $nome, $cpf, $email, $senha, $perfil){
+        $query = 'UPDATE fitnow.usuarios SET
+        nome = :nome,
+        cpf = :cpf,
+        email = :email,
+        senha = :senha,
+        perfil = :perfil
+        WHERE idUsuario = :id;';
+
+        $stmt = $this->dbh->prepare($query);
+        $stmt->bindParam(':id',$id);
+        $stmt->bindParam(':nome',$nome);
+        $stmt->bindParam('cpf',$cpf);
+        $stmt->bindParam(':email',$email);
+        $stmt->bindParam(':senha',$senha);
+        $stmt->bindParam(':perfil',$perfil);
+
+        $result = $stmt->execute();
+        $this->dbh = null;
+        return $result;
+    }
 }
