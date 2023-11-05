@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05/11/2023 às 15:16
+-- Tempo de geração: 05/11/2023 às 19:19
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -32,16 +32,18 @@ CREATE TABLE `academias` (
   `nome` varchar(40) NOT NULL,
   `cnpj` varchar(18) NOT NULL,
   `horarios` varchar(10) NOT NULL,
+  `bairro` varchar(50) NOT NULL,
   `modalidades` varchar(60) NOT NULL,
-  `valores` float NOT NULL
+  `valores` float NOT NULL,
+  `idUsuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `academias`
 --
 
-INSERT INTO `academias` (`idAcademia`, `nome`, `cnpj`, `horarios`, `modalidades`, `valores`) VALUES
-(1, 'ARENA FIT', '49.448.260/0001-13', '8h às 21h', 'Musculação/Box', 20);
+INSERT INTO `academias` (`idAcademia`, `nome`, `cnpj`, `horarios`, `bairro`, `modalidades`, `valores`, `idUsuario`) VALUES
+(1, 'ARENA FIT', '49.448.260/0001-13', '8h às 21h', 'Ceilândia Sul', 'Musculação/Box', 20, 6);
 
 -- --------------------------------------------------------
 
@@ -65,7 +67,8 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`idUsuario`, `nome`, `cpf`, `email`, `senha`, `perfil`) VALUES
 (1, 'FELIPE', 64746900000, 'mrfelipesensei@gmail.com', '123456', 'Admin'),
 (2, 'Tininha', 123457000, 'tina@tina.com', '456', 'Cliente'),
-(3, 'Batman', 202.821, 'bruce@gmail.com', '666', 'Cliente+');
+(3, 'Batman', 202.821, 'bruce@gmail.com', '666', 'Cliente+'),
+(6, 'Steve Jobs', 51598300000, 'mac_daddy@gmail.com', '321', 'Parceiro');
 
 --
 -- Índices para tabelas despejadas
@@ -76,7 +79,8 @@ INSERT INTO `usuarios` (`idUsuario`, `nome`, `cpf`, `email`, `senha`, `perfil`) 
 --
 ALTER TABLE `academias`
   ADD PRIMARY KEY (`idAcademia`),
-  ADD UNIQUE KEY `cnpj` (`cnpj`);
+  ADD UNIQUE KEY `cnpj` (`cnpj`),
+  ADD KEY `idUsuario` (`idUsuario`);
 
 --
 -- Índices de tabela `usuarios`
@@ -100,7 +104,17 @@ ALTER TABLE `academias`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- Restrições para tabelas despejadas
+--
+
+--
+-- Restrições para tabelas `academias`
+--
+ALTER TABLE `academias`
+  ADD CONSTRAINT `academias_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuarios` (`idUsuario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
