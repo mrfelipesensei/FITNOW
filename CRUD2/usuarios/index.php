@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="../assests/css/table.css"> <!--estilo tabela-->
     <link rel="stylesheet" href="assests/css/index_style.css">
     <link rel="shortcut icon" href="../img/icons8-marcador-50.png">
-    <title>FITNOW</title>
+    <title>Usuários</title>
 </head>
 <!--Cabeçalho-->
 <header class="main_header">
@@ -44,7 +44,7 @@
     <h1>Usuários</h1>
     <div>
         <p>
-            <a href="#">Novo Usuário</a>
+            <a href="create.php">Novo Usuário</a>
         </p>
     </div>
     <div>
