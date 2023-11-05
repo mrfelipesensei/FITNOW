@@ -83,6 +83,8 @@ $dbh = null;
             <button type="submit">Salvar</button>
         </p>
     </form>
+    <br>
+    <p>Suas informações serão atualizadas no próximo login</p>
 </body>
 
 
