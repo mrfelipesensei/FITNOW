@@ -58,6 +58,30 @@ class AcademiaDAO{
         $this->dbh = null;
         return $result;
     }
+
+    public function update($id, $nome, $cnpj, $horarios, $bairro, $modalidades, $valores){
+        $query = 'UPDATE fitnow.academias SET
+        nome = :nome,
+        cnpj = :cnpj,
+        horarios = :horarios,
+        bairro = :bairro,
+        modalidades = :modalidades,
+        valores = :valores
+        WHERE idAcademia = :id;';
+
+        $stmt = $this->dbh->prepare($query);
+        $stmt->bindParam(':id',$id);
+        $stmt->bindParam(':nome',$nome);
+        $stmt->bindParam('cnpj',$cnpj);
+        $stmt->bindParam(':horarios',$horarios);
+        $stmt->bindParam(':bairro',$bairro);
+        $stmt->bindParam(':modalidades',$modalidades);
+        $stmt->bindParam(':valores',$valores);
+
+        $result = $stmt->execute();
+        $this->dbh = null;
+        return $result;
+    }
 }
 
 
