@@ -16,7 +16,7 @@ include("protect.php");
         <a href="../usuarios/index.php">Pesquisar/Alterar Usuários</a>
     </p>
     <p>
-        <a href="#">Pesquisar/Alterar Academias</a>
+        <a href="../academias/index.php">Pesquisar/Alterar Academias</a>
     </p>
     <p>
         <a href="logout.php">Sair</a>
