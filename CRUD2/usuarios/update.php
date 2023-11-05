@@ -17,5 +17,9 @@ $perfil = filter_input(INPUT_POST,'perfil', FILTER_SANITIZE_SPECIAL_CHARS);
 $dao = new UsuarioDAO();
 $result = $dao->update($id, $nome, $cpf, $email, $senha, $perfil, $id);
 
-
+if ($result) {
+    header('location: index.php?msg=Usuário atualizado com sucesso!');
+} else {
+    header('location: index.php?error=Não foi possível atualizar o usuário!');
+}
 
