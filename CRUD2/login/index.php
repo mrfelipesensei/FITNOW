@@ -31,6 +31,8 @@ if (isset($_POST["email"]) || isset($_POST["senha"])) {
                     header("Location: admin_painel.php");
                 }elseif ($usuario["perfil"] == "Cliente") {
                     header("Location: painel.php");
+                }else if ($usuario["perfil"] == "Cliente+") {
+                    header("Location: painel+.php");
                 }
                 // header("Location: painel.php");
             }

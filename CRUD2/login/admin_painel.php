@@ -13,17 +13,13 @@ include("protect.php");
 <body>
     Bem vindo ao Painel, <?php echo $_SESSION["nome"]; ?>.
     <p>
-        <a href="#">Pesquisar Academias</a>
+        <a href="#">Pesquisar/Alterar Usuários</a>
     </p>
     <p>
-        <a href="#">Alterar meus Dados</a>
-    </p>
-    <p>
-        <a href="#">Assinatura Plus</a>
+        <a href="#">Pesquisar/Alterar Academias</a>
     </p>
     <p>
         <a href="logout.php">Sair</a>
     </p>
-
 </body>
 </html>

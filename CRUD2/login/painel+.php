@@ -16,10 +16,10 @@ include("protect.php");
         <a href="#">Pesquisar Academias</a>
     </p>
     <p>
-        <a href="#">Alterar meus Dados</a>
+        <a href="#">Meus Pagamentos</a>
     </p>
     <p>
-        <a href="#">Assinatura Plus</a>
+        <a href="#">Alterar meus Dados</a>
     </p>
     <p>
         <a href="logout.php">Sair</a>
