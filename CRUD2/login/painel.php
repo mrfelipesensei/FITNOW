@@ -1,6 +1,9 @@
 <?php
 include("protect.php");
 
+$userId = $_SESSION['idUsuario'];
+var_dump($userId);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +19,7 @@ include("protect.php");
         <a href="../view/cliente_academia.php">Pesquisar Academias</a>
     </p>
     <p>
-        <a href="#">Alterar meus Dados</a>
+        <a href="../view/cliente_usuario.php">Alterar meus Dados</a>
     </p>
     <p>
         <a href="#">Assinatura Plus</a>
