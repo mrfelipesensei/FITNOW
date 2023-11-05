@@ -33,4 +33,28 @@ class UsuarioDAO{
         $this->dbh = null;
         return $result;
     }
+
+    public function getById($id){
+        $query = 'SELECT * FROM fitnow.usuarios WHERE idUsuario = :id;';
+
+        $stmt = $this->dbh->prepare($query);
+        $stmt->bindParam(':id',$id);
+        $stmt->execute();
+
+        $row = $stmt->fetch(PDO::FETCH_BOTH);
+        $this->dbh = null;
+        return $row;
+    }
+
+    public function delete($id){
+        $query = 'DELETE FROM fitnow.usuarios WHERE idUsuario = :id;';
+
+        $stmt = $this->dbh->prepare($query);
+        $stmt->bindParam(':id',$id);
+        $stmt->execute();
+
+        $result = $stmt->rowCount();
+        $this->dbh = null;
+        return $result;
+    }
 }
