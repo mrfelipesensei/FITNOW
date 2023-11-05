@@ -64,7 +64,6 @@
                     <th>Nome</th>
                     <th>CPF</th>
                     <th>E-mail</th>
-                    <th>Senha</th>
                     <th>Perfil</th>
                     <th>Ação</th>
                 </tr>
@@ -81,7 +80,6 @@
                             <td><?= $usuario['nome'];?></td>
                             <td><?= $usuario['cpf'];?></td>
                             <td><?= $usuario['email'];?></td>
-                            <td><?= $usuario['senha'];?></td>
                             <td><?= $usuario['perfil'];?></td>
                             <td class="td__operacao">
                                 <a class="btns" href="edit.php?id=<?=$usuario['idUsuario'];?>">Alterar</a>
