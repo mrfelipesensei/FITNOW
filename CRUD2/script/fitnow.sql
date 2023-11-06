@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05/11/2023 às 23:07
+-- Tempo de geração: 06/11/2023 às 12:09
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -49,6 +49,18 @@ INSERT INTO `academias` (`idAcademia`, `nome`, `cnpj`, `horarios`, `bairro`, `mo
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `academia_usuario`
+--
+
+CREATE TABLE `academia_usuario` (
+  `idAcademiaUsuario` int(11) NOT NULL,
+  `idAcademia` int(11) NOT NULL,
+  `idUsuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `usuarios`
 --
 
@@ -82,6 +94,12 @@ ALTER TABLE `academias`
   ADD PRIMARY KEY (`idAcademia`);
 
 --
+-- Índices de tabela `academia_usuario`
+--
+ALTER TABLE `academia_usuario`
+  ADD PRIMARY KEY (`idAcademiaUsuario`);
+
+--
 -- Índices de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -97,7 +115,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `academias`
 --
 ALTER TABLE `academias`
-  MODIFY `idAcademia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idAcademia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT de tabela `academia_usuario`
+--
+ALTER TABLE `academia_usuario`
+  MODIFY `idAcademiaUsuario` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
