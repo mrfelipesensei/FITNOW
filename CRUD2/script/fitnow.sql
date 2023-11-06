@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06/11/2023 às 14:35
+-- Tempo de geração: 06/11/2023 às 15:04
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -58,6 +58,13 @@ CREATE TABLE `academia_usuario` (
   `idAcademia` int(11) NOT NULL,
   `idUsuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `academia_usuario`
+--
+
+INSERT INTO `academia_usuario` (`idAcademiaUsuario`, `idAcademia`, `idUsuario`) VALUES
+(1, 20, 6);
 
 -- --------------------------------------------------------
 
@@ -124,7 +131,7 @@ ALTER TABLE `academias`
 -- AUTO_INCREMENT de tabela `academia_usuario`
 --
 ALTER TABLE `academia_usuario`
-  MODIFY `idAcademiaUsuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idAcademiaUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
