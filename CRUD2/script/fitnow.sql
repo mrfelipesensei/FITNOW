@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06/11/2023 às 12:09
+-- Tempo de geração: 06/11/2023 às 14:35
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -44,7 +44,8 @@ CREATE TABLE `academias` (
 INSERT INTO `academias` (`idAcademia`, `nome`, `cnpj`, `horarios`, `bairro`, `modalidades`, `valores`) VALUES
 (1, 'BATCAVE', '55724924000122', '6h as 22h', 'Gotham City', 'Musculação/Luta', 666),
 (2, 'ARENA FIT', '20612181000114', '7h às 22h', 'Metropolis', 'Yoga/Funcional', 57),
-(3, 'INFERNO GYM', '66666666666666', '6h às 18h', 'Ceilândia Norte', 'Boxing/Luta', 99);
+(3, 'INFERNO GYM', '66666666666666', '6h às 18h', 'Ceilândia Norte', 'Boxing/Luta', 99),
+(20, 'TIO GOGA', '45785485552158', '7h às 12h', 'Blumenal', 'Natação', 60);
 
 -- --------------------------------------------------------
 
@@ -97,7 +98,9 @@ ALTER TABLE `academias`
 -- Índices de tabela `academia_usuario`
 --
 ALTER TABLE `academia_usuario`
-  ADD PRIMARY KEY (`idAcademiaUsuario`);
+  ADD PRIMARY KEY (`idAcademiaUsuario`),
+  ADD KEY `teste` (`idAcademia`),
+  ADD KEY `teste2` (`idUsuario`);
 
 --
 -- Índices de tabela `usuarios`
@@ -115,7 +118,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `academias`
 --
 ALTER TABLE `academias`
-  MODIFY `idAcademia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `idAcademia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de tabela `academia_usuario`
@@ -128,6 +131,17 @@ ALTER TABLE `academia_usuario`
 --
 ALTER TABLE `usuarios`
   MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- Restrições para tabelas despejadas
+--
+
+--
+-- Restrições para tabelas `academia_usuario`
+--
+ALTER TABLE `academia_usuario`
+  ADD CONSTRAINT `teste` FOREIGN KEY (`idAcademia`) REFERENCES `academias` (`idAcademia`),
+  ADD CONSTRAINT `teste2` FOREIGN KEY (`idUsuario`) REFERENCES `usuarios` (`idUsuario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
