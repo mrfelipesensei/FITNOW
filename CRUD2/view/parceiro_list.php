@@ -2,7 +2,7 @@
 include("../login/protect.php");
 
 $userId = $_SESSION['idUsuario'];
-var_dump($userId);
+// var_dump($userId);
 
     require_once '../src/databases/conexao.php';
     require_once '../src/dao/academiadao.php';
@@ -10,6 +10,12 @@ var_dump($userId);
     $dao = new AcademiaDAO();
     $academias = $dao->getAll();
     $quantidadeRegistros = count($academias);
+
+    require_once '../src/dao/academia_usuariodao.php';
+
+    $dao = new AcademiaUsuarioDAO();
+    $academia_user = $dao->show();
+    var_dump($academia_user);
 ?>
 <!DOCTYPE html>
 <html lang="en">

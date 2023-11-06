@@ -18,6 +18,15 @@ class AcademiaUsuarioDAO{
         return $rows;
     }
 
+    public function show(){
+        $query = "SELECT * FROM fitnow.academias, academia_usuario
+        WHERE academias.idAcademia = academia_usuario.idacademia
+        ORDER BY nome";
+
+        $stmt = $this->dbh->query($query);
+        $rows = $stmt->fetchAll();
+        $this->dbh = null;
+        return $rows;
+    }
     
 }
-
