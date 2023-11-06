@@ -27,7 +27,7 @@ $userId = $_SESSION['idUsuario'];
         <a href="#">Alterar Academia</a>
     </p>
     <p>
-        <a href="#">Alterar meus Dados</a>
+        <a href="../view/parceiro_usuario.php">Alterar meus Dados</a>
     </p>
     <p>
         <a href="logout.php">Sair</a>
