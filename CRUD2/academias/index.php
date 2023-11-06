@@ -20,6 +20,37 @@
     <link rel="stylesheet" href="../assests/css/table.css"> <!--estilo tabela-->
     <link rel="stylesheet" href="assests/css/index_style.css">
     <link rel="shortcut icon" href="../img/icons8-marcador-50.png">
+    <style>
+        .box1 h1{
+            text-align: center;
+            margin-top: 15px;
+            font-size: 25px;
+        }
+        .box1 p{
+            margin-top: 10px;
+            text-align: center;
+        }
+        .box1 button{
+            background-color: rgb(158, 20, 20);
+            color:#fff;
+            font-size: 20px;
+            padding: 10px 25px;
+            border-radius: 5px;
+            border: none;
+        }
+        .box1 button:hover{
+            background-color: rgb(80, 217, 30);
+            color:black;
+            cursor: pointer;
+            font-size: 22px;
+            transition: 1s;
+        }
+        #aviso{
+            margin-top: 10px;
+            font-size: 25px;
+            text-align: center;
+        }
+    </style>
     <title>Academias</title>
 </head>
 <!--Cabeçalho-->
@@ -38,18 +69,20 @@
 </header>
 <!--Fim Cabeçalho-->
 <body>
-    <h1>Academias</h1>
-    <div>
-        <p>
-            <a href="create.php">Nova Academia</a>
-        </p>
+    <div class="box1">
+        <h1>Academias</h1>
+        <div>
+            <p>
+                <a href="create.php"><button>Nova Academia</button></a>
+            </p>
+        </div>
     </div>
-    <div>
-    <?php if (isset($_GET['msg']) || isset($_GET['error'])) : ?>
-            <div class="<?= (isset($_GET['msg']) ? 'msg__success' : 'msg__error') ?>">
-                <p><?= $_GET['msg'] ?? $_GET['error'] ?></p>
-            </div>
-    <?php endif; ?>
+    <div id="aviso">
+        <?php if (isset($_GET['msg']) || isset($_GET['error'])) : ?>
+                <div class="<?= (isset($_GET['msg']) ? 'msg__success' : 'msg__error') ?>">
+                    <p><?= $_GET['msg'] ?? $_GET['error'] ?></p>
+                </div>
+        <?php endif; ?>
     </div>
     <br>
     <div>

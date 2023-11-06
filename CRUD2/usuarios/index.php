@@ -48,6 +48,11 @@
             font-size: 22px;
             transition: 1s;
         }
+        #aviso{
+            margin-top: 10px;
+            font-size: 25px;
+            text-align: center;
+        }
     </style>
     <title>Usuários</title>
 </head>
@@ -75,12 +80,12 @@
             </p>
         </div>
     </div>
-    <div>
-    <?php if (isset($_GET['msg']) || isset($_GET['error'])) : ?>
-            <div class="<?= (isset($_GET['msg']) ? 'msg__success' : 'msg__error') ?>">
-                <p><?= $_GET['msg'] ?? $_GET['error'] ?></p>
-            </div>
-    <?php endif; ?>
+    <div id="aviso">
+        <?php if (isset($_GET['msg']) || isset($_GET['error'])) : ?>
+                <div class="<?= (isset($_GET['msg']) ? 'msg__success' : 'msg__error') ?>">
+                    <p><?= $_GET['msg'] ?? $_GET['error'] ?></p>
+                </div>
+        <?php endif; ?>
     </div>
     <br>
     <div>

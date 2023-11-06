@@ -35,6 +35,7 @@ if (!$academia) {
     <link href="../assests/css/style.css" rel="stylesheet"> <!--style.css-->
     <link rel="stylesheet" href="../assests/css/table.css"> <!--estilo tabela-->
     <link rel="stylesheet" href="assests/css/index_style.css">
+    <link rel="stylesheet" href="../assests/css/cliente_user.css">
     <link rel="shortcut icon" href="../img/icons8-marcador-50.png">
     <title>Alterar Usuário</title>
 </head>
@@ -55,42 +56,46 @@ if (!$academia) {
 <!--Fim Cabeçalho-->
 
 <body>
-    <h1>Alterar Academia</h1>
-    <br>
-    <form action="update.php" method="post">
-        <input type="hidden" name="id" value="<?= $id ?>">
-        <div>
-            <label for="nome">Nome:</label>
-            <input type="text" name="nome" id="" value="<?= htmlspecialchars($academia['nome']) ?>"><br>
+    <div class="box_container" >
+        <div  class="alterar" >
+            <h1>Alterar Academia</h1>
+            <br>
+            <form action="update.php" method="post">
+                <input type="hidden" name="id" value="<?= $id ?>">
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" id="" value="<?= htmlspecialchars($academia['nome']) ?>"><br>
+                </div>
+                <br>
+                <div>
+                    <label for="cnpj">CNPJ:</label>
+                    <input type="text" name="cnpj" id="" maxlength="15" value="<?= htmlspecialchars($academia['cnpj']) ?>"><br>
+                </div>
+                <br>
+                <div>
+                    <label for="horarios">Horários:</label>
+                    <input type="text" name="horarios" id="" value="<?= htmlspecialchars($academia['horarios']) ?>"><br>
+                </div>
+                <br>
+                <div>
+                    <label for="bairro">Bairro:</label>
+                    <input type="text" name="bairro" id="" value="<?= htmlspecialchars($academia['bairro']) ?>"><br>
+                </div>
+                <br>
+                <div>
+                    <label for="modalidades">Modalidades:</label>
+                    <input type="text" name="modalidades" id="" value="<?= htmlspecialchars($academia['modalidades']) ?>">
+                </div>
+                <br>
+                <div>
+                    <label for="valores">Valores:</label>
+                    <input type="text" name="valores" id="" value="<?= htmlspecialchars($academia['valores']) ?>">
+                </div>
+                <br><br>
+                <p>
+                    <button type="submit">Salvar</button>
+                </p>
+            </form>
         </div>
-        <br>
-        <div>
-            <label for="cnpj">CNPJ:</label>
-            <input type="text" name="cnpj" id="" maxlength="15" value="<?= htmlspecialchars($academia['cnpj']) ?>"><br>
-        </div>
-        <br>
-        <div>
-            <label for="horarios">Horários:</label>
-            <input type="text" name="horarios" id="" value="<?= htmlspecialchars($academia['horarios']) ?>"><br>
-        </div>
-        <br>
-        <div>
-            <label for="bairro">Bairro:</label>
-            <input type="text" name="bairro" id="" value="<?= htmlspecialchars($academia['bairro']) ?>"><br>
-        </div>
-        <br>
-        <div>
-            <label for="modalidades">Modalidades:</label>
-            <input type="text" name="modalidades" id="" value="<?= htmlspecialchars($academia['modalidades']) ?>">
-        </div>
-        <br>
-        <div>
-            <label for="valores">Valores:</label>
-            <input type="text" name="valores" id="" value="<?= htmlspecialchars($academia['valores']) ?>">
-        </div>
-        <br><br>
-        <p>
-            <button type="submit">Salvar</button>
-        </p>
-    </form>
+    </div>
 </body>
