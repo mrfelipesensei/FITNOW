@@ -11,6 +11,7 @@
     <link href="../assests/css/style.css" rel="stylesheet"> <!--style.css-->
     <link rel="stylesheet" href="../assests/css/table.css"> <!--estilo tabela-->
     <link rel="stylesheet" href="assests/css/index_style.css">
+    <link rel="stylesheet" href="../assests/css/cliente_user.css">
     <link rel="shortcut icon" href="../img/icons8-marcador-50.png">
     <title>Criar Usuário</title>
 </head>
@@ -30,36 +31,40 @@
 </header>
 <!--Fim Cabeçalho-->
 <body>
-    <h1>Novo Usuário</h1>
-    <br>
-    <form action="save.php" method="post">
-        <div>
-            <label for="nome">Nome:</label>
-            <input type="text" name="nome" placeholder="Informe seu nome" maxlength="40" required><br>
+    <div class="box_container" >
+        <div class="alterar" >
+            <h1>Novo Usuário</h1>
+            <br>
+            <form action="save.php" method="post">
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" placeholder="Informe seu nome" maxlength="40" required><br>
+                </div>
+                <br>
+                <div>
+                    <label for="cpf">CPF:</label>
+                    <input type="text" name="cpf" placeholder="000.000.000-00" maxlength="15" required><br>
+                </div>
+                <br>
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="" placeholder="Informe seu e-mail" required><br>
+                </div>
+                <br>
+                <div>
+                    <label for="senha">Senha:</label>
+                    <input type="password" name="senha" id="" placeholder="Informe sua senha" required><br>
+                </div>
+                <br>
+                <div>
+                    <label for="perfil">Perfil:</label>
+                    <input type="text" name="perfil" id="" placeholder="Informe o perfil" required>
+                </div>
+                <br><br>
+                <p>
+                    <button type="submit">Salvar</button>
+                </p>
+            </form>
         </div>
-        <br>
-        <div>
-            <label for="cpf">CPF:</label>
-            <input type="text" name="cpf" placeholder="000.000.000-00" maxlength="15" required><br>
-        </div>
-        <br>
-        <div>
-            <label for="email">E-mail:</label>
-            <input type="email" name="email" id="" placeholder="Informe seu e-mail" required><br>
-        </div>
-        <br>
-        <div>
-            <label for="senha">Senha:</label>
-            <input type="password" name="senha" id="" placeholder="Informe sua senha" required><br>
-        </div>
-        <br>
-        <div>
-            <label for="perfil">Perfil:</label>
-            <input type="text" name="perfil" id="" placeholder="Informe o perfil" required>
-        </div>
-        <br><br>
-        <p>
-            <button type="submit">Salvar</button>
-        </p>
-    </form>
+    </div>
 </body>

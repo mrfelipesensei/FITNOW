@@ -85,9 +85,9 @@ $dbh = null;
                 <p>
                     <button type="submit">Salvar</button>
                 </p>
-            </div>
+            </form>
         </div>
-    </form>
+    </div>
     <br>
     <p id="aviso" ><span>ATENÇÃO: </span>Suas informações serão atualizadas no próximo login</p>
 </body>
