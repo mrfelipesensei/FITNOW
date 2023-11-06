@@ -9,29 +9,76 @@ $userId = $_SESSION['idUsuario'];
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+    <link href="../assests/css/boot.css" rel="stylesheet"> <!--boot.css-->
+    <link href="../assests/css/style.css" rel="stylesheet"> <!--style.css-->
+    <link rel="stylesheet" href="assests/css/index_style.css">
+    <link rel="shortcut icon" href="img/icons8-marcador-50.png">
+    <link rel="stylesheet" href="../assests/css/login_style.css">
+    <link rel="stylesheet" href="../assests/css/admin.css">
+    <script src="index.js" defer></script>
+    <title>Cliente</title>
 </head>
+<!--Cabeçalho-->
+<header class="main_header">
+    <div class="main_header_content">
+        <a href="#" class="logo">
+            <img id="fitlogo_header" src="../img/logofit.png" alt="FITNOW - A qualquer hora e qualquer lugar"
+                title="FITNOW - A qualquer hora e qualquer lugar"></a>
+
+        <nav class="main_header_content_menu">
+            <ul>
+                <li><a href="logout.php">Sair</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<!--Fim Cabeçalho-->
 <body>
     <?php if (isset($_GET['msg']) || isset($_GET['error'])) : ?>
             <div class="<?= (isset($_GET['msg']) ? 'msg__success' : 'msg__error') ?>">
                 <p><?= $_GET['msg'] ?? $_GET['error'] ?></p>
             </div>
     <?php endif; ?>
-    <p>Bem vindo ao Painel, <?php echo $_SESSION["nome"]; ?>.</p>
-    <p>
-        <a href="../view/parceiro_academia.php">Cadastrar Academia</a>
-    </p>
-    <p>
+    <div>
+        <p id="bemvindo">
+            Bem vindo ao Painel, <?php echo $_SESSION["nome"]; ?>.
+        </p>
+    </div>
+    <div class="box">
+        <div class="item">
+            <p>
+                <a href="../view/parceiro_academia.php">
+                    <img src="../img/gym.png" alt="">
+                    <p class="text">Cadastrar Academia</p>
+                </a>
+            </p>
+        </div>
+        <div class="item">
+            <p>
+                <a href="../erro.php">
+                    <img src="../img/minhagym.png" alt="">
+                    <p class="text">Minhas Academias</p>
+                </a>
+            </p>
+        </div>
+        <div class="item" >
+            <p>
+                <a href="../view/parceiro_usuario.php">
+                    <img src="../img/account.png" alt="">
+                    <p class="text">Alterar meus Dados</p>
+                </a>
+            </p>
+        </div>
+    </div>
+    <!-- <p>
         <a href="../view/parceiro_list.php">Minhas Academias</a>
-    </p>
-    <p>
-        <a href="../view/parceiro_usuario.php">Alterar meus Dados</a>
-    </p>
-    <p>
+    </p> -->
+    <!-- <p>
         <a href="logout.php">Sair</a>
-    </p>
-
+    </p> -->
 </body>
 </html>
