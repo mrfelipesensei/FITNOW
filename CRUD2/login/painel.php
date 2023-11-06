@@ -69,9 +69,8 @@ $userId = $_SESSION['idUsuario'];
             </p>
         </div>
     </div>
-    <p>
+    <!-- <p>
         <a href="logout.php">Sair</a>
-    </p>
-
+    </p> -->
 </body>
 </html>

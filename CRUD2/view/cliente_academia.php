@@ -20,12 +20,38 @@
     <link rel="stylesheet" href="../assests/css/table.css"> <!--estilo tabela-->
     <link rel="stylesheet" href="assests/css/index_style.css">
     <link rel="shortcut icon" href="../img/icons8-marcador-50.png">
+    <style>
+        .box1 h1{
+            text-align: center;
+            margin-top: 15px;
+            font-size: 25px;
+        }
+        .box1 p{
+            margin-top: 10px;
+            text-align: center;
+        }
+        .box1 button{
+            background-color: rgb(158, 20, 20);
+            color:#fff;
+            font-size: 20px;
+            padding: 10px 25px;
+            border-radius: 5px;
+            border: none;
+        }
+        .box1 button:hover{
+            background-color: rgb(80, 217, 30);
+            color:black;
+            cursor: pointer;
+            font-size: 22px;
+            transition: 1s;
+        }
+    </style>
     <title>Academias</title>
 </head>
 <!--Cabeçalho-->
 <header class="main_header">
     <div class="main_header_content">
-        <a href="home.html" class="logo">
+        <a href="#" class="logo">
             <img id="fitlogo_header" src="../img/logofit.png" alt="FITNOW - A qualquer hora e qualquer lugar"
                 title="FITNOW - A qualquer hora e qualquer lugar"></a>
 
@@ -38,11 +64,13 @@
 </header>
 <!--Fim Cabeçalho-->
 <body>
-    <h1>Academias</h1>
-    <div>
-        <p>
-            <a href="#">Especificar</a>
-        </p>
+    <div class="box1">
+        <h1>Academias</h1>
+        <div>
+            <p>
+                <a href="#"><button>Especificar Busca</button></a>
+            </p>
+        </div>
     </div>
     <div>
     <?php if (isset($_GET['msg']) || isset($_GET['error'])) : ?>
