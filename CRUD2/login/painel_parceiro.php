@@ -14,7 +14,12 @@ $userId = $_SESSION['idUsuario'];
     <title>Painel</title>
 </head>
 <body>
-    Bem vindo ao Painel, <?php echo $_SESSION["nome"]; ?>.
+    <?php if (isset($_GET['msg']) || isset($_GET['error'])) : ?>
+            <div class="<?= (isset($_GET['msg']) ? 'msg__success' : 'msg__error') ?>">
+                <p><?= $_GET['msg'] ?? $_GET['error'] ?></p>
+            </div>
+    <?php endif; ?>
+    <p>Bem vindo ao Painel, <?php echo $_SESSION["nome"]; ?>.</p>
     <p>
         <a href="../view/parceiro_academia.php">Cadastrar Academia</a>
     </p>

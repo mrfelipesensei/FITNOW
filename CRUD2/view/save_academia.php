@@ -17,7 +17,7 @@ $result = $dao->new($nome, $cnpj, $horarios, $bairro, $modalidades, $valores);
 
 
 if ($result) {
-    header('location: ../login/painel_parceiro.php?');
+    header('location: ../login/painel_parceiro.php?msg=Academia cadastrada com sucesso!');
 } else {
-    header('location: parceiro_academia.php?error=Não foi possível adicionar o usuário!');
+    header('location: parceiro_academia.php?error=Não foi possível cadastrar academia!');
 }
