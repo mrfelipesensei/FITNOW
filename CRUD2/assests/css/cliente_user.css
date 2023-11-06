@@ -1,0 +1,49 @@
+.box_container{
+    width:100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding-top: 20px;
+}
+
+.alterar{
+    margin: auto;
+    width: 40%;
+    border: 9px solid rgb(158, 20, 20);
+    border-radius: 25px;
+    padding: 5px;
+    background-color: white;
+    text-align: center;
+}
+
+.alterar h1{
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.alterar button{
+    background-color: rgb(158, 20, 20);
+    color:#fff;
+    font-size: 20px;
+    padding: 10px 40px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 5px;
+}
+
+.alterar button:hover{
+    background-color: rgb(80, 217, 30);
+    color:black;
+    cursor: pointer;
+    font-size: 22px;
+    transition: 1s;
+}
+
+#aviso{
+    text-align: center;
+}
+
+#aviso span{
+    color: red;
+}
