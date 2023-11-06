@@ -1,0 +1,30 @@
+a{
+    color: black;
+}
+#bemvindo{
+    text-align:center;
+    font-size: 25px;
+    margin-top: 15px;
+}
+
+.box{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.item{
+    border: 9px solid rgb(158, 20, 20);
+    border-radius: 45px;
+    padding: 20px;
+}
+
+.text{
+    text-decoration: none;
+    margin-top: 10px;
+    font-size: 24px;
+}
+
+.item img{
+    width: 200px;
+}
+
