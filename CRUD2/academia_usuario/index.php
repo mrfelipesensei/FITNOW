@@ -7,10 +7,13 @@
     $academias_user = $dao->getAll();
     $quantidadeRegistros = count($academias_user);
 
-    $dao = new UsuarioDAO();
-    $usuarios = $dao->getAll();
-    $quantidadeRegistros1 = count($usuarios);
+    // $dao = new UsuarioDAO();
+    // $usuarios = $dao->getAll();
+    // $quantidadeRegistros1 = count($usuarios);
 
+    include("../login/protect.php");
+    $userNome = $_SESSION['nome'];
+    // var_dump($userNome);
     
 ?>
 <!DOCTYPE html>
@@ -45,12 +48,12 @@
 </header>
 <!--Fim Cabeçalho-->
 <body>
-    <h1>Academias</h1>
+    <!-- <h1>Academias</h1>
     <div>
         <p>
             <a href="create.php">Nova Academia</a>
         </p>
-    </div>
+    </div> -->
     <div>
     <?php if (isset($_GET['msg']) || isset($_GET['error'])) : ?>
             <div class="<?= (isset($_GET['msg']) ? 'msg__success' : 'msg__error') ?>">
@@ -67,7 +70,7 @@
                         <th>#</th>
                         <th>idAcademia</th>
                         <th>idUsuario</th>
-                        <th>Nome</th>
+                        <th>Nome Parceiro</th>
                         <!-- <th>Parceiro</th> -->
                         <th>Ação</th>
                     </tr>
@@ -84,16 +87,8 @@
                                 <td><?= $academia_user['idAcademia'];?></td>
                                 <td><?= $academia_user['idUsuario'];?></td>
                                 <section>
-                                    
-    
-                                        <?php foreach ($usuarios as $usuario) : ?>
-                                                
-                                                    <td><?= $usuario['nome'];?></td>
-                                                
-                                        <?php endforeach; ?>
-                        
+                                <td><?= $userNome ?></td>
                                 </section>
-                              
                                 <td class="td__operacao">
                                     <a class="btns" href="edit.php?id=<?=$academia['idAcademia'];?>">Alterar</a>
                                     <a class="btns" href="delete.php?id=<?=$academia['idAcademia'];?>" onclick="return confirm('Deseja confirmar a operação?');">Excluir</a>
