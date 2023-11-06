@@ -106,6 +106,21 @@ INSERT INTO `fitnowbd`.`Endereco` (`idEndereco`,`logradouro`,`bairro`,`cidade`,`
 ('9','Quadra QS 306 Conjunto 6','Samambaia Sul','Brasília','DF','Loja','13','9'),
 ('10','Rua 6 Chácara 239','Vicente Pires','Brasília','DF','Loja','25','10');
 
+
+select * from academia_usuario;
+
+
+
+insert into academia_usuario (idAcademiaUsuario, idAcademia, idUsuario)
+values (1,1,1);
+
+insert into academia_usuario (idAcademiaUsuario, idAcademia, idUsuario)
+values (2,2,2);
+
+select * from academia, academia_usuario
+where Academia.idAcademia = academia_usuario.idacademia and academia_usuario.idacademia= 1
+order by nome;
+
 /* Retorna a quantidade de registros de uma tabela
 SELECT COUNT(idAcademia)  'Quantidade de Registros é: 'FROM academia;
 
