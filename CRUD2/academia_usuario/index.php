@@ -1,10 +1,17 @@
 <?php
     require_once '../src/databases/conexao.php';
     require_once '../src/dao/academia_usuariodao.php';
+    require_once '../src/dao/usuariodao.php';
 
     $dao = new AcademiaUsuarioDAO();
     $academias_user = $dao->getAll();
     $quantidadeRegistros = count($academias_user);
+
+    $dao = new UsuarioDAO();
+    $usuarios = $dao->getAll();
+    $quantidadeRegistros1 = count($usuarios);
+
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,6 +67,7 @@
                         <th>#</th>
                         <th>idAcademia</th>
                         <th>idUsuario</th>
+                        <th>Nome</th>
                         <!-- <th>Parceiro</th> -->
                         <th>Ação</th>
                     </tr>
@@ -75,6 +83,17 @@
                                 <td><?php echo $academia_user['idAcademiaUsuario'];?></td>
                                 <td><?= $academia_user['idAcademia'];?></td>
                                 <td><?= $academia_user['idUsuario'];?></td>
+                                <section>
+                                    
+    
+                                        <?php foreach ($usuarios as $usuario) : ?>
+                                                
+                                                    <td><?= $usuario['nome'];?></td>
+                                                
+                                        <?php endforeach; ?>
+                        
+                                </section>
+                              
                                 <td class="td__operacao">
                                     <a class="btns" href="edit.php?id=<?=$academia['idAcademia'];?>">Alterar</a>
                                     <a class="btns" href="delete.php?id=<?=$academia['idAcademia'];?>" onclick="return confirm('Deseja confirmar a operação?');">Excluir</a>
