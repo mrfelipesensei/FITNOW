@@ -100,16 +100,44 @@ if (isset($_POST["email"]) || isset($_POST["senha"])) {
         </div>
     </div>
     <br>
-    <section>
-        <h1>Ainda não é cadastrado?</h1>
-        <p>Não perca mais tempo, venha treinar com nossa ajuda.</p>
-        <br>
-        <p>
-            <a href="#"><button>Cadastre-se</button></a>
-        </p>
+    <section class="cadastro_container">
+        <div class="cadastro">
+            <h1>Ainda não é cadastrado?</h1>
+            <p>Não perca mais tempo, venha treinar com nossa ajuda.</p>
+            <br>
+            <p class="btn2">
+                <a href="#"><button>Cadastre-se</button></a>
+            </p>
+        </div>
     </section>
 </body>
 </html>
+<!--Rodapé-->
+<footer>
+    <section class="flex-container">
+        <div>
+            <h1>Quer saber mais?</h1>
+            <div>
+                <h2>Nossas Páginas</h2>
+                <ul>
+                    <li><a href="#">Cliente</a></li>
+                    <li><a href="#">Cliente Plus</a></li>
+                    <li><a href="#">Parceiros</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+        </div>   
+        <div>
+            <h2>Links Úteis</h2>
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Aviso Legal</a></li>
+            <li><a href="#">Termos de Uso</a></li>
+        </div>
+    </section>
+    <div id="last">
+        <p>FITNOW © - Todos os direitos reservados</p>
+    </div>
+</footer>
 
 
 
