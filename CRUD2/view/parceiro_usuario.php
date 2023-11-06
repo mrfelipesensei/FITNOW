@@ -36,6 +36,7 @@ $dbh = null;
     <link rel="stylesheet" href="../assests/css/table.css"> <!--estilo tabela-->
     <link rel="stylesheet" href="assests/css/index_style.css">
     <link rel="shortcut icon" href="../img/icons8-marcador-50.png">
+    <link rel="stylesheet" href="../assests/css/cliente_user.css">
     <title>Alterar Usuário</title>
 </head>
 <!--Cabeçalho-->
@@ -54,35 +55,39 @@ $dbh = null;
 </header>
 <!--Fim Cabeçalho-->
 <body>
-    <h1>Alterar Usuário</h1>
+    <div class="box_container" >
+        <div class="alterar" >
+            <h1>Alterar Usuário</h1>
+            <br>
+            <form action="update.php" method="post">
+                <input type="hidden" name="id" value="<?= $id ?>">
+                <input type="hidden" name="id" value="<?= $perfil ?>">
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" id="" value="<?= htmlspecialchars($usuario['nome']) ?>"><br>
+                </div>
+                <br>
+                <div>
+                    <label for="cpf">CPF:</label>
+                    <input type="text" name="cpf" id="" maxlength="15" value="<?= htmlspecialchars($usuario['cpf']) ?>"><br>
+                </div>
+                <br>
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="" value="<?= htmlspecialchars($usuario['email']) ?>"><br>
+                </div>
+                <br>
+                <div>
+                    <label for="senha">Senha:</label>
+                    <input type="password" name="senha" id="" value="<?= htmlspecialchars($usuario['senha']) ?>"><br>
+                </div>
+                <br><br>
+                <p>
+                    <button type="submit">Salvar</button>
+                </p>
+            </form>
+        </div>
+    </div>
     <br>
-    <form action="update.php" method="post">
-        <input type="hidden" name="id" value="<?= $id ?>">
-        <input type="hidden" name="id" value="<?= $perfil ?>">
-        <div>
-            <label for="nome">Nome:</label>
-            <input type="text" name="nome" id="" value="<?= htmlspecialchars($usuario['nome']) ?>"><br>
-        </div>
-        <br>
-        <div>
-            <label for="cpf">CPF:</label>
-            <input type="text" name="cpf" id="" maxlength="15" value="<?= htmlspecialchars($usuario['cpf']) ?>"><br>
-        </div>
-        <br>
-        <div>
-            <label for="email">E-mail:</label>
-            <input type="email" name="email" id="" value="<?= htmlspecialchars($usuario['email']) ?>"><br>
-        </div>
-        <br>
-        <div>
-            <label for="senha">Senha:</label>
-            <input type="password" name="senha" id="" value="<?= htmlspecialchars($usuario['senha']) ?>"><br>
-        </div>
-        <br><br>
-        <p>
-            <button type="submit">Salvar</button>
-        </p>
-    </form>
-    <br>
-    <p>Suas informações serão atualizadas no próximo login</p>
+    <p id="aviso" ><span>ATENÇÃO: </span>Suas informações serão atualizadas no próximo login</p>
 </body>
