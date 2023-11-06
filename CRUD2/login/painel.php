@@ -62,7 +62,7 @@ $userId = $_SESSION['idUsuario'];
         </div>
         <div class="item">
             <p>
-                <a href="#">
+                <a href="../erro.php">
                     <img src="../img/clienteplus.png" alt="">
                     <p class="text">Assinatura Plus</p>
                 </a>
