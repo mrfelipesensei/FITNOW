@@ -54,20 +54,62 @@ if (isset($_POST["email"]) || isset($_POST["senha"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+    <link href="../assests/css/boot.css" rel="stylesheet"> <!--boot.css-->
+    <link href="../assests/css/style.css" rel="stylesheet"> <!--style.css-->
+    <link rel="stylesheet" href="assests/css/index_style.css">
+    <link rel="shortcut icon" href="img/icons8-marcador-50.png">
+    <link rel="stylesheet" href="../assests/css/login_style.css">
+    <script src="index.js" defer></script>
     <title>Login</title>
 </head>
+<!--Cabeçalho-->
+<header class="main_header">
+    <div class="main_header_content">
+        <a href="../index.html" class="logo">
+            <img id="fitlogo_header" src="../img/logofit.png" alt="FITNOW - A qualquer hora e qualquer lugar"
+                title="FITNOW - A qualquer hora e qualquer lugar"></a>
+
+        <nav class="main_header_content_menu">
+            <ul>
+                <li><a href="../index.html">Voltar</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<!--Fim Cabeçalho-->
 <body>
-    <h1>Acesse sua conta</h1>
-    <form action="" method="post">
+    <div class="login_container">
+        <div class="login">
+            <h1>Acesse sua conta</h1>
+            <form action="" method="post">
+                <div class="item">
+                    <label for="">Email:</label>
+                    <input type="text" name="email" id="">
+                </div>
+                <div class="item" >
+                    <label for="">Senha:</label>
+                    <input type="password" name="senha" id="senha">
+                </div>
+                <p class="btn" >
+                    <button type="submit">Entrar</button>
+                </p>
+            </form>
+        </div>
+    </div>
+    <br>
+    <section>
+        <h1>Ainda não é cadastrado?</h1>
+        <p>Não perca mais tempo, venha treinar com nossa ajuda.</p>
+        <br>
         <p>
-            <label for="">Email:</label>
-            <input type="text" name="email" id="">
+            <a href="#"><button>Cadastre-se</button></a>
         </p>
-        <p>
-            <label for="">Senha:</label>
-            <input type="password" name="senha" id="">
-        </p>
-        <button type="submit">Entrar</button>
-    </form>
+    </section>
 </body>
 </html>
+
+
+
