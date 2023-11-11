@@ -18,15 +18,14 @@ class AcademiaDAO{
         return $rows;
     }
 
-    public function new($nome,$cnpj,$horarios,$bairro,$modalidades,$valores){
-        $query = 'INSERT INTO fitnow.academias (nome, cnpj, horarios, bairro, modalidades, valores)
-        VALUES (:nome, :cnpj, :horarios, :bairro, :modalidades, :valores);';
+    public function new($nome,$cnpj,$horarios,$modalidades,$valores){
+        $query = 'INSERT INTO fitnow.academias (nome, cnpj, horarios, modalidades, valores)
+        VALUES (:nome, :cnpj, :horarios, :modalidades, :valores);';
 
         $stmt = $this->dbh->prepare($query);
         $stmt->bindParam(':nome', $nome);
         $stmt->bindParam(':cnpj', $cnpj);
         $stmt->bindParam(':horarios', $horarios);
-        $stmt->bindParam(':bairro', $bairro);
         $stmt->bindParam(':modalidades', $modalidades);
         $stmt->bindParam(':valores', $valores);
 
@@ -78,12 +77,11 @@ class AcademiaDAO{
         return $result;
     }
 
-    public function update($id, $nome, $cnpj, $horarios, $bairro, $modalidades, $valores){
+    public function update($id, $nome, $cnpj, $horarios, $modalidades, $valores){
         $query = 'UPDATE fitnow.academias SET
         nome = :nome,
         cnpj = :cnpj,
         horarios = :horarios,
-        bairro = :bairro,
         modalidades = :modalidades,
         valores = :valores
         WHERE idAcademia = :id;';
@@ -93,7 +91,6 @@ class AcademiaDAO{
         $stmt->bindParam(':nome',$nome);
         $stmt->bindParam('cnpj',$cnpj);
         $stmt->bindParam(':horarios',$horarios);
-        $stmt->bindParam(':bairro',$bairro);
         $stmt->bindParam(':modalidades',$modalidades);
         $stmt->bindParam(':valores',$valores);
 
