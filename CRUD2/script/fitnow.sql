@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06/11/2023 às 15:04
--- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.2.4
+-- Tempo de geração: 11-Nov-2023 às 12:51
+-- Versão do servidor: 10.4.24-MariaDB
+-- versão do PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -19,12 +19,13 @@ SET time_zone = "+00:00";
 
 --
 -- Banco de dados: `fitnow`
---
-
+DROP DATABASE IF EXISTS `fitnow`;
+CREATE DATABASE `fitnow`;
+USE `fitnow`;
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `academias`
+-- Estrutura da tabela `academias`
 --
 
 CREATE TABLE `academias` (
@@ -32,44 +33,41 @@ CREATE TABLE `academias` (
   `nome` varchar(40) NOT NULL,
   `cnpj` varchar(18) NOT NULL,
   `horarios` varchar(10) NOT NULL,
-  `bairro` varchar(50) NOT NULL,
   `modalidades` varchar(60) NOT NULL,
   `valores` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `academias`
+-- Extraindo dados da tabela `academias`
 --
 
-INSERT INTO `academias` (`idAcademia`, `nome`, `cnpj`, `horarios`, `bairro`, `modalidades`, `valores`) VALUES
-(1, 'BATCAVE', '55724924000122', '6h as 22h', 'Gotham City', 'Musculação/Luta', 666),
-(2, 'ARENA FIT', '20612181000114', '7h às 22h', 'Metropolis', 'Yoga/Funcional', 57),
-(3, 'INFERNO GYM', '66666666666666', '6h às 18h', 'Ceilândia Norte', 'Boxing/Luta', 99),
-(20, 'TIO GOGA', '45785485552158', '7h às 12h', 'Blumenal', 'Natação', 60);
+INSERT INTO `academias` (`idAcademia`, `nome`, `cnpj`, `horarios`, `modalidades`, `valores`) VALUES
+(1, 'BATCAVE', '55724924000122', '6h as 22h', 'Musculação/Luta', 666),
+(2, 'ARENA FIT', '20612181000114', '7h às 22h', 'Yoga/Funcional', 57),
+(3, 'INFERNO GYM', '66666666666666', '6h às 18h', 'Boxing/Luta', 99);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `academia_usuario`
+-- Estrutura da tabela `endereco`
 --
 
-CREATE TABLE `academia_usuario` (
-  `idAcademiaUsuario` int(11) NOT NULL,
-  `idAcademia` int(11) NOT NULL,
-  `idUsuario` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `academia_usuario`
---
-
-INSERT INTO `academia_usuario` (`idAcademiaUsuario`, `idAcademia`, `idUsuario`) VALUES
-(1, 20, 6);
+CREATE TABLE `endereco` (
+  `idEndereco` int(11) NOT NULL,
+  `uf` varchar(45) NOT NULL,
+  `cidade` varchar(45) NOT NULL,
+  `bairro` varchar(45) NOT NULL,
+  `cep` varchar(16) NOT NULL,
+  `logradouro` varchar(45) NOT NULL,
+  `complemento` varchar(45) NOT NULL,
+  `numero` varchar(5) NOT NULL,
+  `idAcademia` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuarios`
+-- Estrutura da tabela `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -79,10 +77,10 @@ CREATE TABLE `usuarios` (
   `email` varchar(60) NOT NULL,
   `senha` varchar(10) NOT NULL,
   `perfil` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `usuarios`
+-- Extraindo dados da tabela `usuarios`
 --
 
 INSERT INTO `usuarios` (`idUsuario`, `nome`, `cpf`, `email`, `senha`, `perfil`) VALUES
@@ -91,26 +89,36 @@ INSERT INTO `usuarios` (`idUsuario`, `nome`, `cpf`, `email`, `senha`, `perfil`) 
 (3, 'Batman', 202.821, 'bruce@gmail.com', '666', 'Cliente+'),
 (6, 'Steve Jobs', 51598300000, 'mac_daddy@gmail.com', '321', 'Parceiro');
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuario_academia`
+--
+
+CREATE TABLE `usuario_academia` (
+  `idUsuario` int(11) NOT NULL,
+  `idAcademia` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices de tabela `academias`
+-- Índices para tabela `academias`
 --
 ALTER TABLE `academias`
   ADD PRIMARY KEY (`idAcademia`);
 
 --
--- Índices de tabela `academia_usuario`
+-- Índices para tabela `endereco`
 --
-ALTER TABLE `academia_usuario`
-  ADD PRIMARY KEY (`idAcademiaUsuario`),
-  ADD KEY `teste` (`idAcademia`),
-  ADD KEY `teste2` (`idUsuario`);
+ALTER TABLE `endereco`
+  ADD PRIMARY KEY (`idEndereco`),
+  ADD KEY `teste` (`idAcademia`);
 
 --
--- Índices de tabela `usuarios`
+-- Índices para tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`idUsuario`),
@@ -118,20 +126,27 @@ ALTER TABLE `usuarios`
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- Índices para tabela `usuario_academia`
+--
+ALTER TABLE `usuario_academia`
+  ADD KEY `test` (`idAcademia`),
+  ADD KEY `test2` (`idUsuario`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
 -- AUTO_INCREMENT de tabela `academias`
 --
 ALTER TABLE `academias`
-  MODIFY `idAcademia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `idAcademia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT de tabela `academia_usuario`
+-- AUTO_INCREMENT de tabela `endereco`
 --
-ALTER TABLE `academia_usuario`
-  MODIFY `idAcademiaUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `endereco`
+  MODIFY `idEndereco` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
@@ -140,15 +155,21 @@ ALTER TABLE `usuarios`
   MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- Restrições para tabelas despejadas
+-- Restrições para despejos de tabelas
 --
 
 --
--- Restrições para tabelas `academia_usuario`
+-- Limitadores para a tabela `endereco`
 --
-ALTER TABLE `academia_usuario`
-  ADD CONSTRAINT `teste` FOREIGN KEY (`idAcademia`) REFERENCES `academias` (`idAcademia`),
-  ADD CONSTRAINT `teste2` FOREIGN KEY (`idUsuario`) REFERENCES `usuarios` (`idUsuario`);
+ALTER TABLE `endereco`
+  ADD CONSTRAINT `teste` FOREIGN KEY (`idAcademia`) REFERENCES `academias` (`idAcademia`);
+
+--
+-- Limitadores para a tabela `usuario_academia`
+--
+ALTER TABLE `usuario_academia`
+  ADD CONSTRAINT `test` FOREIGN KEY (`idAcademia`) REFERENCES `academias` (`idAcademia`),
+  ADD CONSTRAINT `test2` FOREIGN KEY (`idUsuario`) REFERENCES `usuarios` (`idUsuario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
