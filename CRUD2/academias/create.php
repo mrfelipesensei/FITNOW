@@ -51,10 +51,10 @@
                     <input type="text" name="horarios" id="" placeholder="7h às 20h" maxlength="20" required><br>
                 </div>
                 <br>
-                <div>
+                <!-- <div>
                     <label for="bairro">Bairro</label>
                     <input type="text" name="bairro" id="" placeholder="Cidade Tal" maxlength="40" required><br>
-                </div>
+                </div> -->
                 <br>
                 <div>
                     <label for="modalidades">Modalidades:</label>

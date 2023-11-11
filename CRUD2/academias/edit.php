@@ -77,10 +77,10 @@ if (!$academia) {
                     <input type="text" name="horarios" id="" value="<?= htmlspecialchars($academia['horarios']) ?>"><br>
                 </div>
                 <br>
-                <div>
+                <!-- <div>
                     <label for="bairro">Bairro:</label>
                     <input type="text" name="bairro" id="" value="<?= htmlspecialchars($academia['bairro']) ?>"><br>
-                </div>
+                </div> -->
                 <br>
                 <div>
                     <label for="modalidades">Modalidades:</label>
