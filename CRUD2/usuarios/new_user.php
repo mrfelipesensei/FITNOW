@@ -25,7 +25,8 @@
 
         <nav class="main_header_content_menu">
             <ul>
-                <li><a href="../login/index.php">Voltar</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../login/index.php">Login</a></li>
             </ul>
         </nav>
     </div>
@@ -80,6 +81,33 @@
                     <p><?= $_GET['msg'] ?? $_GET['error'] ?></p>
                 </div>
         <?php endif; ?>
-    </div>
+        </div>
     </div>
 </body>
+<!--Rodapé-->
+<footer>
+    <section class="flex-container">
+        <div>
+            <h1>Quer saber mais?</h1>
+            <div>
+                <h2>Nossas Páginas</h2>
+                <ul>
+                    <li><a href="#">Cliente</a></li>
+                    <li><a href="#">Cliente Plus</a></li>
+                    <li><a href="#">Parceiros</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+        </div>   
+        <div>
+            <h2>Links Úteis</h2>
+            <li><a href="#">Política de Privacidade</a></li>
+            <li><a href="#">Aviso Legal</a></li>
+            <li><a href="#">Termos de Uso</a></li>
+        </div>
+    </section>
+    <div id="last">
+        <p>FITNOW © - Todos os direitos reservados</p>
+    </div>
+</footer>
+</html>
