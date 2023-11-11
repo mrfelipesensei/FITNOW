@@ -29,9 +29,9 @@ class AcademiaDAO{
         $stmt->bindParam(':modalidades', $modalidades);
         $stmt->bindParam(':valores', $valores);
 
-        $result = $stmt->execute();
-        $this->dbh = null;
-        return $result;
+        $stmt->execute();
+        $idAcademia =$this->dbh->lastInsertId();
+        return  $idAcademia;
     }
 
     public function getById($id){

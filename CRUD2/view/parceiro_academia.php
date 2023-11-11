@@ -7,7 +7,7 @@ require_once '../src/databases/conexao.php';
 require_once '../src/dao/academiadao.php';
 
 $dao = new AcademiaDAO();
-$academia_user = $dao->newAcademiaByUser($userId,$idAcademia);
+// $academia_user = $dao->newAcademiaByUser($userId,$idAcademia);
 
 ?>
 

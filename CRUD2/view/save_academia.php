@@ -1,5 +1,7 @@
 <?php
     header("Content-Type: text/html; charset=utf-8;");
+include("../login/protect.php");
+$idUsuario = $_SESSION['idUsuario'];
 
 require_once __DIR__ ."/../src/dao/academiadao.php";
 
@@ -13,10 +15,12 @@ $valores = filter_input(INPUT_POST,'valores', FILTER_SANITIZE_SPECIAL_CHARS);
 // var_dump($nome, $cnpj, $horarios, $bairro, $modalidades, $valores);
 
 $dao = new AcademiaDAO();
-$result = $dao->new($nome, $cnpj, $horarios, $modalidades, $valores);
+$idAcademia = $dao->new($nome, $cnpj, $horarios, $modalidades, $valores);
+if ($idAcademia) {
+    $dao->newAcademiaByUser($idUsuario, $idAcademia);
+}
 
-
-if ($result) {
+if ($idAcademia) {
     header('location: ../login/painel_parceiro.php?msg=Academia cadastrada com sucesso!');
 } else {
     header('location: parceiro_academia.php?error=Não foi possível cadastrar academia!');
