@@ -1,3 +1,16 @@
+<?php
+include("../login/protect.php");
+
+$userId = $_SESSION['idUsuario'];
+// var_dump($userId);
+require_once '../src/databases/conexao.php';
+require_once '../src/dao/academiadao.php';
+
+$dao = new AcademiaDAO();
+$academia_user = $dao->newAcademiaByUser($userId,$idAcademia);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

@@ -46,6 +46,19 @@ class AcademiaDAO{
         return $row;
     }
 
+    public function newAcademiaByUser($idUsuario,$idAcademia){
+        $query = 'INSERT INTO fitnow.usuario_academia (idUsuario, idAcademia)
+        VALUES (:idUsuario, :idAcademia);';
+
+        $stmt = $this->dbh->prepare($query);
+        $stmt->bindParam(':idUsuario', $idUsuario);
+        $stmt->bindParam(':idAcademia', $idAcademia);
+
+        $result = $stmt->execute();
+        $this->dbh = null;
+        return $result;
+    }
+    
     public function getAcademiaByIdUser($idUsuario){
         $query = 'SELECT usuario_academia.idUsuario, usuario_academia.idAcademia, 
                     academias.cnpj, academias.nome as nomeAcademia,
