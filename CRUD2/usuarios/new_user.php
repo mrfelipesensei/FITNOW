@@ -24,18 +24,25 @@
 
         <nav class="main_header_content_menu">
             <ul>
-                <li><a href="index.php">Voltar</a></li>
+                <li><a href="../login/index.php">Voltar</a></li>
             </ul>
         </nav>
     </div>
 </header>
 <!--Fim Cabeçalho-->
 <body>
+    <div id="aviso">
+        <?php if (isset($_GET['msg']) || isset($_GET['error'])) : ?>
+                <div class="<?= (isset($_GET['msg']) ? 'msg__success' : 'msg__error') ?>">
+                    <p><?= $_GET['msg'] ?? $_GET['error'] ?></p>
+                </div>
+        <?php endif; ?>
+    </div>
     <div class="box_container" >
         <div class="alterar" >
             <h1>Novo Usuário</h1>
             <br>
-            <form action="save.php" method="post">
+            <form action="save_new.php" method="post">
                 <div>
                     <label for="nome">Nome:</label>
                     <input type="text" name="nome" placeholder="Informe seu nome" maxlength="40" required><br>
@@ -60,7 +67,7 @@
                     <label for="perfil">Perfil:</label>
                     <!-- <input type="text" name="perfil" id="" placeholder="Informe o perfil" required> -->
                     <select name="perfil">
-                        <option value="admin">Admin</option>
+                        <!-- <option value="admin">Admin</option> -->
                         <option value="Cliente" selected>Cliente</option>
                         <option value="Cliente+">Cliente+</option>
                         <option value="Parceiro">Parceiro</option>

@@ -106,7 +106,7 @@ if (isset($_POST["email"]) || isset($_POST["senha"])) {
             <p>Não perca mais tempo, venha treinar com nossa ajuda.</p>
             <br>
             <p class="btn2">
-                <a href="#"><button>Cadastre-se</button></a>
+                <a href="../usuarios/new_user.php"><button>Cadastre-se</button></a>
             </p>
         </div>
     </section>

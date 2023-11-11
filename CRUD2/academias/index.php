@@ -94,7 +94,7 @@
                         <th>Nome</th>
                         <th>CNPJ</th>
                         <th>Horários</th>
-                        <th>Bairro</th>
+                        <!-- <th>Bairro</th> -->
                         <th>Modalidades</th>
                         <th>Valores</th>
                         <!-- <th>Parceiro</th> -->
@@ -113,7 +113,7 @@
                                 <td><?= $academia['nome'];?></td>
                                 <td><?= $academia['cnpj'];?></td>
                                 <td><?= $academia['horarios'];?></td>
-                                <td><?= $academia['bairro'];?></td>
+                                <!-- <td><?= $academia['bairro'];?></td> -->
                                 <td><?= $academia['modalidades'];?></td>
                                 <td><?= $academia['valores'];?></td>
                                 <td class="td__operacao">

@@ -83,7 +83,13 @@ if (!$usuario) {
                 <br>
                 <div>
                     <label for="perfil">Perfil:</label>
-                    <input type="text" name="perfil" id="" value="<?= htmlspecialchars($usuario['perfil']) ?>">
+                    <!-- <input type="text" name="perfil" id="" placeholder="Informe o perfil" required> -->
+                    <select name="perfil">
+                        <option value="admin">Admin</option>
+                        <option value="Cliente" selected>Cliente</option>
+                        <option value="Cliente+">Cliente+</option>
+                        <option value="Parceiro">Parceiro</option>
+                    </select>
                 </div>
                 <br><br>
                 <p>
