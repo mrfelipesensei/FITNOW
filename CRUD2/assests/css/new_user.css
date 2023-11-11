@@ -12,7 +12,11 @@ body{
     margin-bottom: -25px;
 }
 
+.alterar h1{
+    font-size: 30px;
+}
+
 .alterar{
-    font-size: larger;
+    font-size: 22px;
 }
 
