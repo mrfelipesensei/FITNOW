@@ -8,14 +8,11 @@ $userId = $_SESSION['idUsuario'];
     require_once '../src/dao/academiadao.php';
 
     $dao = new AcademiaDAO();
-    $academias = $dao->getAll();
-    $quantidadeRegistros = count($academias);
+    $academiasUsuario = $dao->getAcademiaByIdUser($userId);
+    $quantidadeRegistros = count($academiasUsuario);
 
-    require_once '../src/dao/academia_usuariodao.php';
-
-    $dao = new AcademiaUsuarioDAO();
-    $academia_user = $dao->show();
-    var_dump($academia_user);
+    // var_dump( $academiasUsuario);
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,7 +64,6 @@ $userId = $_SESSION['idUsuario'];
                         <th>Nome</th>
                         <th>CNPJ</th>
                         <th>Horários</th>
-                        <th>Bairro</th>
                         <th>Modalidades</th>
                         <th>Valores</th>
                         <!-- <th>Parceiro</th> -->
@@ -75,18 +71,17 @@ $userId = $_SESSION['idUsuario'];
                     </tr>
                 </thead>
                 <tbody>
-                <?php if ($quantidadeRegistros == "0"): ?>
+                <?php if (!isset($academiasUsuario)): ?>
                     <tr>
                         <td colspan="7">Não existem usuários cadastrados.</td>
                     </tr>
                 <?php else: ?>
-                    <?php foreach ($academias as $academia) : ?>
+                    <?php foreach ($academiasUsuario as $academia) : ?>
                             <tr>
                                 <td><?php echo $academia['idAcademia'];?></td>
-                                <td><?= $academia['nome'];?></td>
+                                <td><?= $academia['nomeAcademia'];?></td>
                                 <td><?= $academia['cnpj'];?></td>
                                 <td><?= $academia['horarios'];?></td>
-                                <td><?= $academia['bairro'];?></td>
                                 <td><?= $academia['modalidades'];?></td>
                                 <td><?= $academia['valores'];?></td>
                                 <td class="td__operacao">

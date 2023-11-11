@@ -59,7 +59,7 @@ $userId = $_SESSION['idUsuario'];
         </div>
         <div class="item">
             <p>
-                <a href="../erro.php">
+                <a href="../view/parceiro_list.php">
                     <img src="../img/minhagym.png" alt="">
                     <p class="text">Minhas Academias</p>
                 </a>

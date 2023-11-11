@@ -47,6 +47,25 @@ class AcademiaDAO{
         return $row;
     }
 
+    public function getAcademiaByIdUser($idUsuario){
+        $query = 'SELECT usuario_academia.idUsuario, usuario_academia.idAcademia, 
+                    academias.cnpj, academias.nome as nomeAcademia,
+                    academias.valores, academias.horarios, academias.modalidades,
+                    usuarios.nome as nomeUsuario, usuarios.cpf
+                    FROM `usuario_academia` 
+                    INNER JOIN academias ON academias.idAcademia = usuario_academia.idAcademia
+                    INNER JOIN usuarios ON usuarios.idUsuario = usuario_academia.idUsuario
+                    WHERE usuarios.idUsuario = :id;';
+
+        $stmt = $this->dbh->prepare($query);
+        $stmt->bindParam(':id',$idUsuario);
+        $stmt->execute();
+
+        $rows = $stmt->fetchAll();
+        $this->dbh = null;
+        return $rows;
+    }
+
     public function delete($id){
         $query = 'DELETE FROM fitnow.academias WHERE idAcademia = :id;';
 

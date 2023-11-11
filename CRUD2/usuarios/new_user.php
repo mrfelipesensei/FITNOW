@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../assests/css/table.css"> <!--estilo tabela-->
     <link rel="stylesheet" href="assests/css/index_style.css">
     <link rel="stylesheet" href="../assests/css/cliente_user.css">
+    <link rel="stylesheet" href="../assests/css/new_user.css">
     <link rel="shortcut icon" href="../img/icons8-marcador-50.png">
     <title>Criar Usuário</title>
 </head>
@@ -31,13 +32,6 @@
 </header>
 <!--Fim Cabeçalho-->
 <body>
-    <div id="aviso">
-        <?php if (isset($_GET['msg']) || isset($_GET['error'])) : ?>
-                <div class="<?= (isset($_GET['msg']) ? 'msg__success' : 'msg__error') ?>">
-                    <p><?= $_GET['msg'] ?? $_GET['error'] ?></p>
-                </div>
-        <?php endif; ?>
-    </div>
     <div class="box_container" >
         <div class="alterar" >
             <h1>Novo Usuário</h1>
@@ -79,5 +73,13 @@
                 </p>
             </form>
         </div>
+        <br>
+        <div id="aviso">
+        <?php if (isset($_GET['msg']) || isset($_GET['error'])) : ?>
+                <div class="<?= (isset($_GET['msg']) ? 'msg__success' : 'msg__error') ?>">
+                    <p><?= $_GET['msg'] ?? $_GET['error'] ?></p>
+                </div>
+        <?php endif; ?>
+    </div>
     </div>
 </body>
