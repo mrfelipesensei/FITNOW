@@ -112,6 +112,27 @@ class AcademiaDAO{
         $this->dbh = null;
         return $result;
     }
+
+    /*Tabela Endereços */
+
+    public function newEndereco($uf,$cidade,$bairro,$cep,$logradouro,$complemento,$numero){
+        $query = 'INSERT INTO fitnow.endereco (uf, cidade, bairro, cep, logradouro, complemento, numero)
+        VALUES (:uf, :cidade, :bairro, :cep, :logradouro, :complemento, :numero);';
+
+        $stmt = $this->dbh->prepare($query);
+        $stmt->bindParam(':uf',$uf);
+        $stmt->bindParam(':cidade',$cidade);
+        $stmt->bindParam(':bairro',$bairro);
+        $stmt->bindParam(':cep',$cep);
+        $stmt->bindParam(':logradouro',$logradouro);
+        $stmt->bindParam(':complemento',$complemento);
+        $stmt->bindParam(':numero',$numero);
+
+        
+        $stmt->execute();
+        $idEndereco =$this->dbh->lastInsertId();
+        return  $idEndereco;
+    }
 }
 
 

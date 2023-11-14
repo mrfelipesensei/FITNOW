@@ -50,7 +50,6 @@
                     <label for="horarios">Horários:</label>
                     <input type="text" name="horarios" id="" placeholder="7h às 20h" maxlength="20" required><br>
                 </div>
-                <br>
                 <!-- <div>
                     <label for="bairro">Bairro</label>
                     <input type="text" name="bairro" id="" placeholder="Cidade Tal" maxlength="40" required><br>
@@ -64,6 +63,11 @@
                 <div>
                     <label for="valores">Valores:</label>
                     <input type="number" name="valores" id="" placeholder="35" maxlength="6" required><br>
+                </div>
+                <br>
+                <div>
+                    <label for="uf">UF:</label>
+                    <input type="text" name="uf" id="" placeholder="DF" maxlength="2" required><br>
                 </div>
                 <br><br>
                 <p>
