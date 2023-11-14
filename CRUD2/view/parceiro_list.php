@@ -27,6 +27,7 @@ $userId = $_SESSION['idUsuario'];
     <link href="../assests/css/style.css" rel="stylesheet"> <!--style.css-->
     <link rel="stylesheet" href="../assests/css/table.css"> <!--estilo tabela-->
     <link rel="stylesheet" href="assests/css/index_style.css">
+    <link rel="stylesheet" href="../assests/css/parceiro_list.css">
     <link rel="shortcut icon" href="../img/icons8-marcador-50.png">
     <title>Academias</title>
 </head>
@@ -47,6 +48,11 @@ $userId = $_SESSION['idUsuario'];
 <!--Fim Cabeçalho-->
 <body>
     <h1>Minhas Academias</h1>
+    <div>
+        <p>
+            <a href="parceiro_academia.php"><button class="newbtn">Nova Academia</button></a>
+        </p>
+    </div>
     <div>
     <?php if (isset($_GET['msg']) || isset($_GET['error'])) : ?>
             <div class="<?= (isset($_GET['msg']) ? 'msg__success' : 'msg__error') ?>">
@@ -94,9 +100,5 @@ $userId = $_SESSION['idUsuario'];
                 </tbody>
             </table>
         </section>
-        <br><br>
-        <p>
-            <a href="parceiro_acadenua.php"><button>Nova Academia</button></a>
-        </p>
     </div>
 </body>

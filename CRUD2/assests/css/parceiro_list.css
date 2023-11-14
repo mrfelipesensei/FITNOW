@@ -1,0 +1,28 @@
+body h1{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 25px;
+}
+body p{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
+.newbtn{
+    background-color: rgb(158, 20, 20);
+    color:#fff;
+    font-size: 20px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 5px;
+}
+
+.newbtn:hover{
+    background-color: rgb(80, 217, 30);
+    color:black;
+    cursor: pointer;
+    font-size: 22px;
+    transition: 1s;
+}

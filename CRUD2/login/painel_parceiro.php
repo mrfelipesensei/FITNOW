@@ -16,11 +16,12 @@ $userId = $_SESSION['idUsuario'];
     <link href="../assests/css/boot.css" rel="stylesheet"> <!--boot.css-->
     <link href="../assests/css/style.css" rel="stylesheet"> <!--style.css-->
     <link rel="stylesheet" href="assests/css/index_style.css">
-    <link rel="shortcut icon" href="img/icons8-marcador-50.png">
+    <link rel="shortcut icon" href="../img/icons8-marcador-50.png">
     <link rel="stylesheet" href="../assests/css/login_style.css">
     <link rel="stylesheet" href="../assests/css/admin.css">
     <script src="index.js" defer></script>
-    <title>Cliente</title>
+
+    <title>Parceiro</title>
 </head>
 <!--Cabeçalho-->
 <header class="main_header">
