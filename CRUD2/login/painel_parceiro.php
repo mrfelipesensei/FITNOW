@@ -20,7 +20,7 @@ $userId = $_SESSION['idUsuario'];
     <link rel="stylesheet" href="../assests/css/login_style.css">
     <link rel="stylesheet" href="../assests/css/admin.css">
     <script src="index.js" defer></script>
-
+    <link rel="stylesheet" href="../assests/css/parceiro.css">
     <title>Parceiro</title>
 </head>
 <!--Cabeçalho-->
@@ -39,15 +39,17 @@ $userId = $_SESSION['idUsuario'];
 </header>
 <!--Fim Cabeçalho-->
 <body>
-    <?php if (isset($_GET['msg']) || isset($_GET['error'])) : ?>
-            <div class="<?= (isset($_GET['msg']) ? 'msg__success' : 'msg__error') ?>">
-                <p><?= $_GET['msg'] ?? $_GET['error'] ?></p>
-            </div>
-    <?php endif; ?>
     <div>
         <p id="bemvindo">
             Bem vindo ao Painel, <?php echo $_SESSION["nome"]; ?>.
         </p>
+    </div>
+    <div class="msg">
+        <?php if (isset($_GET['msg']) || isset($_GET['error'])) : ?>
+                <div class="<?= (isset($_GET['msg']) ? 'msg__success' : 'msg__error') ?>">
+                    <p><?= $_GET['msg'] ?? $_GET['error'] ?></p>
+                </div>
+        <?php endif; ?>
     </div>
     <div class="box">
         <div class="item">

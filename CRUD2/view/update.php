@@ -26,7 +26,12 @@ $dao = new UsuarioDAO();
 $result = $dao->update($userId, $nome, $cpf, $email, $senha, $userPerfil);
 
 if ($result) {
-    header('location: ../login/painel.php?msg=Usuário atualizado com sucesso!');
+    if ($userPerfil == "Parceiro") {
+        header('location: ../login/painel_parceiro.php?msg=Usuário atualizado com sucesso!');
+    }else{
+        header('location: ../login/painel.php?msg=Usuário atualizado com sucesso!');
+    }
+    
 } else {
     header('location: ../login/painel.php?error=Não foi possível atualizar o usuário!');
 }
