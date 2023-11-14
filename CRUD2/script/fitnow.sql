@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11-Nov-2023 às 12:51
--- Versão do servidor: 10.4.24-MariaDB
--- versão do PHP: 8.1.6
+-- Tempo de geração: 14/11/2023 às 20:41
+-- Versão do servidor: 10.4.28-MariaDB
+-- Versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -19,13 +19,12 @@ SET time_zone = "+00:00";
 
 --
 -- Banco de dados: `fitnow`
-DROP DATABASE IF EXISTS `fitnow`;
-CREATE DATABASE `fitnow`;
-USE `fitnow`;
+--
+
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `academias`
+-- Estrutura para tabela `academias`
 --
 
 CREATE TABLE `academias` (
@@ -35,21 +34,22 @@ CREATE TABLE `academias` (
   `horarios` varchar(10) NOT NULL,
   `modalidades` varchar(60) NOT NULL,
   `valores` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `academias`
+-- Despejando dados para a tabela `academias`
 --
 
 INSERT INTO `academias` (`idAcademia`, `nome`, `cnpj`, `horarios`, `modalidades`, `valores`) VALUES
 (1, 'BATCAVE', '55724924000122', '6h as 22h', 'Musculação/Luta', 666),
 (2, 'ARENA FIT', '20612181000114', '7h às 22h', 'Yoga/Funcional', 57),
-(3, 'INFERNO GYM', '66666666666666', '6h às 18h', 'Boxing/Luta', 99);
+(3, 'INFERNO GYM', '66666666666666', '6h às 18h', 'Boxing/Luta', 99),
+(22, 'RED HOT GYMs', '44557858', '8h às 12h', 'Boxing', 75);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `endereco`
+-- Estrutura para tabela `endereco`
 --
 
 CREATE TABLE `endereco` (
@@ -62,12 +62,12 @@ CREATE TABLE `endereco` (
   `complemento` varchar(45) NOT NULL,
   `numero` varchar(5) NOT NULL,
   `idAcademia` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuarios`
+-- Estrutura para tabela `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -77,10 +77,10 @@ CREATE TABLE `usuarios` (
   `email` varchar(60) NOT NULL,
   `senha` varchar(10) NOT NULL,
   `perfil` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `usuarios`
+-- Despejando dados para a tabela `usuarios`
 --
 
 INSERT INTO `usuarios` (`idUsuario`, `nome`, `cpf`, `email`, `senha`, `perfil`) VALUES
@@ -92,33 +92,41 @@ INSERT INTO `usuarios` (`idUsuario`, `nome`, `cpf`, `email`, `senha`, `perfil`) 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuario_academia`
+-- Estrutura para tabela `usuario_academia`
 --
 
 CREATE TABLE `usuario_academia` (
   `idUsuario` int(11) NOT NULL,
   `idAcademia` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `usuario_academia`
+--
+
+INSERT INTO `usuario_academia` (`idUsuario`, `idAcademia`) VALUES
+(6, 22),
+(6, 53);
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices para tabela `academias`
+-- Índices de tabela `academias`
 --
 ALTER TABLE `academias`
   ADD PRIMARY KEY (`idAcademia`);
 
 --
--- Índices para tabela `endereco`
+-- Índices de tabela `endereco`
 --
 ALTER TABLE `endereco`
   ADD PRIMARY KEY (`idEndereco`),
   ADD KEY `teste` (`idAcademia`);
 
 --
--- Índices para tabela `usuarios`
+-- Índices de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`idUsuario`),
@@ -126,27 +134,27 @@ ALTER TABLE `usuarios`
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Índices para tabela `usuario_academia`
+-- Índices de tabela `usuario_academia`
 --
 ALTER TABLE `usuario_academia`
   ADD KEY `test` (`idAcademia`),
   ADD KEY `test2` (`idUsuario`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
 -- AUTO_INCREMENT de tabela `academias`
 --
 ALTER TABLE `academias`
-  MODIFY `idAcademia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `idAcademia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT de tabela `endereco`
 --
 ALTER TABLE `endereco`
-  MODIFY `idEndereco` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idEndereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
@@ -155,21 +163,14 @@ ALTER TABLE `usuarios`
   MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- Restrições para despejos de tabelas
+-- Restrições para tabelas despejadas
 --
 
 --
--- Limitadores para a tabela `endereco`
+-- Restrições para tabelas `endereco`
 --
 ALTER TABLE `endereco`
   ADD CONSTRAINT `teste` FOREIGN KEY (`idAcademia`) REFERENCES `academias` (`idAcademia`);
-
---
--- Limitadores para a tabela `usuario_academia`
---
-ALTER TABLE `usuario_academia`
-  ADD CONSTRAINT `test` FOREIGN KEY (`idAcademia`) REFERENCES `academias` (`idAcademia`),
-  ADD CONSTRAINT `test2` FOREIGN KEY (`idUsuario`) REFERENCES `usuarios` (`idUsuario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
