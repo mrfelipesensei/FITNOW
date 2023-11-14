@@ -66,8 +66,40 @@
                 </div>
                 <br>
                 <div>
-                    <label for="uf">UF:</label>
-                    <input type="text" name="uf" id="" placeholder="DF" maxlength="2" required><br>
+                    <div>
+                        <label for="uf">UF:</label>
+                        <input type="text" name="uf" id="" placeholder="DF" maxlength="2" required><br>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" name="cidade" placeholder="Informe sua cidade" maxlength="30" required><br>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="bairro">Bairro:</label>
+                        <input type="text" name="bairro" placeholder="Informe sua cidade" maxlength="30" required><br>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="cep">CEP:</label>
+                        <input type="number" name="cep" placeholder="7223115" maxlength="7" required><br>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="logradouro">Logradouro:</label>
+                        <input type="text" name="logradouro" placeholder="Informe o logradouro" maxlength="30" required><br>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="complemento">Complemento:</label>
+                        <input type="text" name="complemento" placeholder="Informe o complemento" maxlength="20" required><br>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="numero">Número:</label>
+                        <input type="text" name="numero" placeholder="Informe o numero" maxlength="5" required><br>
+                    </div>
                 </div>
                 <br><br>
                 <p>
