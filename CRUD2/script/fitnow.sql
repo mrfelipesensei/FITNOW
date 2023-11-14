@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14/11/2023 às 20:41
+-- Tempo de geração: 14/11/2023 às 21:43
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -105,8 +105,7 @@ CREATE TABLE `usuario_academia` (
 --
 
 INSERT INTO `usuario_academia` (`idUsuario`, `idAcademia`) VALUES
-(6, 22),
-(6, 53);
+(6, 22);
 
 --
 -- Índices para tabelas despejadas
