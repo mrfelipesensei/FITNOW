@@ -72,7 +72,10 @@ $userId = $_SESSION['idUsuario'];
                         <th>Horários</th>
                         <th>Modalidades</th>
                         <th>Valores</th>
-                        <!-- <th>Parceiro</th> -->
+                        <th>CEP</th>
+                        <th>Bairro</th>
+                        <th>Complemento</th>
+                        <th>Número</th>
                         <th>Ação</th>
                     </tr>
                 </thead>
@@ -90,6 +93,10 @@ $userId = $_SESSION['idUsuario'];
                                 <td><?= $academia['horarios'];?></td>
                                 <td><?= $academia['modalidades'];?></td>
                                 <td><?= $academia['valores'];?></td>
+                                <td><?= $academia['cep'];?></td>
+                                <td><?= $academia['bairro'];?></td>
+                                <td><?= $academia['complemento'];?></td>
+                                <td><?= $academia['numero'];?></td>
                                 <td class="td__operacao">
                                     <a class="btns" href="edit.php?id=<?=$academia['idAcademia'];?>">Alterar</a>
                                     <!-- <a class="btns" href="delete.php?id=<?=$academia['idAcademia'];?>" onclick="return confirm('Deseja confirmar a operação?');">Excluir</a> -->

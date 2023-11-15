@@ -50,33 +50,52 @@ $dao = new AcademiaDAO();
             <br>
             <form action="save_academia.php" method="post">
                 <div>
-                    <label for="nome">Nome:</label>
-                    <input type="text" name="nome" placeholder="Nome da Academia" maxlength="40" required><br>
+                    <div>
+                        <label for="nome">Nome:</label>
+                        <input type="text" name="nome" placeholder="Nome da Academia" maxlength="40" required><br>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="cnpj">CNPJ:</label>
+                        <input type="text" name="cnpj" id="" placeholder="52147189000143" maxlength="14" required><br>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="horarios">Horários:</label>
+                        <input type="text" name="horarios" id="" placeholder="7h às 20h" maxlength="20" required><br>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="modalidades">Modalidades:</label>
+                        <input type="text" name="modalidades" id="" placeholder="Musculação/Box" maxlength="80" required><br>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="valores">Valores:</label>
+                        <input type="number" name="valores" id="" placeholder="35" maxlength="6" required><br>
+                    </div>
+                    <br>
                 </div>
-                <br>
                 <div>
-                    <label for="cnpj">CNPJ:</label>
-                    <input type="text" name="cnpj" id="" placeholder="52147189000143" maxlength="14" required><br>
-                </div>
-                <br>
-                <div>
-                    <label for="horarios">Horários:</label>
-                    <input type="text" name="horarios" id="" placeholder="7h às 20h" maxlength="20" required><br>
-                </div>
-                <br>
-                <!-- <div>
-                    <label for="bairro">Bairro</label>
-                    <input type="text" name="bairro" id="" placeholder="Cidade Tal" maxlength="40" required><br>
-                </div>
-                <br> -->
-                <div>
-                    <label for="modalidades">Modalidades:</label>
-                    <input type="text" name="modalidades" id="" placeholder="Musculação/Box" maxlength="80" required><br>
-                </div>
-                <br>
-                <div>
-                    <label for="valores">Valores:</label>
-                    <input type="number" name="valores" id="" placeholder="35" maxlength="6" required><br>
+                    <div>
+                        <label for="cep">CEP:</label>
+                        <input type="number" name="cep" id="" placeholder="00000000" maxlength="8" required><br>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="bairro">Bairro:</label>
+                        <input type="text" name="bairro" id="" placeholder="Informe o Bairro" maxlength="30" required><br>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="complemento">Complemento:</label>
+                        <input type="text" name="complemento" placeholder="Informe o Complemento" maxlength="40" required><br>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="numero">Número:</label>
+                        <input type="number" name="numero" placeholder="000" maxlength="3" required>
+                    </div>
                 </div>
                 <br><br>
                 <p>

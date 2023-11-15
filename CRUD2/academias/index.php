@@ -106,7 +106,7 @@
                 <tbody>
                 <?php if ($quantidadeRegistros == "0"): ?>
                     <tr>
-                        <td colspan="7">Não existem usuários cadastrados.</td>
+                        <td colspan="13">Não existem academias cadastradas.</td>
                     </tr>
                 <?php else: ?>
                     <?php foreach ($academias as $academia) : ?>

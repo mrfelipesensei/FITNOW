@@ -67,7 +67,7 @@ class AcademiaDAO{
     public function getAcademiaByIdUser($idUsuario){
         $query = 'SELECT usuario_academia.idUsuario, usuario_academia.idAcademia, 
                     academias.cnpj, academias.nome as nomeAcademia,
-                    academias.valores, academias.horarios, academias.modalidades,
+                    academias.valores, academias.horarios, academias.modalidades, academias.cep, academias.bairro, academias.complemento, academias.numero,
                     usuarios.nome as nomeUsuario, usuarios.cpf
                     FROM `usuario_academia` 
                     INNER JOIN academias ON academias.idAcademia = usuario_academia.idAcademia
