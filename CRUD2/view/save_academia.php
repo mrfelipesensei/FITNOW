@@ -24,7 +24,7 @@ if ($idAcademia) {
 }
 
 if ($idAcademia) {
-    header('location: ../login/painel_parceiro.php?msg=Academia cadastrada com sucesso!');
+    header('location: ../login/painel_parceiro.php?msg=Academia cadastradada com sucesso!');
 } else {
     header('location: parceiro_academia.php?error=Não foi possível cadastrar academia!');
 }

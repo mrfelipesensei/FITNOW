@@ -82,7 +82,7 @@ $userId = $_SESSION['idUsuario'];
                 <tbody>
                 <?php if (!isset($academiasUsuario)): ?>
                     <tr>
-                        <td colspan="7">Não existem usuários cadastrados.</td>
+                        <td colspan="7">Não existem academias cadastradas.</td>
                     </tr>
                 <?php else: ?>
                     <?php foreach ($academiasUsuario as $academia) : ?>
