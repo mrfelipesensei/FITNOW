@@ -66,7 +66,8 @@
 <body>
 <div class="box1">
         <h1>Pesquisar Academias por:</h1>
-        <div>
+        <br>
+        <!-- <div>
             <p>
                 <a href="#"><button>Bairro</button></a>
             </p>
@@ -76,6 +77,13 @@
             <p>
                 <a href="#"><button>Modalidades</button></a>
             </p>
+        </div> -->
+        <div>
+            <form action="" method="get">
+                <label for="">Buscar por Bairro:</label>
+                <input type="text" name="busca">
+                <button type="submit">Buscar</button>
+            </form>
         </div>
     </div>
 </body>
