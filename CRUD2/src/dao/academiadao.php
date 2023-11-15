@@ -18,9 +18,9 @@ class AcademiaDAO{
         return $rows;
     }
 
-    public function new($nome,$cnpj,$horarios,$modalidades,$valores){
-        $query = 'INSERT INTO fitnow.academias (nome, cnpj, horarios, modalidades, valores)
-        VALUES (:nome, :cnpj, :horarios, :modalidades, :valores);';
+    public function new($nome,$cnpj,$horarios,$modalidades,$valores,$cep,$bairro,$complemento,$numero){
+        $query = 'INSERT INTO fitnow.academias (nome, cnpj, horarios, modalidades, valores, cep, bairro, complemento, numero)
+        VALUES (:nome, :cnpj, :horarios, :modalidades, :valores, :cep, :bairro, :complemento, :numero);';
 
         $stmt = $this->dbh->prepare($query);
         $stmt->bindParam(':nome', $nome);
@@ -28,6 +28,10 @@ class AcademiaDAO{
         $stmt->bindParam(':horarios', $horarios);
         $stmt->bindParam(':modalidades', $modalidades);
         $stmt->bindParam(':valores', $valores);
+        $stmt->bindParam(':cep', $cep);
+        $stmt->bindParam(':bairro', $bairro);
+        $stmt->bindParam(':complemento', $complemento);
+        $stmt->bindParam(':numero', $numero);
 
         
         $stmt->execute();
@@ -91,13 +95,17 @@ class AcademiaDAO{
         return $result;
     }
 
-    public function update($id, $nome, $cnpj, $horarios, $modalidades, $valores){
+    public function update($id, $nome, $cnpj, $horarios, $modalidades, $valores, $cep, $bairro, $complemento, $numero){
         $query = 'UPDATE fitnow.academias SET
         nome = :nome,
         cnpj = :cnpj,
         horarios = :horarios,
         modalidades = :modalidades,
-        valores = :valores
+        valores = :valores,
+        cep = :cep,
+        bairro = :bairro,
+        complemento = :complemento,
+        numero = :numero
         WHERE idAcademia = :id;';
 
         $stmt = $this->dbh->prepare($query);
@@ -107,32 +115,16 @@ class AcademiaDAO{
         $stmt->bindParam(':horarios',$horarios);
         $stmt->bindParam(':modalidades',$modalidades);
         $stmt->bindParam(':valores',$valores);
+        $stmt->bindParam(':cep',$cep);
+        $stmt->bindParam(':bairro',$bairro);
+        $stmt->bindParam(':complemento',$complemento);
+        $stmt->bindParam(':numero',$numero);
 
         $result = $stmt->execute();
         $this->dbh = null;
         return $result;
     }
 
-    /*Tabela Endereços */
-
-    public function newEndereco($uf,$cidade,$bairro,$cep,$logradouro,$complemento,$numero){
-        $query = 'INSERT INTO fitnow.endereco (uf, cidade, bairro, cep, logradouro, complemento, numero)
-        VALUES (:uf, :cidade, :bairro, :cep, :logradouro, :complemento, :numero);';
-
-        $stmt = $this->dbh->prepare($query);
-        $stmt->bindParam(':uf',$uf);
-        $stmt->bindParam(':cidade',$cidade);
-        $stmt->bindParam(':bairro',$bairro);
-        $stmt->bindParam(':cep',$cep);
-        $stmt->bindParam(':logradouro',$logradouro);
-        $stmt->bindParam(':complemento',$complemento);
-        $stmt->bindParam(':numero',$numero);
-
-        
-        $stmt->execute();
-        $idEndereco =$this->dbh->lastInsertId();
-        return  $idEndereco;
-    }
 }
 
 

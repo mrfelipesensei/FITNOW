@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14/11/2023 às 21:43
+-- Tempo de geração: 15/11/2023 às 13:54
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -33,36 +33,19 @@ CREATE TABLE `academias` (
   `cnpj` varchar(18) NOT NULL,
   `horarios` varchar(10) NOT NULL,
   `modalidades` varchar(60) NOT NULL,
-  `valores` float NOT NULL
+  `valores` float NOT NULL,
+  `cep` varchar(20) NOT NULL,
+  `bairro` varchar(45) NOT NULL,
+  `complemento` varchar(45) NOT NULL,
+  `numero` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `academias`
 --
 
-INSERT INTO `academias` (`idAcademia`, `nome`, `cnpj`, `horarios`, `modalidades`, `valores`) VALUES
-(1, 'BATCAVE', '55724924000122', '6h as 22h', 'Musculação/Luta', 666),
-(2, 'ARENA FIT', '20612181000114', '7h às 22h', 'Yoga/Funcional', 57),
-(3, 'INFERNO GYM', '66666666666666', '6h às 18h', 'Boxing/Luta', 99),
-(22, 'RED HOT GYMs', '44557858', '8h às 12h', 'Boxing', 75);
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `endereco`
---
-
-CREATE TABLE `endereco` (
-  `idEndereco` int(11) NOT NULL,
-  `uf` varchar(45) NOT NULL,
-  `cidade` varchar(45) NOT NULL,
-  `bairro` varchar(45) NOT NULL,
-  `cep` varchar(16) NOT NULL,
-  `logradouro` varchar(45) NOT NULL,
-  `complemento` varchar(45) NOT NULL,
-  `numero` varchar(5) NOT NULL,
-  `idAcademia` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `academias` (`idAcademia`, `nome`, `cnpj`, `horarios`, `modalidades`, `valores`, `cep`, `bairro`, `complemento`, `numero`) VALUES
+(1, 'TESTE', '55724924000122', '7H as 22h', 'Luta', 66, '7231457', 'Ceilândia Norte', 'QNN 19 Cj N Loja', '754');
 
 -- --------------------------------------------------------
 
@@ -118,13 +101,6 @@ ALTER TABLE `academias`
   ADD PRIMARY KEY (`idAcademia`);
 
 --
--- Índices de tabela `endereco`
---
-ALTER TABLE `endereco`
-  ADD PRIMARY KEY (`idEndereco`),
-  ADD KEY `teste` (`idAcademia`);
-
---
 -- Índices de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -147,29 +123,13 @@ ALTER TABLE `usuario_academia`
 -- AUTO_INCREMENT de tabela `academias`
 --
 ALTER TABLE `academias`
-  MODIFY `idAcademia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
-
---
--- AUTO_INCREMENT de tabela `endereco`
---
-ALTER TABLE `endereco`
-  MODIFY `idEndereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `idAcademia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- Restrições para tabelas despejadas
---
-
---
--- Restrições para tabelas `endereco`
---
-ALTER TABLE `endereco`
-  ADD CONSTRAINT `teste` FOREIGN KEY (`idAcademia`) REFERENCES `academias` (`idAcademia`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

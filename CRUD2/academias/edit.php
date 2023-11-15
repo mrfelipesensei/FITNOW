@@ -61,37 +61,56 @@ if (!$academia) {
             <h1>Alterar Academia</h1>
             <br>
             <form action="update.php" method="post">
-                <input type="hidden" name="id" value="<?= $id ?>">
                 <div>
-                    <label for="nome">Nome:</label>
-                    <input type="text" name="nome" id="" value="<?= htmlspecialchars($academia['nome']) ?>"><br>
+                    <input type="hidden" name="id" value="<?= $id ?>">
+                    <div>
+                        <label for="nome">Nome:</label>
+                        <input type="text" name="nome" id="" value="<?= htmlspecialchars($academia['nome']) ?>"><br>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="cnpj">CNPJ:</label>
+                        <input type="text" name="cnpj" id="" maxlength="15" value="<?= htmlspecialchars($academia['cnpj']) ?>"><br>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="horarios">Horários:</label>
+                        <input type="text" name="horarios" id="" value="<?= htmlspecialchars($academia['horarios']) ?>"><br>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="modalidades">Modalidades:</label>
+                        <input type="text" name="modalidades" id="" value="<?= htmlspecialchars($academia['modalidades']) ?>"><br>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="valores">Valores:</label>
+                        <input type="text" name="valores" id="" value="<?= htmlspecialchars($academia['valores']) ?>"><br>
+                    </div>
+                    <br>
+                </div>
+                <div>  
+                    <div>
+                        <label for="cep">CEP:</label>
+                        <input type="number" name="cep" id="" value="<?= htmlspecialchars($academia['cep']) ?>">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="bairro">Bairro:</label>
+                        <input type="text" name="bairro" id="" value="<?= htmlspecialchars($academia['bairro']) ?>">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="complemento">Complemento:</label>
+                        <input type="text" name="complemento" id="" value="<?= htmlspecialchars($academia['complemento']) ?>">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="numero">Número:</label>
+                        <input type="text" name="numero" id="" value="<?= htmlspecialchars($academia['numero']) ?>">
+                    </div>
                 </div>
                 <br>
-                <div>
-                    <label for="cnpj">CNPJ:</label>
-                    <input type="text" name="cnpj" id="" maxlength="15" value="<?= htmlspecialchars($academia['cnpj']) ?>"><br>
-                </div>
-                <br>
-                <div>
-                    <label for="horarios">Horários:</label>
-                    <input type="text" name="horarios" id="" value="<?= htmlspecialchars($academia['horarios']) ?>"><br>
-                </div>
-                <br>
-                <!-- <div>
-                    <label for="bairro">Bairro:</label>
-                    <input type="text" name="bairro" id="" value="<?= htmlspecialchars($academia['bairro']) ?>"><br>
-                </div> -->
-                <br>
-                <div>
-                    <label for="modalidades">Modalidades:</label>
-                    <input type="text" name="modalidades" id="" value="<?= htmlspecialchars($academia['modalidades']) ?>">
-                </div>
-                <br>
-                <div>
-                    <label for="valores">Valores:</label>
-                    <input type="text" name="valores" id="" value="<?= htmlspecialchars($academia['valores']) ?>">
-                </div>
-                <br><br>
                 <p>
                     <button type="submit">Salvar</button>
                 </p>

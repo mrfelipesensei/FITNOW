@@ -37,71 +37,54 @@
             <br>
             <form action="save.php" method="post">
                 <div>
-                    <label for="nome">Nome:</label>
-                    <input type="text" name="nome" placeholder="Nome da Academia" maxlength="40" required><br>
-                </div>
-                <br>
-                <div>
-                    <label for="cnpj">CNPJ:</label>
-                    <input type="text" name="cnpj" id="" placeholder="52147189000143" maxlength="14" required><br>
-                </div>
-                <br>
-                <div>
-                    <label for="horarios">Horários:</label>
-                    <input type="text" name="horarios" id="" placeholder="7h às 20h" maxlength="20" required><br>
-                </div>
-                <!-- <div>
-                    <label for="bairro">Bairro</label>
-                    <input type="text" name="bairro" id="" placeholder="Cidade Tal" maxlength="40" required><br>
-                </div> -->
-                <br>
-                <div>
-                    <label for="modalidades">Modalidades:</label>
-                    <input type="text" name="modalidades" id="" placeholder="Musculação/Box" maxlength="80" required><br>
-                </div>
-                <br>
-                <div>
-                    <label for="valores">Valores:</label>
-                    <input type="number" name="valores" id="" placeholder="35" maxlength="6" required><br>
-                </div>
-                <br>
-                <div>
                     <div>
-                        <label for="uf">UF:</label>
-                        <input type="text" name="uf" id="" placeholder="DF" maxlength="2" required><br>
+                        <label for="nome">Nome:</label>
+                        <input type="text" name="nome" placeholder="Nome da Academia" maxlength="40" required><br>
                     </div>
                     <br>
                     <div>
-                        <label for="cidade">Cidade:</label>
-                        <input type="text" name="cidade" placeholder="Informe sua cidade" maxlength="30" required><br>
+                        <label for="cnpj">CNPJ:</label>
+                        <input type="text" name="cnpj" id="" placeholder="52147189000143" maxlength="14" required><br>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="horarios">Horários:</label>
+                        <input type="text" name="horarios" id="" placeholder="7h às 20h" maxlength="20" required><br>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="modalidades">Modalidades:</label>
+                        <input type="text" name="modalidades" id="" placeholder="Musculação/Box" maxlength="80" required><br>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="valores">Valores:</label>
+                        <input type="number" name="valores" id="" placeholder="35" maxlength="6" required><br>
+                    </div>
+                    <br>
+                </div>
+                <div>
+                    <div>
+                        <label for="cep">CEP:</label>
+                        <input type="number" name="cep" id="" placeholder="00000000" maxlength="8" required><br>
                     </div>
                     <br>
                     <div>
                         <label for="bairro">Bairro:</label>
-                        <input type="text" name="bairro" placeholder="Informe sua cidade" maxlength="30" required><br>
-                    </div>
-                    <br>
-                    <div>
-                        <label for="cep">CEP:</label>
-                        <input type="number" name="cep" placeholder="7223115" maxlength="7" required><br>
-                    </div>
-                    <br>
-                    <div>
-                        <label for="logradouro">Logradouro:</label>
-                        <input type="text" name="logradouro" placeholder="Informe o logradouro" maxlength="30" required><br>
+                        <input type="text" name="bairro" id="" placeholder="Informe o Bairro" maxlength="30" required><br>
                     </div>
                     <br>
                     <div>
                         <label for="complemento">Complemento:</label>
-                        <input type="text" name="complemento" placeholder="Informe o complemento" maxlength="20" required><br>
+                        <input type="text" name="complemento" placeholder="Informe o Complemento" maxlength="40" required><br>
                     </div>
                     <br>
                     <div>
                         <label for="numero">Número:</label>
-                        <input type="text" name="numero" placeholder="Informe o numero" maxlength="5" required><br>
+                        <input type="number" name="numero" placeholder="000" maxlength="3" required>
                     </div>
                 </div>
-                <br><br>
+                <br>
                 <p>
                     <button type="submit">Salvar</button>
                 </p>
