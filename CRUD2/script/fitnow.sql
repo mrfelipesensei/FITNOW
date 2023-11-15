@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15/11/2023 às 13:54
+-- Tempo de geração: 15/11/2023 às 19:50
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -19,11 +19,7 @@ SET time_zone = "+00:00";
 
 --
 -- Banco de dados: `fitnow`
--- 
-drop database if exists fitnow;
-create database fitnow;
-use fitnow;
-
+--
 
 -- --------------------------------------------------------
 
@@ -49,7 +45,17 @@ CREATE TABLE `academias` (
 --
 
 INSERT INTO `academias` (`idAcademia`, `nome`, `cnpj`, `horarios`, `modalidades`, `valores`, `cep`, `bairro`, `complemento`, `numero`) VALUES
-(1, 'TESTE', '55724924000122', '7H as 22h', 'Luta', 66, '7231457', 'Ceilândia Norte', 'QNN 19 Cj N Loja', '754');
+(1, 'ARENA FIT', '17937053000136', '7h às 21h', 'Musculação/Funcional', 50, '70830452', 'Asa Norte', 'SGAN 610 Módulo B Lt', '66'),
+(2, 'BODY PAIN', '82930368000113', '6h às 22h', 'Musculação/Yoga/Box', 40, '72610421', 'Recanto das Emas', 'Quadra 204 Cj 21 Loja', '50'),
+(3, 'ACQUA FIT', '43156310000102', '7h às 19h', 'Musculação/Natação', 55, '71015026', 'Guará I', 'Quadra QI 20 Conjunto B Lt', '40'),
+(4, 'RED HOT GYM', '37245988000169', '8h às 22h', 'Box/Jiu-Jitsu/Luta', 40, '72308402', 'Samambaia Sul', 'Quadra QN 316 Conjunto 2 Lt', '12'),
+(5, 'SOS FIT', '97996708000186', '5h às 21h', 'Musculação/Funcional', 40, '72260874', 'Ceilândia Norte', 'Quadra QNO 18 Conjunto 74 Loja', '25'),
+(6, 'USSR GYM', '85657953000180', '6h às 22h', 'Musculação/Luta', 35, '72341403', 'Samambaia Norte', 'QR 209 Conjunto 3 Lote', '13'),
+(7, 'GORILLAS', '63448156000150', '7h às 23h', 'Crossfit/Funcional', 60, '72125310', 'Taguatinga Norte', 'Quadra QNE 31 Loja', '31'),
+(8, 'Star Bem Fit', '06453388000162', '5h às 22h ', 'Musculação/Luta', 57, '72255311', 'Ceilândia Norte', 'QNO 13 Conjunto K Loja', '40'),
+(9, 'HORSE POWER', '28965185000198', '6h às 00h', 'Musculação/Luta/Box', 55, '72220403', 'Ceilândia Sul', 'QNN 40 Conjunto C Loja', '15'),
+(10, 'FIGHT CLUB', '35857495000154', '19h às 00h', 'Luta', 40, '72015525', 'Taguatinga Sul', 'Quadra CSB 2 Bloco A Loja', '01'),
+(11, 'Fit Life', '41745969000179', '6h às 22h', 'Musculação/Funcional', 60, '70835140', 'Asa Norte', 'SQN 403 Bloco N Loja', '14');
 
 -- --------------------------------------------------------
 
@@ -127,7 +133,7 @@ ALTER TABLE `usuario_academia`
 -- AUTO_INCREMENT de tabela `academias`
 --
 ALTER TABLE `academias`
-  MODIFY `idAcademia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idAcademia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
