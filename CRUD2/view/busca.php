@@ -57,65 +57,25 @@
 
         <nav class="main_header_content_menu">
             <ul>
-                <li><a href="../login/painel.php">Voltar</a></li>
+                <li><a href="../login/cliente_academia.php">Voltar</a></li>
             </ul>
         </nav>
     </div>
 </header>
 <!--Fim Cabeçalho-->
 <body>
-    <div class="box1">
-        <h1>Academias</h1>
+<div class="box1">
+        <h1>Pesquisar Academias por:</h1>
         <div>
             <p>
-                <a href="busca.php"><button>Especificar Busca</button></a>
+                <a href="#"><button>Bairro</button></a>
+            </p>
+            <p>
+                <a href="#"><button>Valor</button></a>
+            </p>
+            <p>
+                <a href="#"><button>Modalidades</button></a>
             </p>
         </div>
-    </div>
-    <div>
-    <?php if (isset($_GET['msg']) || isset($_GET['error'])) : ?>
-            <div class="<?= (isset($_GET['msg']) ? 'msg__success' : 'msg__error') ?>">
-                <p><?= $_GET['msg'] ?? $_GET['error'] ?></p>
-            </div>
-    <?php endif; ?>
-    </div>
-    <br>
-    <div>
-        <section>
-            <table>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Nome</th>
-                        <th>CNPJ</th>
-                        <th>Horários</th>
-                        <th>Bairro</th>
-                        <th>Modalidades</th>
-                        <th>Valores</th>
-                        <!-- <th>Parceiro</th> -->
-                        <!-- <th>Ação</th> -->
-                    </tr>
-                </thead>
-                <tbody>
-                <?php if ($quantidadeRegistros == "0"): ?>
-                    <tr>
-                        <td colspan="7">Não existem usuários cadastrados.</td>
-                    </tr>
-                <?php else: ?>
-                    <?php foreach ($academias as $academia) : ?>
-                            <tr>
-                                <td><?php echo $academia['idAcademia'];?></td>
-                                <td><?= $academia['nome'];?></td>
-                                <td><?= $academia['cnpj'];?></td>
-                                <td><?= $academia['horarios'];?></td>
-                                <td><?= $academia['bairro'];?></td>
-                                <td><?= $academia['modalidades'];?></td>
-                                <td><?= $academia['valores'];?></td>
-                            </tr>
-                            <?php endforeach; ?>
-                        <?php endif; $dbh = null; ?>
-                </tbody>
-            </table>
-        </section>
     </div>
 </body>
