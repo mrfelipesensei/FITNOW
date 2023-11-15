@@ -19,7 +19,11 @@ SET time_zone = "+00:00";
 
 --
 -- Banco de dados: `fitnow`
---
+-- 
+drop database if exists fitnow;
+create database fitnow;
+use fitnow;
+
 
 -- --------------------------------------------------------
 

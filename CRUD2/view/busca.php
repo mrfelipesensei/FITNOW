@@ -3,11 +3,29 @@
     require_once '../src/dao/academiadao.php';
 
     $dao = new AcademiaDAO();
-    $academias = $dao->getAll();
+    // $academias = $dao->getAll();
+    
+
+    $busca = filter_input(INPUT_GET,'busca',FILTER_SANITIZE_SPECIAL_CHARS);
+    
+    $modal = $busca;
+    $academias = $dao->getByModal($modal);
+    // var_dump($academias);
     $quantidadeRegistros = count($academias);
-?>
-<?php
-$busca = filter_input(INPUT_GET,'busca',FILTER_SANITIZE_SPECIAL_CHARS);
+    
+
+
+    //Condições SQL
+    // $condicoes = [
+    //     strlen($busca) ? 'bairro LIKE "%'.$busca.'%" ' : null
+    // ];
+
+    // print_r($condicoes);
+
+    //Claúsula WHERE
+    // $where = implode('AND',$condicoes);
+    // echo $where;
+
 
 ?>
 <!DOCTYPE html>
@@ -84,10 +102,55 @@ $busca = filter_input(INPUT_GET,'busca',FILTER_SANITIZE_SPECIAL_CHARS);
         </div> -->
         <div>
             <form action="" method="get">
-                <label for="">Buscar por Bairro:</label>
+                <label for="">Modalidades:</label>
                 <input type="text" name="busca" value="<?= $busca ?>">
                 <button type="submit">Buscar</button>
             </form>
         </div>
+        <br>
+    </div>
+    <div>
+    <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Modalidades</th>
+                        <th>Nome</th>
+                        <th>Horários</th>
+                        <th>Valores</th>
+                        <th>CEP</th>
+                        <th>Bairro</th>
+                        <th>Complemento</th>
+                        <th>Número</th>
+                        <!-- <th>Ação</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                <?php if ($quantidadeRegistros == "0"): ?>
+                    <tr>
+                        <td colspan="13">Não existem academias cadastradas.</td>
+                    </tr>
+                <?php else: ?>
+                    <?php foreach ($academias as $academia) : ?>
+                            <tr>
+                                <td><?= $academia['modalidades'];?></td>
+                                <td><?= $academia['nome'];?></td>
+                                <td><?= $academia['horarios'];?></td>
+                                <td><?= $academia['valores'];?></td>
+                                <td><?= $academia['cep'];?></td>
+                                <td><?= $academia['bairro'];?></td>
+                                <td><?= $academia['complemento'];?></td>
+                                <td><?= $academia['numero'];?></td>
+                                <!-- <td class="td__operacao">
+                                    <a class="btns" href="edit.php?id=<?=$academia['idAcademia'];?>">Alterar</a>
+                                    <br><br>
+                                    <a class="btns" href="delete.php?id=<?=$academia['idAcademia'];?>" onclick="return confirm('Deseja confirmar a operação?');">Excluir</a>
+                                </td> -->
+                            </tr>
+                            <?php endforeach; ?>
+                        <?php endif; $dbh = null; ?>
+                </tbody>
+            </table>
+        </section>
     </div>
 </body>

@@ -125,6 +125,18 @@ class AcademiaDAO{
         return $result;
     }
 
+    public function getByModal($modalidades){
+        $query = 'SELECT * FROM fitnow.academias WHERE modalidades = :modalidades;';
+
+        $stmt = $this->dbh->prepare($query);
+        $stmt->bindParam(':modalidades',$modalidades);
+        $stmt->execute();
+
+        $rows = $stmt->fetchAll();
+        $this->dbh = null;
+        return $rows;
+
+    }
 }
 
 
