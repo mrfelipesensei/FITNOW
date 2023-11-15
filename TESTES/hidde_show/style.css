@@ -1,0 +1,7 @@
+.item{background-color:#ddd;margin-bottom:20px;font-family:arial;}	
+.item-details{display:none;padding:15px;}
+.item.active .item-details{display:block;}
+h4{padding:15px;margin:0;}
+h4 span{float:right;}
+p{margin:0;}
+.item.active h4 span{transform: rotate(0.25turn);}
