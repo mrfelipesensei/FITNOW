@@ -6,6 +6,10 @@
     $academias = $dao->getAll();
     $quantidadeRegistros = count($academias);
 ?>
+<?php
+$busca = filter_input(INPUT_GET,'busca',FILTER_SANITIZE_SPECIAL_CHARS);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,7 +85,7 @@
         <div>
             <form action="" method="get">
                 <label for="">Buscar por Bairro:</label>
-                <input type="text" name="busca">
+                <input type="text" name="busca" value="<?= $busca ?>">
                 <button type="submit">Buscar</button>
             </form>
         </div>
