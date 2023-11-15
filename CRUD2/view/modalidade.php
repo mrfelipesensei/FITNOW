@@ -79,7 +79,7 @@
 
         <nav class="main_header_content_menu">
             <ul>
-                <li><a href="../login/cliente_academia.php">Voltar</a></li>
+                <li><a href="cliente_academia.php">Voltar</a></li>
             </ul>
         </nav>
     </div>
@@ -87,19 +87,8 @@
 <!--Fim Cabeçalho-->
 <body>
 <div class="box1">
-        <h1>Pesquisar Academias por:</h1>
+        <h1>Digite a Modalidade Desejada:</h1>
         <br>
-        <!-- <div>
-            <p>
-                <a href="#"><button>Bairro</button></a>
-            </p>
-            <p>
-                <a href="#"><button>Valor</button></a>
-            </p>
-            <p>
-                <a href="#"><button>Modalidades</button></a>
-            </p>
-        </div> -->
         <div>
             <form action="" method="get">
                 <label for="">Modalidades:</label>

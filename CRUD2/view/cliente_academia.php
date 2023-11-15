@@ -70,6 +70,17 @@
             <p>
                 <a href="busca.php"><button>Especificar Busca</button></a>
             </p>
+            <div>
+            <p>
+                <a href="#"><button>Bairro</button></a>
+            </p>
+            <p>
+                <a href="#"><button>Valor</button></a>
+            </p>
+            <p>
+                <a href="modalidade.php"><button>Modalidades</button></a>
+            </p>
+            </div>
         </div>
     </div>
     <div>
