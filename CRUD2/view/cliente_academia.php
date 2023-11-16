@@ -68,18 +68,18 @@
         <h1>Academias</h1>
         <div>
             <p>
-                <a href="busca.php"><button>Especificar Busca</button></a>
+                <a href="#" id="especificarBusca"><button>Filtrar Busca</button></a>
             </p>
-            <div>
-            <p>
-                <a href="bairro.php"><button>Bairro</button></a>
-            </p>
-            <p>
-                <a href="#"><button>Valor</button></a>
-            </p>
-            <p>
-                <a href="modalidade.php"><button>Modalidades</button></a>
-            </p>
+            <div id="outrosBotoes" style="display: none;">
+                <p>
+                    <a href="bairro.php"><button>Bairro</button></a>
+                </p>
+                <p>
+                    <a href="#"><button>Valor</button></a>
+                </p>
+                <p>
+                    <a href="modalidade.php"><button>Modalidades</button></a>
+                </p>
             </div>
         </div>
     </div>
@@ -130,3 +130,13 @@
         </section>
     </div>
 </body>
+<script>
+    document.getElementById('especificarBusca').addEventListener('click', function() {
+        var outrosBotoes = document.getElementById('outrosBotoes');
+        if (outrosBotoes.style.display === 'none') {
+            outrosBotoes.style.display = 'block';
+        } else {
+            outrosBotoes.style.display = 'none';
+        }
+    });
+</script>

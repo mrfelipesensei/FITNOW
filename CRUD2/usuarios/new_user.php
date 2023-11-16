@@ -14,6 +14,14 @@
     <link rel="stylesheet" href="../assests/css/cliente_user.css">
     <link rel="stylesheet" href="../assests/css/new_user.css">
     <link rel="shortcut icon" href="../img/icons8-marcador-50.png">
+    <style>
+        #aviso{
+            text-align: center;
+            font-weight: bolder;
+            font-size: 35px;
+            color: white;
+        }
+    </style>
     <title>Criar Usuário</title>
 </head>
 <!--Cabeçalho-->
@@ -75,12 +83,15 @@
             </form>
         </div>
         <br>
-        <div id="aviso">
-        <?php if (isset($_GET['msg']) || isset($_GET['error'])) : ?>
-                <div class="<?= (isset($_GET['msg']) ? 'msg__success' : 'msg__error') ?>">
-                    <p><?= $_GET['msg'] ?? $_GET['error'] ?></p>
-                </div>
-        <?php endif; ?>
+        <div id="aviso_box">
+            <div id="aviso">
+                <?php if (isset($_GET['msg']) || isset($_GET['error'])) : ?>
+                        <div class="<?= (isset($_GET['msg']) ? 'msg__success' : 'msg__error') ?>">
+                            <p><?= $_GET['msg'] ?? $_GET['error'] ?></p>
+
+                        </div>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 </body>
