@@ -1,0 +1,21 @@
+public function getByValueRange($values, $operator){
+    // Construindo espaços reservados para a cláusula IN
+    $placeholders = rtrim(str_repeat('?,', count($values)), ',');
+    
+    // Construindo uma consulta com um operador de comparação para cada valor em values
+    $query = 'SELECT * FROM tabela WHERE coluna ' . $operator . ' ?';
+    for ($i = 1; $i < count($values); $i++) {
+        $query .= ' OR coluna ' . $operator . ' ?';
+    }
+    
+    $stmt = $this->dbh->prepare($query);
+    $params = array();
+    foreach ($values as $val) {
+        $params[] = $val;
+    }
+    
+    $stmt->execute($params); // Executando a instrução preparada com o array de valores
+    
+    $rows = $stmt->fetchAll();
+    return $rows;
+}
