@@ -173,6 +173,30 @@ class AcademiaDAO{
         $rows = $stmt->fetchAll();
         return $rows;
     }
+
+    //Construindo lógica de consulta por bairro
+    public function getByBairro($bairro){
+        // Construindo placeholders para a claúsula IN
+        $placeholders = rtrim(str_repeat('?,', count($bairro)), ',');
+        
+        // Construindo uma consulta com LIKE para cada substring nas modalidades
+        $query = 'SELECT * FROM fitnow.academias WHERE bairro LIKE ?';
+        for ($i = 1; $i < count($bairro); $i++) {
+            $query .= ' OR bairro LIKE ?';
+        }
+        
+        // Preparando a query e criando array que receberá as variáveis
+        $stmt = $this->dbh->prepare($query);
+        $params = array();
+        foreach ($bairro as $bair) {
+            $params[] = "%$bair%";
+        }
+        
+        $stmt->execute($params); // Executando a instrução preparada com o array de modalidades
+        
+        $rows = $stmt->fetchAll();
+        return $rows;
+    }
     
 }
 
