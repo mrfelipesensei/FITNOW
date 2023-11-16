@@ -161,13 +161,14 @@ class AcademiaDAO{
             $query .= ' OR modalidades LIKE ?';
         }
         
+        // Preparando a query e criando array que receberá as variáveis
         $stmt = $this->dbh->prepare($query);
         $params = array();
         foreach ($modalidades as $mod) {
             $params[] = "%$mod%";
         }
         
-        $stmt->execute($params); // // Executando a instrução preparada com o array de modalidades
+        $stmt->execute($params); // Executando a instrução preparada com o array de modalidades
         
         $rows = $stmt->fetchAll();
         return $rows;
