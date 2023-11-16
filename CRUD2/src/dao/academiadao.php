@@ -125,18 +125,54 @@ class AcademiaDAO{
         return $result;
     }
 
+    // public function getByModal($modalidades){
+    //     $sql = "SELECT * FROM `academias` WHERE modalidades LIKE \'%Luta%\';";
+
+    //     $stmt = $this->dbh->prepare($sql);
+    //     $stmt->bindParam(':modalidades',$modalidades);
+    //     $stmt->execute();
+
+    //     $rows = $stmt->fetchAll();
+    //     $this->dbh = null;
+    //     return $rows;
+
+    // }
+
+    // public function getByModal($modalidades){
+    //     // Constructing placeholders for the IN clause
+    //     $placeholders = rtrim(str_repeat('?,', count($modalidades)), ',');
+        
+    //     $query = "SELECT * FROM `academias` WHERE modalidades LIKE \'%  $placeholders  %\';";
+        
+    //     $stmt = $this->dbh->prepare($query);
+    //     $stmt->execute($modalidades); // Executing the prepared statement with the array of modalities
+        
+    //     $rows = $stmt->fetchAll();
+    //     return $rows;
+    // }
+
     public function getByModal($modalidades){
-        $query = 'SELECT * FROM fitnow.academias WHERE modalidades = :modalidades;';
-
+        // Construindo placeholders para a claúsula IN
+        $placeholders = rtrim(str_repeat('?,', count($modalidades)), ',');
+        
+        // Construindo uma consulta com LIKE para cada substring nas modalidades
+        $query = 'SELECT * FROM fitnow.academias WHERE modalidades LIKE ?';
+        for ($i = 1; $i < count($modalidades); $i++) {
+            $query .= ' OR modalidades LIKE ?';
+        }
+        
         $stmt = $this->dbh->prepare($query);
-        $stmt->bindParam(':modalidades',$modalidades);
-        $stmt->execute();
-
+        $params = array();
+        foreach ($modalidades as $mod) {
+            $params[] = "%$mod%";
+        }
+        
+        $stmt->execute($params); // // Executando a instrução preparada com o array de modalidades
+        
         $rows = $stmt->fetchAll();
-        $this->dbh = null;
         return $rows;
-
     }
+    
 }
 
 

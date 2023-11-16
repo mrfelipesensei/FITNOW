@@ -9,8 +9,13 @@
     $busca = filter_input(INPUT_GET,'busca',FILTER_SANITIZE_SPECIAL_CHARS);
     
     $modal = $busca;
-    $academias = $dao->getByModal($modal);
+    // $academias = $dao->getByModal($modal);
     // var_dump($academias);
+
+    //modalidades recebe a busca do get
+    $modalidades = [$busca];
+    $academias = $dao->getByModal($modalidades);
+
     $quantidadeRegistros = count($academias);
     
 
@@ -117,7 +122,7 @@
                 <tbody>
                 <?php if ($quantidadeRegistros == "0"): ?>
                     <tr>
-                        <td colspan="13">Não existem academias cadastradas.</td>
+                        <td colspan="13">Não existem academias com essa modalidade.</td>
                     </tr>
                 <?php else: ?>
                     <?php foreach ($academias as $academia) : ?>
