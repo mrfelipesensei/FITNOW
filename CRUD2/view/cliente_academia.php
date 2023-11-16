@@ -45,6 +45,15 @@
             font-size: 22px;
             transition: 1s;
         }
+        .box2{
+            display: flex;
+            justify-content: center;
+            margin-right: 12px;
+        }
+        .box2 a{
+            margin-left: 5px;
+        }
+
     </style>
     <title>Academias</title>
 </head>
@@ -71,15 +80,18 @@
                 <a href="#" id="especificarBusca"><button>Filtrar Busca</button></a>
             </p>
             <div id="outrosBotoes" style="display: none;">
-                <p>
-                    <a href="bairro.php"><button>Bairro</button></a>
-                </p>
-                <p>
-                    <a href="#"><button>Valor</button></a>
-                </p>
-                <p>
-                    <a href="modalidade.php"><button>Modalidades</button></a>
-                </p>
+                <div class="box2">
+                    <p>
+                        <a href="bairro.php"><button>Bairro</button></a>
+                    </p>
+                    <p>
+                        <a href="modalidade.php"><button>Modalidades</button></a>
+                    </p>
+                    <p>
+                        <a href="#"><button>Valor</button></a>
+                    </p>
+
+                </div>
             </div>
         </div>
     </div>
