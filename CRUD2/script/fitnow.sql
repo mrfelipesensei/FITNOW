@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17-Nov-2023 às 13:06
+-- Tempo de geração: 17-Nov-2023 às 13:40
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -81,20 +81,22 @@ CREATE TABLE `usuarios` (
   `cpf` float NOT NULL,
   `email` varchar(60) NOT NULL,
   `senha` varchar(10) NOT NULL,
-  `perfil` varchar(30) NOT NULL
+  `perfil` varchar(30) NOT NULL,
+  `foto_perfil` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`idUsuario`, `nome`, `cpf`, `email`, `senha`, `perfil`) VALUES
-(1, 'FELIPE', 64746900000, 'mrfelipesensei@gmail.com', '123456', 'Admin'),
-(2, 'TininhaA', 123457000, 'tina@tina.com', '654', 'Cliente'),
-(3, 'Batman', 202.821, 'bruce@gmail.com', '666', 'Cliente+'),
-(6, 'Steve Jobs', 51598300000, 'mac_daddy@gmail.com', '321', 'Parceiro'),
-(10, 'Karine', 12377, 'karine_k@gmail.com', '741', 'Cliente'),
-(11, 'Teste', 45456500, 'teste@gmail.com', '4545', 'Cliente');
+INSERT INTO `usuarios` (`idUsuario`, `nome`, `cpf`, `email`, `senha`, `perfil`, `foto_perfil`) VALUES
+(1, 'FELIPE', 64746900000, 'mrfelipesensei@gmail.com', '123456', 'Admin', NULL),
+(2, 'TininhaA', 123457000, 'tina@tina.com', '654', 'Cliente', NULL),
+(3, 'Batman', 202.821, 'bruce@gmail.com', '666', 'Cliente+', NULL),
+(6, 'Steve Jobs', 51598300000, 'mac_daddy@gmail.com', '321', 'Parceiro', NULL),
+(10, 'Karine', 12377, 'karine_k@gmail.com', '741', 'Cliente', NULL),
+(11, 'Teste', 45456500, 'teste@gmail.com', '4545', 'Cliente', NULL),
+(13, 'Ronie', 111111000000000, 'ronie@exemplo.com', '123', 'Cliente', '65575c2f49ba78.63968102.jpg');
 
 -- --------------------------------------------------------
 
@@ -153,7 +155,7 @@ ALTER TABLE `academias`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
