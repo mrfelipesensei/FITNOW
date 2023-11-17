@@ -45,10 +45,15 @@
         <div class="alterar" >
             <h1>Novo Usuário</h1>
             <br>
-            <form action="save_new.php" method="post">
+            <form action="save_new.php" method="post" enctype="multipart/form-data">
                 <div>
                     <label for="nome">Nome:</label>
                     <input type="text" name="nome" placeholder="Informe seu nome" maxlength="40" required><br>
+                </div>
+                <br>
+                <div>
+                    <label for="">Foto Perfil:</label>
+                    <input type="file" name="foto_perfil">
                 </div>
                 <br>
                 <div>

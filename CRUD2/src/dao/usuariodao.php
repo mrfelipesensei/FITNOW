@@ -18,9 +18,9 @@ class UsuarioDAO{
         return $rows;
     }
 
-    public function new($nome,$cpf,$email,$senha,$perfil){
-        $query = 'INSERT INTO fitnow.usuarios (nome, cpf, email, senha, perfil)
-        VALUES (:nome, :cpf, :email, :senha, :perfil);';
+    public function new($nome,$cpf,$email,$senha,$perfil,$foto_perfil){
+        $query = 'INSERT INTO fitnow.usuarios (nome, cpf, email, senha, perfil, foto_perfil)
+        VALUES (:nome, :cpf, :email, :senha, :perfil, :foto_perfil);';
 
         $stmt = $this->dbh->prepare($query);
         $stmt->bindParam(':nome',$nome);
@@ -28,6 +28,7 @@ class UsuarioDAO{
         $stmt->bindParam(':email',$email);
         $stmt->bindParam(':senha',$senha);
         $stmt->bindParam(':perfil',$perfil);
+        $stmt->bindParam(':foto_perfil',$foto_perfil);
 
         $result = $stmt->execute();
         $this->dbh = null;

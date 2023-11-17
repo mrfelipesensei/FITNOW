@@ -22,7 +22,13 @@ if (isset($_POST["email"]) || isset($_POST["senha"])) {
 
             if (!isset($_SESSION)) {
                 session_start();
+                $_SESSION['usuario'] = array(
+                    'id' => $usuario["idUsuario"],
+                    'nome' => $usuario["nome"],
+                    'perfil' => $usuario["perfil"],
+                    'foto_perfil' => $usuario["foto_perfil"],
 
+                );
                 $_SESSION["idUsuario"] = $usuario["idUsuario"];
                 $_SESSION["nome"] = $usuario["nome"];
                 $_SESSION["perfil"] = $usuario["perfil"];

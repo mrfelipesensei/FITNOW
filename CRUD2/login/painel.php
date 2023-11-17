@@ -2,8 +2,11 @@
 include("protect.php");
 
 $userId = $_SESSION['idUsuario'];
-// var_dump($userId);
-
+const UPLOAD_DIR = "../img/usuarios/";
+$foto_perfil = $_SESSION['usuario']['foto_perfil'];
+$caminho_foto = UPLOAD_DIR . $foto_perfil;
+var_dump($caminho_foto );
+// var_dump($_SESSION['usuario']['foto_perfil'] );
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,6 +71,9 @@ $userId = $_SESSION['idUsuario'];
                 </a>
             </p>
         </div>
+
+        <br><br>
+        <img src="<?=$caminho_foto ?>" alt="imagem do aluno">
     </div>
     <!-- <p>
         <a href="logout.php">Sair</a>
