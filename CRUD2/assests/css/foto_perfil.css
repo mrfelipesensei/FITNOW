@@ -1,0 +1,22 @@
+#container_foto {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 45px;
+    /* height: 100vh; Altura total da janela do navegador */
+}
+
+#foto {
+    width: 200px; /* Largura padrão desejada */
+    border: 9px solid rgb(158, 20, 20); /* Borda de 1px com cor cinza claro (apenas como exemplo) */
+    border-radius: 45px;
+    overflow: hidden; /* Para conter a imagem dentro da div */
+}
+
+#foto img {
+    width: 100%; /* Para ocupar toda a largura da div pai */
+    height: auto; /* Para manter a proporção da imagem */
+    display: block; /* Para remover qualquer espaço extra abaixo da imagem */
+}
+

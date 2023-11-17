@@ -5,7 +5,7 @@ $userId = $_SESSION['idUsuario'];
 const UPLOAD_DIR = "../img/usuarios/";
 $foto_perfil = $_SESSION['usuario']['foto_perfil'];
 $caminho_foto = UPLOAD_DIR . $foto_perfil;
-var_dump($caminho_foto );
+// var_dump($caminho_foto );
 // var_dump($_SESSION['usuario']['foto_perfil'] );
 ?>
 <!DOCTYPE html>
@@ -22,6 +22,7 @@ var_dump($caminho_foto );
     <link rel="shortcut icon" href="img/icons8-marcador-50.png">
     <link rel="stylesheet" href="../assests/css/login_style.css">
     <link rel="stylesheet" href="../assests/css/admin.css">
+    <link rel="stylesheet" href="../assests/css/foto_perfil.css"> <!--foto perfil-->
     <script src="index.js" defer></script>
     <title>Cliente</title>
 </head>
@@ -41,6 +42,11 @@ var_dump($caminho_foto );
 </header>
 <!--Fim Cabeçalho-->
 <body>
+    <div id="container_foto">
+        <div id="foto">
+            <img src="<?=$caminho_foto ?>" alt="imagem do aluno">
+        </div>
+    </div>
     <div>
         <p id="bemvindo">
             Bem vindo ao Painel, <?php echo $_SESSION["nome"]; ?>.
@@ -71,9 +77,6 @@ var_dump($caminho_foto );
                 </a>
             </p>
         </div>
-
-        <br><br>
-        <img src="<?=$caminho_foto ?>" alt="imagem do aluno">
     </div>
     <!-- <p>
         <a href="logout.php">Sair</a>
