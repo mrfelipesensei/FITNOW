@@ -198,6 +198,39 @@ class AcademiaDAO{
         return $rows;
     }
     
+    // public function getByValor($valor){
+    //     // Construindo placeholders para a claúsula IN
+    //     $placeholders = rtrim(str_repeat('?,', count($valor)), ',');
+        
+    //     // Construindo uma consulta com LIKE para cada substring nas modalidades
+    //     $query = 'SELECT * FROM fitnow.academias WHERE valores LIKE ?';
+    //     for ($i = 1; $i < count($valor); $i++) {
+    //         $query .= ' OR valores LIKE ?';
+    //     }
+        
+    //     // Preparando a query e criando array que receberá as variáveis
+    //     $stmt = $this->dbh->prepare($query);
+    //     $params = array();
+    //     foreach ($valor as $val) {
+    //         $params[] = "%$val%";
+    //     }
+        
+    //     $stmt->execute($params); // Executando a instrução preparada com o array de modalidades
+        
+    //     $rows = $stmt->fetchAll();
+    //     return $rows;
+    // }
+
+    public function getByIntervalo($min, $max){
+        $query = 'SELECT * FROM fitnow.academias WHERE valores BETWEEN ? AND ?';
+        
+        $stmt = $this->dbh->prepare($query);
+        $stmt->execute([$min, $max]);
+        
+        $rows = $stmt->fetchAll();
+        return $rows;
+    }
+    
 }
 
 

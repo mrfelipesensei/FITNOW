@@ -3,8 +3,38 @@
     require_once '../src/dao/academiadao.php';
 
     $dao = new AcademiaDAO();
-    $academias = $dao->getAll();
+    // $academias = $dao->getAll();
+    
+
+    $busca = filter_input(INPUT_GET,'busca',FILTER_SANITIZE_SPECIAL_CHARS);
+    $busca2 = filter_input(INPUT_GET,'busca2',FILTER_SANITIZE_SPECIAL_CHARS);
+    
+    $val = $busca;
+    $val2 = $busca2;
+    // $academias = $dao->getByModal($modal);
+    // var_dump($academias);
+
+    //modalidades recebe a busca do get
+    $valor = [$busca];
+    $valor2 = [$busca2];
+    $academias = $dao->getByIntervalo($val, $val2);
+
     $quantidadeRegistros = count($academias);
+    
+
+
+    //Condições SQL
+    // $condicoes = [
+    //     strlen($busca) ? 'bairro LIKE "%'.$busca.'%" ' : null
+    // ];
+
+    // print_r($condicoes);
+
+    //Claúsula WHERE
+    // $where = implode('AND',$condicoes);
+    // echo $where;
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,15 +75,6 @@
             font-size: 22px;
             transition: 1s;
         }
-        .box2{
-            display: flex;
-            justify-content: center;
-            margin-right: 12px;
-        }
-        .box2 a{
-            margin-left: 5px;
-        }
-
     </style>
     <title>Academias</title>
 </head>
@@ -66,74 +87,63 @@
 
         <nav class="main_header_content_menu">
             <ul>
-                <li><a href="../login/painel.php">Voltar</a></li>
+                <li><a href="cliente_academia.php">Voltar</a></li>
             </ul>
         </nav>
     </div>
 </header>
 <!--Fim Cabeçalho-->
 <body>
-    <div class="box1">
-        <h1>Academias</h1>
+<div class="box1">
+        <h1>Digite a Modalidade Desejada:</h1>
+        <br>
         <div>
-            <p>
-                <a href="#" id="especificarBusca"><button>Filtrar Busca</button></a>
-            </p>
-            <div id="outrosBotoes" style="display: none;">
-                <div class="box2">
-                    <p>
-                        <a href="bairro.php"><button>Bairro</button></a>
-                    </p>
-                    <p>
-                        <a href="modalidade.php"><button>Modalidades</button></a>
-                    </p>
-                    <p>
-                        <a href="valores.php"><button>Valor</button></a>
-                    </p>
-
-                </div>
-            </div>
+            <form action="" method="get">
+                <label for="">Modalidades:</label>
+                <input type="text" name="busca" value="<?= $busca ?>">
+                <input type="text" name="busca2" value="<?= $busca2 ?>">
+                <button type="submit">Buscar</button>
+            </form>
         </div>
+        <br>
     </div>
     <div>
-    <?php if (isset($_GET['msg']) || isset($_GET['error'])) : ?>
-            <div class="<?= (isset($_GET['msg']) ? 'msg__success' : 'msg__error') ?>">
-                <p><?= $_GET['msg'] ?? $_GET['error'] ?></p>
-            </div>
-    <?php endif; ?>
-    </div>
-    <br>
-    <div>
-        <section>
+    <section>
             <table>
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>Nome</th>
-                        <th>CNPJ</th>
-                        <th>Horários</th>
-                        <th>Bairro</th>
                         <th>Modalidades</th>
+                        <th>Nome</th>
+                        <th>Horários</th>
                         <th>Valores</th>
-                        <!-- <th>Parceiro</th> -->
+                        <th>CEP</th>
+                        <th>Bairro</th>
+                        <th>Complemento</th>
+                        <th>Número</th>
                         <!-- <th>Ação</th> -->
                     </tr>
                 </thead>
                 <tbody>
                 <?php if ($quantidadeRegistros == "0"): ?>
                     <tr>
-                        <td colspan="7">Não existem usuários cadastrados.</td>
+                        <td colspan="13">Não existem academias com essa modalidade.</td>
                     </tr>
                 <?php else: ?>
                     <?php foreach ($academias as $academia) : ?>
                             <tr>
-                                <td><?php echo $academia['idAcademia'];?></td>
-                                <td><?= $academia['nome'];?></td>
-                                <td><?= $academia['cnpj'];?></td>
-                                <td><?= $academia['horarios'];?></td>
-                                <td><?= $academia['bairro'];?></td>
                                 <td><?= $academia['modalidades'];?></td>
+                                <td><?= $academia['nome'];?></td>
+                                <td><?= $academia['horarios'];?></td>
                                 <td><?= $academia['valores'];?></td>
+                                <td><?= $academia['cep'];?></td>
+                                <td><?= $academia['bairro'];?></td>
+                                <td><?= $academia['complemento'];?></td>
+                                <td><?= $academia['numero'];?></td>
+                                <!-- <td class="td__operacao">
+                                    <a class="btns" href="edit.php?id=<?=$academia['idAcademia'];?>">Alterar</a>
+                                    <br><br>
+                                    <a class="btns" href="delete.php?id=<?=$academia['idAcademia'];?>" onclick="return confirm('Deseja confirmar a operação?');">Excluir</a>
+                                </td> -->
                             </tr>
                             <?php endforeach; ?>
                         <?php endif; $dbh = null; ?>
@@ -142,13 +152,3 @@
         </section>
     </div>
 </body>
-<script>
-    document.getElementById('especificarBusca').addEventListener('click', function() {
-        var outrosBotoes = document.getElementById('outrosBotoes');
-        if (outrosBotoes.style.display === 'none') {
-            outrosBotoes.style.display = 'block';
-        } else {
-            outrosBotoes.style.display = 'none';
-        }
-    });
-</script>
