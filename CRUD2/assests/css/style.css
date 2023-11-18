@@ -102,6 +102,15 @@
     max-width: 1300px;
     padding: 170px 40px;
 }
+/*Video*/
+.video{
+    text-align: center;
+}
+.video h1{
+    font-size: 45px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
 
 /*2ª Dobra*/
 .db2 h1{
