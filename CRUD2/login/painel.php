@@ -25,6 +25,13 @@ $caminho_foto = UPLOAD_DIR . $foto_perfil;
     <link rel="stylesheet" href="../assests/css/foto_perfil.css"> <!--foto perfil-->
     <script src="index.js" defer></script>
     <title>Cliente</title>
+    <style>
+        .item:hover{
+            padding: 22px;
+            border: 10px solid green;
+            transition: 0.5s all;
+        }
+    </style>
 </head>
 <!--Cabeçalho-->
 <header class="main_header">

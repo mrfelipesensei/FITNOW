@@ -6,17 +6,17 @@
     // $academias = $dao->getAll();
     
 
-    $busca = filter_input(INPUT_GET,'busca',FILTER_SANITIZE_SPECIAL_CHARS);
-    $busca2 = filter_input(INPUT_GET,'busca2',FILTER_SANITIZE_SPECIAL_CHARS);
+    $inicio = filter_input(INPUT_GET,'inicio',FILTER_SANITIZE_SPECIAL_CHARS);
+    $fim = filter_input(INPUT_GET,'fim',FILTER_SANITIZE_SPECIAL_CHARS);
     
-    $val = $busca;
-    $val2 = $busca2;
+    $val = $inicio;
+    $val2 = $fim;
     // $academias = $dao->getByModal($modal);
     // var_dump($academias);
 
     //modalidades recebe a busca do get
-    $valor = [$busca];
-    $valor2 = [$busca2];
+    $valor = [$inicio];
+    $valor2 = [$fim];
     $academias = $dao->getByIntervalo($val, $val2);
 
     $quantidadeRegistros = count($academias);
@@ -75,6 +75,25 @@
             font-size: 22px;
             transition: 1s;
         }
+        .box1 form{
+            text-align: center;
+        }
+        .box1 label{
+            font-size: 25px;
+        }
+        .box1 input{
+            padding: 5px;
+            font-size: larger;
+        }
+        #focus{
+            font-size: 20px;
+            color: green;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+        #focus:hover{
+            font-size: 24px;
+        }
     </style>
     <title>Academias</title>
 </head>
@@ -95,13 +114,14 @@
 <!--Fim Cabeçalho-->
 <body>
 <div class="box1">
-        <h1>Digite a Modalidade Desejada:</h1>
+        <h1>Digite os Valores Desejados:</h1>
         <br>
         <div>
             <form action="" method="get">
-                <label for="">Modalidades:</label>
-                <input type="text" name="busca" value="<?= $busca ?>">
-                <input type="text" name="busca2" value="<?= $busca2 ?>">
+                <label for="">Valores De:</label>
+                <input type="text" name="inicio" value="<?= $inicio ?>">
+                <label for=""> Até </label>
+                <input type="text" name="fim" value="<?= $fim ?>">
                 <button type="submit">Buscar</button>
             </form>
         </div>
@@ -112,10 +132,10 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Modalidades</th>
+                        <th>Valores</th>
                         <th>Nome</th>
                         <th>Horários</th>
-                        <th>Valores</th>
+                        <th>Modalidades</th>
                         <th>CEP</th>
                         <th>Bairro</th>
                         <th>Complemento</th>
@@ -126,15 +146,15 @@
                 <tbody>
                 <?php if ($quantidadeRegistros == "0"): ?>
                     <tr>
-                        <td colspan="13">Não existem academias com essa modalidade.</td>
+                        <td colspan="13">Não existem academias com esses valores.</td>
                     </tr>
                 <?php else: ?>
                     <?php foreach ($academias as $academia) : ?>
                             <tr>
-                                <td><?= $academia['modalidades'];?></td>
+                                <td id="focus"><?= $academia['valores'];?></td>
                                 <td><?= $academia['nome'];?></td>
                                 <td><?= $academia['horarios'];?></td>
-                                <td><?= $academia['valores'];?></td>
+                                <td><?= $academia['modalidades'];?></td>
                                 <td><?= $academia['cep'];?></td>
                                 <td><?= $academia['bairro'];?></td>
                                 <td><?= $academia['complemento'];?></td>

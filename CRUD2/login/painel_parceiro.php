@@ -22,6 +22,13 @@ $userId = $_SESSION['idUsuario'];
     <script src="index.js" defer></script>
     <link rel="stylesheet" href="../assests/css/parceiro.css">
     <title>Parceiro</title>
+    <style>
+        .item:hover{
+            padding: 22px;
+            border: 10px solid green;
+            transition: 0.5s all;
+        }
+    </style>
 </head>
 <!--Cabeçalho-->
 <header class="main_header">

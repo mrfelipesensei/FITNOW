@@ -18,6 +18,13 @@ include("protect.php");
     <link rel="stylesheet" href="../assests/css/admin.css">
     <script src="index.js" defer></script>
     <title>ADMIN</title>
+    <style>
+        .item:hover{
+            padding: 22px;
+            border: 10px solid green;
+            transition: 0.5s all;
+        }
+    </style>
 </head>
 <!--Cabeçalho-->
 <header class="main_header">

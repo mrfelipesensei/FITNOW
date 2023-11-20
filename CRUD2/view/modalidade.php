@@ -72,6 +72,25 @@
             font-size: 22px;
             transition: 1s;
         }
+        .box1 form{
+            text-align: center;
+        }
+        .box1 label{
+            font-size: 25px;
+        }
+        .box1 input{
+            padding: 5px;
+            font-size: larger;
+        }
+        #focus{
+            font-size: 20px;
+            color: green;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+        #focus:hover{
+            font-size: 24px;
+        }
     </style>
     <title>Academias</title>
 </head>
@@ -127,7 +146,7 @@
                 <?php else: ?>
                     <?php foreach ($academias as $academia) : ?>
                             <tr>
-                                <td><?= $academia['modalidades'];?></td>
+                                <td id="focus"><?= $academia['modalidades'];?></td>
                                 <td><?= $academia['nome'];?></td>
                                 <td><?= $academia['horarios'];?></td>
                                 <td><?= $academia['valores'];?></td>
