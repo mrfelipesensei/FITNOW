@@ -49,8 +49,15 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
     <link rel="stylesheet" href="../assests/css/table.css"> <!--estilo tabela-->
     <link rel="stylesheet" href="assests/css/index_style.css">
     <link rel="stylesheet" href="../assests/css/cliente_user.css">
+    <link rel="stylesheet" href="../assests/css/foto_perfil.css"> <!--foto perfil-->
     <link rel="shortcut icon" href="../img/icons8-marcador-50.png">
     <title>Alterar Usuário</title>
+    <style>
+        #form_atualizacao{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
 </head>
 <!--Cabeçalho-->
 <header class="main_header">
