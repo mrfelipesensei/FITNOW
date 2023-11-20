@@ -90,6 +90,17 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
             </p>
         </div>
     </div>
+    <br>
+    <div>
+        <form action="atualizar_foto_perfil.php" method="post" enctype="multipart/form-data">
+            <input type="file" name="nova_foto_perfil" accept="image/*">
+            <input type="submit" value="Atualizar Foto">
+        </form>
+    </div>
+    <br>
+    <!-- <?php
+        var_dump($_SESSION['usuario']['foto_perfil']);
+    ?> -->
     <!-- <p>
         <a href="logout.php">Sair</a>
     </p> -->

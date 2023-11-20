@@ -80,4 +80,17 @@ class UsuarioDAO{
         $this->dbh = null;
         return $result;
     }
+
+    public function atualizarFotoPerfil($userId, $foto_nome) {
+        // Lógica para atualizar a foto do perfil no banco de dados
+        // Substitua essas linhas pela lógica específica do seu banco de dados
+
+        $query = "UPDATE usuarios SET foto_perfil = :foto WHERE idUsuario = :id";
+
+        $stmt = $this->dbh->prepare($query);
+        $stmt->bindParam(':foto', $foto_nome);
+        $stmt->bindParam(':id', $userId);
+        
+        return $stmt->execute();
+    }
 }
