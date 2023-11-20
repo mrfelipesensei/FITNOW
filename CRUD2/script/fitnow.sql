@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17-Nov-2023 às 13:40
--- Versão do servidor: 10.4.24-MariaDB
--- versão do PHP: 8.1.6
+-- Tempo de geração: 20/11/2023 às 21:50
+-- Versão do servidor: 10.4.28-MariaDB
+-- Versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,13 +20,11 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `fitnow`
 --
-drop database if exists fitnow;
-create database fitnow;
-use fitnow;
+
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `academias`
+-- Estrutura para tabela `academias`
 --
 
 CREATE TABLE `academias` (
@@ -40,10 +38,10 @@ CREATE TABLE `academias` (
   `bairro` varchar(45) NOT NULL,
   `complemento` varchar(45) NOT NULL,
   `numero` varchar(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `academias`
+-- Despejando dados para a tabela `academias`
 --
 
 INSERT INTO `academias` (`idAcademia`, `nome`, `cnpj`, `horarios`, `modalidades`, `valores`, `cep`, `bairro`, `complemento`, `numero`) VALUES
@@ -74,7 +72,7 @@ INSERT INTO `academias` (`idAcademia`, `nome`, `cnpj`, `horarios`, `modalidades`
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuarios`
+-- Estrutura para tabela `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -85,10 +83,10 @@ CREATE TABLE `usuarios` (
   `senha` varchar(10) NOT NULL,
   `perfil` varchar(30) NOT NULL,
   `foto_perfil` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `usuarios`
+-- Despejando dados para a tabela `usuarios`
 --
 
 INSERT INTO `usuarios` (`idUsuario`, `nome`, `cpf`, `email`, `senha`, `perfil`, `foto_perfil`) VALUES
@@ -98,21 +96,21 @@ INSERT INTO `usuarios` (`idUsuario`, `nome`, `cpf`, `email`, `senha`, `perfil`, 
 (6, 'Steve Jobs', 51598300000, 'mac_daddy@gmail.com', '321', 'Parceiro', NULL),
 (10, 'Karine', 12377, 'karine_k@gmail.com', '741', 'Cliente', NULL),
 (11, 'Teste', 45456500, 'teste@gmail.com', '4545', 'Cliente', NULL),
-(13, 'Ronie', 111111000000000, 'ronie@exemplo.com', '123', 'Cliente', '65575c2f49ba78.63968102.jpg');
+(13, 'Ronie', 4757900, 'ronie@exemplo.com', '123', 'Cliente', '65575c2f49ba78.63968102.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuario_academia`
+-- Estrutura para tabela `usuario_academia`
 --
 
 CREATE TABLE `usuario_academia` (
   `idUsuario` int(11) NOT NULL,
   `idAcademia` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `usuario_academia`
+-- Despejando dados para a tabela `usuario_academia`
 --
 
 INSERT INTO `usuario_academia` (`idUsuario`, `idAcademia`) VALUES
@@ -123,13 +121,13 @@ INSERT INTO `usuario_academia` (`idUsuario`, `idAcademia`) VALUES
 --
 
 --
--- Índices para tabela `academias`
+-- Índices de tabela `academias`
 --
 ALTER TABLE `academias`
   ADD PRIMARY KEY (`idAcademia`);
 
 --
--- Índices para tabela `usuarios`
+-- Índices de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`idUsuario`),
@@ -137,14 +135,14 @@ ALTER TABLE `usuarios`
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Índices para tabela `usuario_academia`
+-- Índices de tabela `usuario_academia`
 --
 ALTER TABLE `usuario_academia`
   ADD KEY `test` (`idAcademia`),
   ADD KEY `test2` (`idUsuario`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
