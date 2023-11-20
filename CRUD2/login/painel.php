@@ -36,9 +36,6 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
             border: 10px solid green;
             transition: 0.5s all;
         }
-        #foto{
-            cursor: pointer;
-        }
     </style>
 </head>
 <!--Cabeçalho-->
@@ -61,12 +58,6 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
         <div id="foto">
             <img src="<?=$caminho_foto ?>" alt="imagem do Usuário" id="perfil_img">
         </div>
-    </div>
-    <div id="form_atualizacao" style="display: none;">
-        <form action="atualizar_foto_perfil.php" method="post" enctype="multipart/form-data">
-            <input type="file" name="nova_foto_perfil" accept="image/*">
-            <input type="submit" value="Atualizar Foto">
-        </form>
     </div>
     <div>
         <p id="bemvindo">
@@ -100,28 +91,5 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
         </div>
     </div>
     <br>
-    <!-- <?php
-        var_dump($_SESSION['usuario']['foto_perfil']);
-    ?> -->
-    <!-- <p>
-        <a href="logout.php">Sair</a>
-    </p> -->
-
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var fotoPerfil = document.getElementById('perfil_img');
-        var formAtualizacao = document.getElementById('form_atualizacao');
-
-        fotoPerfil.addEventListener('click', function() {
-            if (formAtualizacao.style.display === 'none') {
-                formAtualizacao.style.display = 'block';
-            } else {
-                formAtualizacao.style.display = 'none';
-            }
-        });
-    });
-</script>
-
 </body>
 </html>
