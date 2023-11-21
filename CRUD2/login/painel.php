@@ -83,7 +83,7 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
         </div>
         <div class="item">
             <p>
-                <a href="../erro.php">
+                <a href="../view/clienteplus.php">
                     <img src="../img/clienteplus.png" alt="">
                     <p class="text">Assinatura Plus</p>
                 </a>
