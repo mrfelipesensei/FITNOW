@@ -13,6 +13,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['assinar'])) {
 
     // Atualiza o perfil para Cliente Plus
     $_SESSION['perfil'] = 'Cliente+';
+
+    // Atualiza o perfil no banco de dados
+    $userId = $_SESSION['idUsuario'];
+    $novoPerfil = $_SESSION['perfil'];
+
+    // Conexão com o banco de dados (substitua com suas credenciais)
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "fitnow";
+
+    // Cria conexão
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Verifica a conexão
+    if ($conn->connect_error) {
+        die("Conexão falhou: " . $conn->connect_error);
+    }
+
+    // Query para atualizar o perfil na tabela de usuários
+    $sql = "UPDATE usuarios SET perfil = '$novoPerfil' WHERE idUsuario = '$userId'";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Perfil atualizado no banco de dados com sucesso.";
+    } else {
+        echo "Erro ao atualizar perfil: " . $conn->error;
+    }
+
+    $conn->close();
     
     // Redireciona para esta mesma página ou outra página
     echo "ASSINOU!";
@@ -21,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['assinar'])) {
 }
 
 $userPerfil = $_SESSION['perfil'];
-var_dump($userPerfil);
+// var_dump($userPerfil);
 ?>
 
 <!DOCTYPE html>
