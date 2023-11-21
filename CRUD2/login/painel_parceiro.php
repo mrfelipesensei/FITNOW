@@ -4,6 +4,16 @@ include("protect.php");
 $userId = $_SESSION['idUsuario'];
 // var_dump($userId);
 
+const UPLOAD_DIR = "../img/usuarios/";
+$foto_perfil = $_SESSION['usuario']['foto_perfil'];
+$caminho_foto = UPLOAD_DIR . $foto_perfil;
+
+
+//se não houver foto cadastrada então redireciona para uma foto
+if (!file_exists($caminho_foto) || empty($foto_perfil)) {
+    $caminho_foto = "../img/usuarios/user.png"; // Caminho para a foto padrão
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,6 +31,7 @@ $userId = $_SESSION['idUsuario'];
     <link rel="stylesheet" href="../assests/css/admin.css">
     <script src="index.js" defer></script>
     <link rel="stylesheet" href="../assests/css/parceiro.css">
+    <link rel="stylesheet" href="../assests/css/foto_perfil.css"> <!--foto perfil-->
     <title>Parceiro</title>
     <style>
         .item:hover{
@@ -46,6 +57,11 @@ $userId = $_SESSION['idUsuario'];
 </header>
 <!--Fim Cabeçalho-->
 <body>
+    <div id="container_foto">
+        <div id="foto">
+            <img src="<?=$caminho_foto ?>" alt="imagem do Usuário" id="perfil_img">
+        </div>
+    </div>
     <div>
         <p id="bemvindo">
             Bem vindo ao Painel, <?php echo $_SESSION["nome"]; ?>.

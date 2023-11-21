@@ -20,6 +20,7 @@
             font-weight: bolder;
             font-size: 35px;
             color: white;
+            margin-bottom: 10px;
         }
     </style>
     <title>Criar Usuário</title>
@@ -42,6 +43,15 @@
 <!--Fim Cabeçalho-->
 <body>
     <div class="box_container" >
+        <div id="aviso_box">
+            <div id="aviso">
+                <?php if (isset($_GET['msg']) || isset($_GET['error'])) : ?>
+                    <div class="<?= (isset($_GET['msg']) ? 'msg__success' : 'msg__error') ?>">
+                        <p><?= $_GET['msg'] ?? $_GET['error'] ?></p>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
         <div class="alterar" >
             <h1>Novo Usuário</h1>
             <br>
@@ -81,23 +91,13 @@
                         <option value="Parceiro">Parceiro</option>
                     </select>
                 </div>
-                <br><br>
+                <br>
                 <p>
                     <button type="submit">Salvar</button>
                 </p>
             </form>
         </div>
         <br>
-        <div id="aviso_box">
-            <div id="aviso">
-                <?php if (isset($_GET['msg']) || isset($_GET['error'])) : ?>
-                        <div class="<?= (isset($_GET['msg']) ? 'msg__success' : 'msg__error') ?>">
-                            <p><?= $_GET['msg'] ?? $_GET['error'] ?></p>
-
-                        </div>
-                <?php endif; ?>
-            </div>
-        </div>
     </div>
 </body>
 <!--Rodapé-->

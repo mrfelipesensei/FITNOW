@@ -21,6 +21,19 @@ $stmt->execute();
 $usuario = $stmt->fetch();
 $dbh = null;
 
+//Foto
+$userId = $_SESSION['idUsuario'];
+const UPLOAD_DIR = "../img/usuarios/";
+$foto_perfil = $_SESSION['usuario']['foto_perfil'];
+$caminho_foto = UPLOAD_DIR . $foto_perfil;
+// var_dump($caminho_foto );
+// var_dump($_SESSION['usuario']['foto_perfil'] );
+
+//se não houver foto cadastrada então redireciona para uma foto
+if (!file_exists($caminho_foto) || empty($foto_perfil)) {
+    $caminho_foto = "../img/usuarios/user.png"; // Caminho para a foto padrão
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +50,14 @@ $dbh = null;
     <link rel="stylesheet" href="assests/css/index_style.css">
     <link rel="shortcut icon" href="../img/icons8-marcador-50.png">
     <link rel="stylesheet" href="../assests/css/cliente_user.css">
+    <link rel="stylesheet" href="../assests/css/foto_perfil.css"> <!--foto perfil-->
     <title>Alterar Usuário</title>
+    <style>
+        #form_atualizacao{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
 </head>
 <!--Cabeçalho-->
 <header class="main_header">
@@ -55,6 +75,18 @@ $dbh = null;
 </header>
 <!--Fim Cabeçalho-->
 <body>
+    <div id="container_foto">
+        <div id="foto">
+            <img src="<?=$caminho_foto ?>" alt="imagem do Usuário" id="perfil_img">
+        </div>
+    </div>
+    <br>
+    <div id="form_atualizacao">
+        <form action="atualizar_foto_parceiro.php" method="post" enctype="multipart/form-data">
+            <input type="file" name="nova_foto_perfil" accept="image/*">
+            <input type="submit" value="Atualizar Foto">
+        </form>
+    </div>
     <div class="box_container" >
         <div class="alterar" >
             <h1>Alterar Usuário</h1>
@@ -69,7 +101,7 @@ $dbh = null;
                 <br>
                 <div>
                     <label for="cpf">CPF:</label>
-                    <input type="text" name="cpf" id="" maxlength="15" value="<?= htmlspecialchars($usuario['cpf']) ?>"><br>
+                    <input type="text" name="cpf" id="" maxlength="15" value="<?= htmlspecialchars($usuario['cpf']) ?>" readonly><br>
                 </div>
                 <br>
                 <div>

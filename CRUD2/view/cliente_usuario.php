@@ -101,7 +101,7 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
                 <br>
                 <div>
                     <label for="cpf">CPF:</label>
-                    <input type="text" name="cpf" id="" maxlength="15" value="<?= htmlspecialchars($usuario['cpf']) ?>"><br>
+                    <input type="text" name="cpf" id="" maxlength="15" value="<?= htmlspecialchars($usuario['cpf']) ?>" readonly><br>
                 </div>
                 <br>
                 <div>
