@@ -44,7 +44,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['assinar'])) {
     $conn->close();
     
     // Redireciona para esta mesma página ou outra página
-    echo "ASSINOU!";
     // header("Location: esta_mesma_pagina.php"); // Altere para a página desejada
     exit();
 }
