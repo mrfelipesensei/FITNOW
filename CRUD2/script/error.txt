@@ -1,0 +1,5 @@
+--Os comandos que seguem devem estar dentro de fitnow.sql
+
+DROP DATABASE IF EXISTS `fitnow`;
+CREATE DATABASE `fitnow`;
+USE `fitnow`;
