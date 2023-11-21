@@ -34,6 +34,26 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
     $caminho_foto = "../img/usuarios/user.png"; // Caminho para a foto padrão
 }
 
+//Botão Voltar Cliente Plus
+// $userPerfil = $_SESSION['perfil'];
+// var_dump($userPerfil);
+
+function getLinkVoltar() {
+    if(isset($_SESSION['perfil'])) {
+        $perfil = $_SESSION['perfil'];
+        switch($perfil) {
+            case 'Cliente':
+                return '../login/painel.php'; // Redirecionar para a página 1
+            case 'Cliente+':
+                return '../login/painelplus.php'; // Redirecionar para a página 2
+            // Adicione mais casos conforme necessário para outros perfis
+            default:
+                return '../pagina_padrao.php'; // Redirecionar para uma página padrão se o perfil não for reconhecido
+        }
+    } else {
+        return '../pagina_padrao.php'; // Redirecionar para uma página padrão se o perfil não estiver definido
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,7 +88,7 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
 
         <nav class="main_header_content_menu">
             <ul>
-                <li><a href="../login/painel.php">Voltar</a></li>
+                <li><a href="<?php echo getLinkVoltar(); ?>">Voltar</a></li>
             </ul>
         </nav>
     </div>

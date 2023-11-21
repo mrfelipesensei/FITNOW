@@ -29,6 +29,13 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
     <link rel="stylesheet" href="../assests/css/admin.css">
     <link rel="stylesheet" href="../assests/css/foto_perfil.css"> <!--foto perfil-->
     <script src="index.js" defer></script>
+    <style>
+        .item:hover{
+            padding: 22px;
+            border: 10px solid green;
+            transition: 0.5s all;
+        }
+    </style>
     <title>Cliente+</title>
 </head>
 <!--Cabeçalho-->
@@ -69,7 +76,7 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
         <div class="item">
             <p>
                 <a href="../view/clienteplus.php">
-                    <img src="../img/clienteplus.png" alt="">
+                    <img src="../img/gym.png" alt="">
                     <p class="text">Academias Matriculadas</p>
                 </a>
             </p>
@@ -86,7 +93,7 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
             <p>
                 <a href="../view/clienteplus.php">
                     <img src="../img/clienteplus.png" alt="">
-                    <p class="text">Minha Assinatura</p>
+                    <p class="text">Alterar minha Assinatura</p>
                 </a>
             </p>
         </div>
