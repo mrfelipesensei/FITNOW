@@ -1,0 +1,32 @@
+.box1 h1{
+    text-align: center;
+    margin-top: 15px;
+    font-size: 25px;
+}
+.box1 p{
+    margin-top: 10px;
+    text-align: center;
+}
+.box1 button{
+    background-color: rgb(158, 20, 20);
+    color:#fff;
+    font-size: 20px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: none;
+}
+.box1 button:hover{
+    background-color: rgb(80, 217, 30);
+    color:black;
+    cursor: pointer;
+    font-size: 22px;
+    transition: 1s;
+}
+.box2{
+    display: flex;
+    justify-content: center;
+    margin-right: 12px;
+}
+.box2 a{
+    margin-left: 10px;
+}

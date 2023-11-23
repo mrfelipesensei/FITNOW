@@ -28,6 +28,7 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
     <link rel="stylesheet" href="../assests/css/login_style.css">
     <link rel="stylesheet" href="../assests/css/admin.css">
     <link rel="stylesheet" href="../assests/css/foto_perfil.css"> <!--foto perfil-->
+    <link rel="shortcut icon" href="../img/icons8-marcador-50.png">
     <script src="index.js" defer></script>
     <style>
         .item:hover{
@@ -101,7 +102,7 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
         </div>
         <div class="item">
             <p>
-                <a href="#">
+                <a href="../view/alterarplus.php">
                     <img src="../img/clienteplus.png" alt="">
                     <p class="text">Alterar minha Assinatura</p>
                 </a>

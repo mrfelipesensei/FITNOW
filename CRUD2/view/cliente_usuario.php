@@ -76,6 +76,23 @@ function getLinkVoltar() {
         #form_atualizacao{
             display: flex;
             justify-content: center;
+            font-size: larger;
+        }
+        #fto_btn{
+            background-color: rgb(158, 20, 20);
+            color:#fff;
+            font-size: 20px;
+            padding: 10px 40px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 5px;
+        }
+        #fto_btn:hover{
+            background-color: rgb(80, 217, 30);
+            color:black;
+            cursor: pointer;
+            font-size: 22px;
+            transition: 1s;
         }
     </style>
 </head>
@@ -104,7 +121,7 @@ function getLinkVoltar() {
     <div id="form_atualizacao">
         <form action="atualizar_foto_perfil.php" method="post" enctype="multipart/form-data">
             <input type="file" name="nova_foto_perfil" accept="image/*">
-            <input type="submit" value="Atualizar Foto">
+            <input id="fto_btn" type="submit" value="Atualizar Foto">
         </form>
     </div>
     <div class="box_container">
