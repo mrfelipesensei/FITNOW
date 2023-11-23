@@ -36,6 +36,13 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
             border: 10px solid green;
             transition: 0.5s all;
         }
+        #aviso{
+            margin-top: 5px;
+            font-size: 30px;
+            color: green;
+            font-weight: bolder;
+            text-align: center;
+        }
     </style>
     <title>Cliente+</title>
 </head>

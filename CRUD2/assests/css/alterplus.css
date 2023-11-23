@@ -30,3 +30,9 @@
 .box2 a{
     margin-left: 10px;
 }
+
+.box3{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}

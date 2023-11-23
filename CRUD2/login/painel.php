@@ -36,6 +36,13 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
             border: 10px solid green;
             transition: 0.5s all;
         }
+        #aviso{
+            margin-top: 5px;
+            font-size: 30px;
+            color: red;
+            font-weight: bolder;
+            text-align: center;
+        }
     </style>
 </head>
 <!--Cabeçalho-->
@@ -54,6 +61,16 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
 </header>
 <!--Fim Cabeçalho-->
 <body>
+    <div class="box_container" >
+        <div id="aviso_box">
+            <div id="aviso">
+                <?php if (isset($_GET['msg']) || isset($_GET['error'])) : ?>
+                    <div class="<?= (isset($_GET['msg']) ? 'msg__success' : 'msg__error') ?>">
+                        <p><?= $_GET['msg'] ?? $_GET['error'] ?></p>
+                    </div>
+            <?php endif; ?>
+        </div>
+    </div>
     <div id="container_foto">
         <div id="foto">
             <img src="<?=$caminho_foto ?>" alt="imagem do Usuário" id="perfil_img">
