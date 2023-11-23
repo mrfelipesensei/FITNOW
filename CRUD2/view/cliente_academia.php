@@ -5,6 +5,29 @@
     $dao = new AcademiaDAO();
     $academias = $dao->getAll();
     $quantidadeRegistros = count($academias);
+
+    //Pegando o perfil do usuário
+    include("../login/protect.php");
+    $userPerfil = $_SESSION['perfil'];
+    // var_dump($userPerfil);
+
+    //botão Voltar Cliente Plus
+    function getLinkVoltar() {
+        if(isset($_SESSION['perfil'])) {
+            $perfil = $_SESSION['perfil'];
+            switch($perfil) {
+                case 'Cliente':
+                    return '../login/painel.php'; // Redirecionar para a página 1
+                case 'Cliente+':
+                    return '../login/painelplus.php'; // Redirecionar para a página 2
+                // Adicione mais casos conforme necessário para outros perfis
+                default:
+                    return '../pagina_padrao.php'; // Redirecionar para uma página padrão se o perfil não for reconhecido
+            }
+        } else {
+            return '../pagina_padrao.php'; // Redirecionar para uma página padrão se o perfil não estiver definido
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +89,7 @@
 
         <nav class="main_header_content_menu">
             <ul>
-                <li><a href="../login/painel.php">Voltar</a></li>
+                <li><a href="<?php echo getLinkVoltar(); ?>">Voltar</a></li>
             </ul>
         </nav>
     </div>

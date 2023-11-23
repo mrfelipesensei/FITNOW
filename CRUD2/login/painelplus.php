@@ -54,6 +54,16 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
 </header>
 <!--Fim Cabeçalho-->
 <body>
+    <div class="box_container" >
+        <div id="aviso_box">
+            <div id="aviso">
+                <?php if (isset($_GET['msg']) || isset($_GET['error'])) : ?>
+                    <div class="<?= (isset($_GET['msg']) ? 'msg__success' : 'msg__error') ?>">
+                        <p><?= $_GET['msg'] ?? $_GET['error'] ?></p>
+                    </div>
+            <?php endif; ?>
+        </div>
+    </div>
     <div id="container_foto">
         <div id="foto">
             <img src="<?=$caminho_foto ?>" alt="imagem do Usuário" id="perfil_img">
@@ -75,7 +85,7 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
         </div>
         <div class="item">
             <p>
-                <a href="../view/clienteplus.php">
+                <a href="#">
                     <img src="../img/gym.png" alt="">
                     <p class="text">Academias Matriculadas</p>
                 </a>
@@ -91,7 +101,7 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
         </div>
         <div class="item">
             <p>
-                <a href="../view/clienteplus.php">
+                <a href="#">
                     <img src="../img/clienteplus.png" alt="">
                     <p class="text">Alterar minha Assinatura</p>
                 </a>
