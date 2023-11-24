@@ -26,7 +26,8 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
     <link rel="stylesheet" href="assests/css/index_style.css">
     <link rel="shortcut icon" href="img/icons8-marcador-50.png">
     <link rel="stylesheet" href="../assests/css/login_style.css">
-    <link rel="stylesheet" href="../assests/css/admin.css">
+    <!-- <link rel="stylesheet" href="../assests/css/admin.css"> -->
+    <link rel="stylesheet" href="../assests/css/clienteplus.css">
     <link rel="stylesheet" href="../assests/css/foto_perfil.css"> <!--foto perfil-->
     <link rel="shortcut icon" href="../img/icons8-marcador-50.png">
     <script src="index.js" defer></script>
@@ -96,6 +97,14 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
                 <a href="#">
                     <img src="../img/gym.png" alt="">
                     <p class="text">Academias Matriculadas</p>
+                </a>
+            </p>
+        </div>
+        <div class="item">
+            <p>
+                <a href="#">
+                    <img src="../img/gym.png" alt="">
+                    <p class="text">Carteira Digital</p>
                 </a>
             </p>
         </div>

@@ -92,11 +92,11 @@
                     <tr>
                         <th>#</th>
                         <th>Nome</th>
-                        <th>CNPJ</th>
+                        <!-- <th>CNPJ</th> -->
                         <th>Horários</th>
                         <th>Modalidades</th>
                         <th>Valores</th>
-                        <th>CEP</th>
+                        <!-- <th>CEP</th> -->
                         <th>Bairro</th>
                         <th>Complemento</th>
                         <th>Número</th>
@@ -113,11 +113,11 @@
                             <tr>
                                 <td><?php echo $academia['idAcademia'];?></td>
                                 <td><?= $academia['nome'];?></td>
-                                <td><?= $academia['cnpj'];?></td>
+                                <!-- <td><?= $academia['cnpj'];?></td> -->
                                 <td><?= $academia['horarios'];?></td>
                                 <td><?= $academia['modalidades'];?></td>
                                 <td><?= $academia['valores'];?></td>
-                                <td><?= $academia['cep'];?></td>
+                                <!-- <td><?= $academia['cep'];?></td> -->
                                 <td><?= $academia['bairro'];?></td>
                                 <td><?= $academia['complemento'];?></td>
                                 <td><?= $academia['numero'];?></td>
