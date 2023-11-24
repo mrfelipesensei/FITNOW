@@ -11,6 +11,7 @@
     //Associação para resgatar as informações de Academia Específica pelo idAcademia
     $dao = new AcademiaDAO();
     $academias = $dao->getById($idAcademia);
+    
 
     // var_dump($academias);
 
@@ -30,6 +31,38 @@
     <link rel="stylesheet" href="assests/css/index_style.css">
     <link rel="shortcut icon" href="../img/icons8-marcador-50.png">
     <title>Academia Tal</title>
+    <style>
+        .box_container{
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+        .box1{
+            margin-top: 2%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box2{
+            border: 9px solid rgb(158, 20, 20);
+            border-radius: 45px;
+            padding: 20px;
+        }
+
+        .academia-info {
+            margin-bottom: 10px;
+        }
+
+        .info-key {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .info-value {
+            font-size: 20px;
+            color: #333; /* Cor do texto */
+        }
+    </style>
 </head>
 <!--Cabeçalho-->
 <header class="main_header">
@@ -46,3 +79,37 @@
     </div>
 </header>
 <!--Fim Cabeçalho-->
+<body>
+    <div class="box_container">
+        <div class="box1">
+            <div class="box2">
+                <?php
+                    if (is_array($academias) && count($academias) > 0) {
+                        $keys = array_keys($academias);
+
+                        // Filtra apenas as chaves associativas
+                        $associativeKeys = array_filter($keys, 'is_string');
+
+                        foreach ($associativeKeys as $key) {
+                            if ($key !== 'idAcademia') { // Ignora a chave 'idAcademia'
+                                $formattedKey = ucfirst($key); // Formata a chave para iniciar com maiúscula
+                                $value = $academias[$key]; // Obtém o valor correspondente
+
+                                // Exibe apenas se o valor não for 'idAcademia'
+                                echo "<p class='academia-info'><span class='info-key'>$formattedKey:</span> <span class='info-value'>$value</span></p>";
+                            }
+                        }
+                    } else {
+                        echo "Nenhuma informação encontrada para esta academia.";
+                    }
+                ?>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="box2">
+                    
+            </div>
+        </div>            
+    </div>
+
+</body>
