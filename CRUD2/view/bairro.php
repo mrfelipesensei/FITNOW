@@ -18,6 +18,11 @@
 
     $quantidadeRegistros = count($bairros);
     
+    include ("../login/protect.php");
+    $userPerfil = $_SESSION['perfil'];
+    // var_dump($userPerfil);
+
+    
 
 
     //Condições SQL
@@ -91,6 +96,9 @@
         #focus:hover{
             font-size: 22px;
         }
+        a{
+            color: green;
+        }
     </style>
     <title>Academias</title>
 </head>
@@ -146,7 +154,12 @@
                 <?php else: ?>
                     <?php foreach ($bairros as $bairro) : ?>
                             <tr>
-                                <td id="focus"><?= $bairro['bairro'];?></td>
+                                <!--Redireciona para a página de fotos da Academia e para sua Matrícula-->
+                                <td id="focus">
+                                    <a href="academia_page.php?idAcademia=<?= $bairro['idAcademia'];?>">
+                                        <?= $bairro['bairro'];?>
+                                    </a>
+                                </td>
                                 <td><?= $bairro['nome'];?></td>
                                 <td><?= $bairro['horarios'];?></td>
                                 <td><?= $bairro['modalidades'];?></td>
