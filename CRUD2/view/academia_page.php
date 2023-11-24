@@ -11,9 +11,11 @@
     //Associação para resgatar as informações de Academia Específica pelo idAcademia
     $dao = new AcademiaDAO();
     $academias = $dao->getById($idAcademia);
-    
-
     // var_dump($academias);
+
+    include ("../login/protect.php");
+    $userPerfil = $_SESSION['perfil'];
+    // var_dump($userPerfil);
 
 ?>
 <!DOCTYPE html>
@@ -30,7 +32,7 @@
     <link rel="stylesheet" href="../assests/css/table.css"> <!--estilo tabela-->
     <link rel="stylesheet" href="assests/css/index_style.css">
     <link rel="shortcut icon" href="../img/icons8-marcador-50.png">
-    <title>Academia Tal</title>
+    <title><?= $academias['nome']; ?></title>
     <style>
         .box_container{
             display: flex;
@@ -64,6 +66,29 @@
         }
         .item img{
             width: 450px;
+        }
+        #btns{
+            text-align: center;
+            width: 100%;
+        }
+        #btns p{
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+        #btns button{
+            background-color: rgb(158, 20, 20);
+            color:#fff;
+            font-size: 25px;
+            padding: 10px 25px;
+            border-radius: 5px;
+            border: none;
+        }
+        #btns button:hover{
+            background-color: rgb(80, 217, 30);
+            color:black;
+            cursor: pointer;
+            font-size: 30px;
+            transition: 1s;
         }
     </style>
 </head>
@@ -210,4 +235,15 @@
         </div>            
     </div>
     <br>
+    <div id="btns">
+        <?php
+            if ($userPerfil == 'Cliente+') {
+                echo '<a href="pagina_matricula.php"><button>Treinar Já!</button></a>';
+            } else if ($userPerfil == 'Cliente') {
+                echo '<p>Quer treinar?</p>';
+                echo '<a href="clienteplus.php"><button>Seja Plus</button></a>';
+            }
+        ?>
+    </div>
+    <br><br>
 </body>
