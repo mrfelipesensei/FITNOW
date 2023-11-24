@@ -21,7 +21,8 @@
 
     $quantidadeRegistros = count($academias);
     
-
+    include ("../login/protect.php");
+    $userPerfil = $_SESSION['perfil'];
 
     //Condições SQL
     // $condicoes = [
@@ -94,6 +95,9 @@
         #focus:hover{
             font-size: 24px;
         }
+        a{
+            color: green;
+        }
     </style>
     <title>Academias</title>
 </head>
@@ -151,7 +155,12 @@
                 <?php else: ?>
                     <?php foreach ($academias as $academia) : ?>
                             <tr>
-                                <td id="focus"><?= $academia['valores'];?></td>
+                                <!--Redireciona para a página da Academia-->
+                                <td id="focus">
+                                    <a href="academia_page.php?idAcademia=<?= $academia['idAcademia'];?>">
+                                        <?= $academia['valores'];?>
+                                    </a>
+                                </td>
                                 <td><?= $academia['nome'];?></td>
                                 <td><?= $academia['horarios'];?></td>
                                 <td><?= $academia['modalidades'];?></td>
