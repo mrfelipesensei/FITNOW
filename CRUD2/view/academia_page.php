@@ -4,6 +4,15 @@
 
     // var_dump($idAcademia);
 
+    //Informações das Academias
+    require_once '../src/databases/conexao.php';
+    require_once '../src/dao/academiadao.php';
+
+    //Associação para resgatar as informações de Academia Específica pelo idAcademia
+    $dao = new AcademiaDAO();
+    $academias = $dao->getById($idAcademia);
+
+    // var_dump($academias);
 
 ?>
 <!DOCTYPE html>
