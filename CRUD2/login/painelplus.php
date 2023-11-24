@@ -32,9 +32,9 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
     <link rel="shortcut icon" href="../img/icons8-marcador-50.png">
     <script src="index.js" defer></script>
     <style>
-        .item:hover{
-            padding: 22px;
-            border: 10px solid green;
+        .item:hover, .item_:hover{
+            /* padding: 22px; */
+            border: 15px solid green;
             transition: 0.5s all;
         }
         #aviso{
@@ -103,7 +103,7 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
         <div class="item">
             <p>
                 <a href="#">
-                    <img src="../img/gym.png" alt="">
+                    <img src="../img/digital-wallet.png" alt="">
                     <p class="text">Carteira Digital</p>
                 </a>
             </p>
@@ -116,7 +116,9 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
                 </a>
             </p>
         </div>
-        <div class="item">
+    </div>
+    <div class="box2">
+        <div class="item_">
             <p>
                 <a href="../view/alterarplus.php">
                     <img src="../img/clienteplus.png" alt="">
@@ -124,6 +126,7 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
                 </a>
             </p>
         </div>
-    </div>
+    </div> 
+    <br>      
 </body>
 </html>

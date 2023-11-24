@@ -62,6 +62,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cancelar'])) {
     <link href="../assests/css/alterplus.css" rel="stylesheet">
     <link rel="shortcut icon" href="../img/icons8-marcador-50.png">
     <title>Cliente+</title>
+    <style>
+        .box_{
+            margin-top: 20px;
+            text-align: center;
+        }
+        #mercado{
+            margin-top: 15px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        #mercado img{
+            width: 300px;
+        }
+        #mercado img:hover{
+            transition: 0.5s all;
+            width: 350px;
+        }
+    </style>
 </head>
 <!--Cabeçalho-->
 <header class="main_header">
@@ -81,6 +99,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cancelar'])) {
 <body>
     <div class="box1">
         <h1>Alterar Assinatura Plus</h1>
+        <div class="box_">
+            <h2>Entre com sua Conta Mercado Pago</h2>
+            <br>
+            <div id="mercado">
+                <a href="https://www.mercadolivre.com/jms/mlb/lgz/msl/login/H4sIAAAAAAAEA5WRTU7DMBCF75IFK9IKFVpRKUJJQZWAlJ8KxG7k2mPHrR0H26kbUO-OXbgAy_fNvHnj8XemjJAt-KHDbJ7hoVOSSp-dZ50inhurQbJY0F1ETnr8k2qTWoglGj1al82_0yCBrMJoSqO87TH2kN43wJUJEZ2iIpMO8BBtLVEQcLOXmKqcKJccwkTReN-5-XgcQhhptJQw0xFhRtTo0caOOdoU3Xri8rRFvseWoR0r2e5yhpGJU9ncnGniPXhjVDG7ur6czq4mZ73X4ExvKRZLY4TCE9HIZK8Lh8TS5kQo0R2Roi3qxwrqZ1ijUvGxUD7BByyjTJ2wWkNlScsie4zxv4HBWPY_m6BKsmKxDQ-LUpZbPnxWTenuZCjzN_Z1_6zyy1XjJxXvZ6uLh-Uw2S-h5qKeDhdT3ldDTda71xrL9-37F9AZP7BFYxaHt_ql3N9CFe6y43m8sYvHsITusnn6oOMPO5OZ_gACAAA/user">
+                    <img src="../img/mercado-pago-logo.png" alt="">
+                </a>
+            </div>
+        </div>
         <div>
             <!--Aqui vai entrar os dados da API-->
         </div>

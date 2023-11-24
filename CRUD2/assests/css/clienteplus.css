@@ -1,4 +1,4 @@
-a{
+/* a{
     color: black;
 }
 #bemvindo{
@@ -26,4 +26,58 @@ a{
 
 .item img{
     width: 200px;
+} */
+a{
+    color: black;
 }
+#bemvindo{
+    text-align:center;
+    font-size: 25px;
+    margin-top: 15px;
+}
+.text{
+    text-decoration: none;
+    margin-top: 10px;
+    font-size: 24px;
+}
+.box {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px; /* Espaçamento entre os itens */
+}
+
+.item {
+    border: 9px solid rgb(158, 20, 20);
+    border-radius: 45px;
+    padding: 20px;
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+.item img, .item_ img {
+    width: 200px;
+}
+.box2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item_ {
+    text-align: center;
+    border: 9px solid rgb(158, 20, 20);
+    border-radius: 45px;
+    margin-top: 20px;
+    padding: 40px;
+}
+
+
+
+/* Altera o layout para uma única coluna em telas menores */
+@media (max-width: 768px) {
+    .box {
+        grid-template-columns: 1fr;
+    }
+}
+
