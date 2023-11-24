@@ -62,6 +62,9 @@
             font-size: 20px;
             color: #333; /* Cor do texto */
         }
+        .item img{
+            width: 450px;
+        }
     </style>
 </head>
 <!--Cabeçalho-->
@@ -107,9 +110,104 @@
         </div>
         <div class="box1">
             <div class="box2">
-                    
+                <div class="item">
+                    <?php
+                        // Verifica se a descrição da modalidade contém a palavra "Luta" para exibir a imagem correspondente
+                        if (stripos($academias['modalidades'], 'Luta') !== false) {
+                            echo "<img src='../img/academias/luta.jpeg' alt='Imagem de luta'>";
+                        }
+                    ?>
+                </div>
+                <div class="item">
+                    <?php
+                        if (stripos($academias['modalidades'], 'Musculação') !== false) {
+                            echo "<img src='../img/academias/musculacao.jpg' alt='Imagem de luta'>";
+                        }
+                    ?>
+                </div>
+                <div class="item">
+                    <?php
+                        if (stripos($academias['modalidades'], 'Pilates') !== false) {
+                            echo "<img src='../img/academias/pilates.jpg' alt='Imagem de luta'>";
+                        }
+                    ?>
+                </div>
+                <div class="item">
+                    <?php
+                        if (stripos($academias['modalidades'], 'Corrida') !== false) {
+                            echo "<img src='../img/academias/corrida.png' alt='Imagem de luta'>";
+                        }
+                    ?>
+                </div>
+                <div class="item">
+                    <?php
+                        if (stripos($academias['modalidades'], 'Jiu-Jitsu') !== false) {
+                            echo "<img src='../img/academias/jiu.jpg' alt='Imagem de luta'>";
+                        }
+                    ?>
+                </div>
+                <div class="item">
+                    <?php
+                        if (stripos($academias['modalidades'], 'Box') !== false) {
+                            echo "<img src='../img/academias/boxing.jpg' alt='Imagem de luta'>";
+                        }
+                    ?>
+                </div>
+                <div class="item">
+                    <?php
+                        if (stripos($academias['modalidades'], 'Natação') !== false) {
+                            echo "<img src='../img/academias/natacao.png' alt='Imagem de luta'>";
+                        }
+                    ?>
+                </div>
+                <div class="item">
+                    <?php
+                        if (stripos($academias['modalidades'], 'Yoga') !== false) {
+                            echo "<img src='../img/academias/yoga.jpg' alt='Imagem de luta'>";
+                        }
+                    ?>
+                </div>
+                <div class="item">
+                    <?php
+                        if (stripos($academias['modalidades'], 'Funcional') !== false) {
+                            echo "<img src='../img/academias/funcional.jpg' alt='Imagem de luta'>";
+                        }
+                    ?>
+                </div>
+                <div class="item">
+                    <?php
+                        if (stripos($academias['modalidades'], 'Crossfit') !== false) {
+                            echo "<img src='../img/academias/crossfit.jpg' alt='Imagem de luta'>";
+                        }
+                    ?>
+                </div>
+                <div class="item">
+                    <?php
+                        if (stripos($academias['modalidades'], 'Judô') !== false) {
+                            echo "<img src='../img/academias/judo.jpg' alt='Imagem de luta'>";
+                        }
+                    ?>
+                </div>
+                <div class="item">
+                    <?php
+                        if (stripos($academias['modalidades'], 'Spinning') !== false) {
+                            echo "<img src='../img/academias/spinning.jpg' alt='Imagem de luta'>";
+                        }
+                    ?>
+                </div>
+                <div class="item">
+                    <?php
+                        if (stripos($academias['modalidades'], 'Dança') !== false) {
+                            echo "<img src='../img/academias/danca.jpeg' alt='Imagem de luta'>";
+                        }
+                               
+                        if (stripos($academias['modalidades'], 'Zumba') !== false) {
+                            echo "<img src='../img/academias/danca.jpeg' alt='Imagem de luta'>";
+                        }
+                    ?>
+                </div>
             </div>
         </div>            
     </div>
-
+    <br>
 </body>
