@@ -66,7 +66,7 @@ if (isset($_POST["email"]) || isset($_POST["senha"])) {
     <link href="../assests/css/boot.css" rel="stylesheet"> <!--boot.css-->
     <link href="../assests/css/style.css" rel="stylesheet"> <!--style.css-->
     <link rel="stylesheet" href="assests/css/index_style.css">
-    <link rel="shortcut icon" href="img/icons8-marcador-50.png">
+    <link rel="shortcut icon" href="../img/icons8-marcador-50.png">
     <link rel="stylesheet" href="../assests/css/login_style.css">
     <script src="index.js" defer></script>
     <title>Login</title>

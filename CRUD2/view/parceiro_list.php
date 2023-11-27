@@ -98,7 +98,7 @@ $userId = $_SESSION['idUsuario'];
                                 <td><?= $academia['complemento'];?></td>
                                 <td><?= $academia['numero'];?></td>
                                 <td class="td__operacao">
-                                    <a class="btns" href="edit.php?id=<?=$academia['idAcademia'];?>">Alterar</a>
+                                    <a class="btns" href="parceiro_edit.php?idAcademia=<?=$academia['idAcademia'];?>">Alterar</a>
                                     <!-- <a class="btns" href="delete.php?id=<?=$academia['idAcademia'];?>" onclick="return confirm('Deseja confirmar a operação?');">Excluir</a> -->
                                 </td>
                             </tr>
