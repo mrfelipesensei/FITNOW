@@ -30,6 +30,15 @@ $userId = $_SESSION['idUsuario'];
     <link rel="stylesheet" href="../assests/css/parceiro_list.css">
     <link rel="shortcut icon" href="../img/icons8-marcador-50.png">
     <title>Academias</title>
+    <style>
+        #aviso{
+            margin-top: 20px;
+            font-size: 35px;
+            color: green;
+            font-weight: bolder;
+            text-align: center;
+        }
+    </style>
 </head>
 <!--Cabeçalho-->
 <header class="main_header">
@@ -53,7 +62,7 @@ $userId = $_SESSION['idUsuario'];
             <a href="parceiro_academia.php"><button class="newbtn">Nova Academia</button></a>
         </p>
     </div>
-    <div>
+    <div id="aviso">
     <?php if (isset($_GET['msg']) || isset($_GET['error'])) : ?>
             <div class="<?= (isset($_GET['msg']) ? 'msg__success' : 'msg__error') ?>">
                 <p><?= $_GET['msg'] ?? $_GET['error'] ?></p>

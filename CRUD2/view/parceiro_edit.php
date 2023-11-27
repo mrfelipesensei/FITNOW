@@ -74,8 +74,8 @@ $academia = $dao->getById($idAcademia);
         <div class="alterar">
             <h1>Alterar Academia</h1>
             <br>
-    <form action="../academias/update.php" method="post">
-                <input type="hidden" name="id" value="<?= $id ?>">
+    <form action="../academias/parceiro_update.php" method="post">
+                <input type="hidden" name="id" value="<?= $idAcademia ?>">
                 <div>
                 <label for="nome">Nome:</label>
                 <input type="text" name="nome" id="" value="<?= htmlspecialchars($academia['nome']) ?>">
@@ -120,11 +120,11 @@ $academia = $dao->getById($idAcademia);
                 <label for="numero">Número:</label>
                 <input type="number" name="numero" value="<?= htmlspecialchars($academia['numero']) ?>">
             </div>
+            <br><br>
+            <p>
+            <button id="fto_btn" type="submit">Salvar</button>
+            </p>
         </div>
-        <br><br>
-        <p>
-            <button type="submit">Salvar</button>
-        </p>
     </form>
     </div>
 </body>
