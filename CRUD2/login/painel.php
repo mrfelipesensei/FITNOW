@@ -39,7 +39,7 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
         #aviso{
             margin-top: 5px;
             font-size: 30px;
-            color: red;
+            color: green;
             font-weight: bolder;
             text-align: center;
         }
