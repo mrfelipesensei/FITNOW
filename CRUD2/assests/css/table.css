@@ -1,5 +1,6 @@
 table{
     width: 100%;
+    font-size: larger;
     border-collapse: collapse;
     text-align: center;
 }
@@ -12,7 +13,7 @@ th{
 }
 
 tr:nth-child(even){
-    background-color: #f2f2f2;
+    background-color: #b09c9c;
 }
 
 td{

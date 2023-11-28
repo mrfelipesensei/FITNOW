@@ -58,7 +58,7 @@ include("protect.php");
         </div>
         <div class="item">
             <p>
-                <a href="../academias/index.php">
+                <a href="../academias/nome.php">
                     <img src="../img/gym.png" alt="">
                     <p class="text" >Pesquisar/Alterar Academias</p>
                 </a>

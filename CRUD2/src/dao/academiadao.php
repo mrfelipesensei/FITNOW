@@ -231,6 +231,28 @@ class AcademiaDAO{
         return $rows;
     }
     
+    public function getByNome($nome){
+        // Construindo placeholders para a claúsula IN
+        $placeholders = rtrim(str_repeat('?,', count($nome)), ',');
+        
+        // Construindo uma consulta com LIKE para cada substring nas modalidades
+        $query = 'SELECT * FROM fitnow.academias WHERE nome LIKE ?';
+        for ($i = 1; $i < count($nome); $i++) {
+            $query .= ' OR nome LIKE ?';
+        }
+        
+        // Preparando a query e criando array que receberá as variáveis
+        $stmt = $this->dbh->prepare($query);
+        $params = array();
+        foreach ($nome as $nom) {
+            $params[] = "%$nom%";
+        }
+        
+        $stmt->execute($params); // Executando a instrução preparada com o array de modalidades
+        
+        $rows = $stmt->fetchAll();
+        return $rows;
+    }
 }
 
 
