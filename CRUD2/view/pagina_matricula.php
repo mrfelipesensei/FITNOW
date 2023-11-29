@@ -42,7 +42,7 @@ if ($saldo !== null) {
         $stmtUpdate->close();
 
         // Redireciona para a página de sucesso ou outra página conforme necessário
-        header("Location: pagina_sucesso.php");
+        header("Location: qrcode.php");
         exit();
     } else {
         echo "Saldo insuficiente para realizar o treinamento.";

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gerar QR Code com JavaScript</title>
+</head>
+<body>
+    <div id="qrcode"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+    <script>
+        // Texto que será codificado no QR code
+        var textoQR = 'https://exemplo.com/pagina_sucesso.php';
+
+        // Cria um elemento canvas para o QR code
+        var qrCanvas = document.createElement('canvas');
+        qrCanvas.id = 'qrcodeCanvas';
+        document.getElementById('qrcode').appendChild(qrCanvas);
+
+        // Configuração e geração do QR code
+        var qr = new QRious({
+            element: qrCanvas,
+            value: textoQR,
+            size: 200
+        });
+    </script>
+</body>
+</html>
