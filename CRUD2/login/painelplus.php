@@ -92,17 +92,17 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
                 </a>
             </p>
         </div>
-        <div class="item">
+        <!-- <div class="item">
             <p>
                 <a href="#">
                     <img src="../img/gym.png" alt="">
                     <p class="text">Academias Matriculadas</p>
                 </a>
             </p>
-        </div>
+        </div> -->
         <div class="item">
             <p>
-                <a href="#">
+                <a href="../view/carteira.php">
                     <img src="../img/digital-wallet.png" alt="">
                     <p class="text">Carteira Digital</p>
                 </a>
@@ -116,8 +116,16 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
                 </a>
             </p>
         </div>
+        <div class="item">
+            <p>
+                <a href="../view/alterarplus.php">
+                    <img src="../img/clienteplus.png" alt="">
+                    <p class="text">Alterar minha Assinatura</p>
+                </a>
+            </p>
+        </div>
     </div>
-    <div class="box2">
+    <!-- <div class="box2">
         <div class="item_">
             <p>
                 <a href="../view/alterarplus.php">
@@ -127,6 +135,6 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
             </p>
         </div>
     </div> 
-    <br>      
+    <br>       -->
 </body>
 </html>
