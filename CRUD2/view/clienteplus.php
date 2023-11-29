@@ -37,6 +37,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['assinar'])) {
 
     if ($conn->query($sql) === TRUE) {
         echo "Perfil atualizado no banco de dados com sucesso.";
+
+        // Registrando a data, hora e userId
+        $dataHoraClique = date('Y-m-d H:i:s'); // Obtém a data e hora atuais no formato MySQL
+
+        // Query para inserir os dados na tabela de registro de cliques
+        $sqlRegistro = "INSERT INTO fitnow.assinatura (idUsuario, data_hora_clique) VALUES ('$userId', '$dataHoraClique')";
+
+        if ($conn->query($sqlRegistro) === TRUE) {
+            echo "Registro de clique inserido com sucesso.";
+        } else {
+            echo "Erro ao inserir registro de clique: " . $conn->error;
+        }
+        
     } else {
         echo "Erro ao atualizar perfil: " . $conn->error;
     }
