@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         // Redireciona para a página de sucesso ou outra página conforme necessário
-        header("Location: pagina_sucesso.php");
+        header("Location: carteira.php");
         exit();
     } else {
         echo "O valor do depósito precisa ser maior que zero.";
