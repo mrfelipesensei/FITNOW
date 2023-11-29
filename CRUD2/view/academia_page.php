@@ -238,7 +238,7 @@
     <div id="btns">
         <?php
             if ($userPerfil == 'Cliente+') {
-                echo '<a href="pagina_matricula.php"><button>Treinar Já!</button></a>';
+                echo '<a href="pagina_matricula.php?idAcademia=' . $idAcademia . '&valor=' . $academias['valores'] . '"><button>Treinar Já!</button></a>';
             } else if ($userPerfil == 'Cliente') {
                 echo '<p>Quer treinar?</p>';
                 echo '<a href="clienteplus.php"><button>Seja Plus</button></a>';
