@@ -25,12 +25,16 @@ if (isset($_POST["email"]) || isset($_POST["senha"])) {
                 $_SESSION['usuario'] = array(
                     'id' => $usuario["idUsuario"],
                     'nome' => $usuario["nome"],
+                    'cpf' => $usuario["cpf"],
+                    'email' => $usuario["email"],
                     'perfil' => $usuario["perfil"],
                     'foto_perfil' => $usuario["foto_perfil"],
 
                 );
                 $_SESSION["idUsuario"] = $usuario["idUsuario"];
                 $_SESSION["nome"] = $usuario["nome"];
+                $_SESSION["cpf"] = $usuario["cpf"];
+                $_SESSION["email"] = $usuario["email"];
                 $_SESSION["perfil"] = $usuario["perfil"];
 
                 if ($usuario["perfil"] == "Admin") {

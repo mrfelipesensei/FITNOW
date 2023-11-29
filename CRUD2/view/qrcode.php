@@ -1,3 +1,14 @@
+<?php
+include("../login/protect.php");
+
+$userId = $_SESSION['idUsuario'];
+$userName = $_SESSION['nome'];
+
+$userCPF = $_SESSION['cpf'];
+$userEmail = $_SESSION['email'];
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,6 +28,11 @@
             text-align: center;
             font-size: 30px;
             margin-top: 20px;
+        }
+        p{
+            text-align: center;
+            margin-top: 10px;
+            font-size: 25px;
         }
         #qrcode {
             display: flex;
@@ -45,13 +61,15 @@
 <body>
     <h1>Agora é só mostrar seu QRCode!</h1>
     <div id="qrcode"></div>
+    
+    <p>Ótimo treino!</p>
 
     <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
     <script>
         // Informações do usuário
-        var nome = 'Fulano de Tal';
-        var cpf = '123.456.789-00';
-        var email = 'fulano@example.com';
+        var nome = '<?php echo $userName; ?>';
+        var cpf = '<?php echo $userCPF; ?>';
+        var email = '<?php echo $userEmail; ?>';
 
         // Cria um objeto com as informações do usuário
         var usuario = {
