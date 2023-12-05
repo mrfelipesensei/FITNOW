@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29/11/2023 às 21:55
+-- Tempo de geração: 05/12/2023 às 11:04
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -20,9 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `fitnow`
 --
-DROP DATABASE IF EXISTS `fitnow`;
-CREATE DATABASE `fitnow`;
-USE `fitnow`;
+
 -- --------------------------------------------------------
 
 --
