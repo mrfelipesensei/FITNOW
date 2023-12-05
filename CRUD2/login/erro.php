@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
-    <link href="assests/css/boot.css" rel="stylesheet"> <!--boot.css-->
+    <link href="../assests/css/boot.css" rel="stylesheet"> <!--boot.css-->
     <title>ERRO</title>
     <style>
         h1{
@@ -45,14 +45,16 @@
     </style>
 </head>
 <body>
-    <h1>PÁGINA INDISPONÍVEL</h1>
+    <h1>Usuário <span style="color:red">NÃO ENCONTRADO</span></h1>
     <div id="gif">
-        <img src="img/monkey-23.gif" alt="">
+        <img src="../img/monkey-23.gif" alt="">
     </div>
-    <h2>Lamentamos o transtorno</h2>
+    <h2>Seu email ou sua senha estão <span style="color:red">incorretos</span></h2>
+    <h2>OU</h2>
+    <h2>Ainda <span style="color:red">NÃO</span> foi cadastrado</h2>
     <div>
-        <a href="index.html">
-            <p><button id="btn2">HOMEPAGE</button></p>
+        <a href="index.php">
+            <p><button id="btn2">Voltar</button></p>
         </a> 
     </div>
 </body>

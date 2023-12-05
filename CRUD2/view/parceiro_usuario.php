@@ -62,7 +62,7 @@ if (!file_exists($caminho_foto) || empty($foto_perfil)) {
 <!--Cabeçalho-->
 <header class="main_header">
     <div class="main_header_content">
-        <a href="home.html" class="logo">
+        <a href="#" class="logo">
             <img id="fitlogo_header" src="../img/logofit.png" alt="FITNOW - A qualquer hora e qualquer lugar"
                 title="FITNOW - A qualquer hora e qualquer lugar"></a>
 
